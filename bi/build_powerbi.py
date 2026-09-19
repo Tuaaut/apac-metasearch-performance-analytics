@@ -82,6 +82,10 @@ def literal(value: str) -> dict:
     return {"expr": {"Literal": {"Value": f"'{value}'"}}}
 
 
+def boolean(value: bool) -> dict:
+    return {"expr": {"Literal": {"Value": str(value).lower()}}}
+
+
 def color(value: str) -> dict:
     return {"solid": {"color": literal(value)}}
 
@@ -154,7 +158,14 @@ def card(name: str, table: str, measure: str, x: int, y: int, w: int) -> dict:
 def slicer(name: str, table: str, column: str, x: int, width: int) -> dict:
     return visual(name, "slicer", x, 115, width, 60,
                   {"Values": {"projections": [projection(table, column, "Column")]}},
-                  objects={"data": [{"properties": {"mode": literal("Dropdown")}}]})
+                  objects={
+                      "data": [{"properties": {"mode": literal("Dropdown")}}],
+                      "selection": [{"properties": {
+                          "singleSelect": boolean(False),
+                          "strictSingleSelect": boolean(False),
+                          "selectAllCheckboxEnabled": boolean(True),
+                      }}],
+                  })
 
 
 def chart(name: str, chart_type: str, table: str, category: str,
