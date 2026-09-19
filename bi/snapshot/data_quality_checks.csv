@@ -1,0 +1,9 @@
+check_order,category,check_name,severity,status,observed_value,expected_condition,failed_rows,data_through_date,evidence
+1,Freshness,Campaign snapshot freshness,Warning,PASS,2026-08-31,A populated month-end data date,0,2026-08-31,MAX(Campaign.date)
+2,Completeness,Campaign row volume,Critical,PASS,930 rows,930 rows = 3 markets × 5 channels × 2 devices × 31 days,0,2026-08-31,COUNTROWS(Campaign)
+3,Completeness,Experiment row volume,Critical,PASS,15 rows,15 rows = 3 markets × 5 channels,0,2026-08-31,COUNTROWS(Experiment)
+4,Completeness,Required campaign keys,Critical,PASS,0 null-key rows,"0 nulls across date, market, channel, campaign_id, device_type",0,2026-08-31,Null-key row count
+5,Validity,Campaign daily grain uniqueness,Critical,PASS,930 distinct grains,"One row per date, market, channel, campaign_id, device_type",0,2026-08-31,Distinct campaign grain versus row count
+6,Validity,Funnel and economic bounds,Critical,PASS,0 invalid rows,"0 rows where clicks > impressions, conversions/sessions > clicks, or economics are invalid",0,2026-08-31,Row-level bounds check
+7,Reconciliation,Confirmed bookings reconcile,Critical,PASS,"1,792 conversions = 1,792 confirmed bookings",Platform conversions equal confirmed bookings,0,2026-08-31,SUM(conversions) versus SUM(confirmed_bookings)
+8,Reconciliation,Experiment lift arithmetic,Warning,PASS,0 mismatched experiment rows,incremental_conversions = treatment_conversions − control_conversions,0,2026-08-31,Experiment row-level arithmetic

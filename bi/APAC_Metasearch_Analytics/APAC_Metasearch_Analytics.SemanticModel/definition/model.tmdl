@@ -10,3 +10,4 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 ref table Campaign
 ref table Experiment
+ref table DataQuality

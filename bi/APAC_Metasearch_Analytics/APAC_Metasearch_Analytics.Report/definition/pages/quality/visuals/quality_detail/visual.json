@@ -1,0 +1,198 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "quality_detail",
+  "position": {
+    "x": 20,
+    "y": 520,
+    "z": 114,
+    "height": 140,
+    "width": 1240,
+    "tabOrder": 114
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "category"
+                }
+              },
+              "queryRef": "DataQuality.category",
+              "nativeQueryRef": "category",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "check_name"
+                }
+              },
+              "queryRef": "DataQuality.check_name",
+              "nativeQueryRef": "check_name",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "severity"
+                }
+              },
+              "queryRef": "DataQuality.severity",
+              "nativeQueryRef": "severity",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "observed_value"
+                }
+              },
+              "queryRef": "DataQuality.observed_value",
+              "nativeQueryRef": "observed_value",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "expected_condition"
+                }
+              },
+              "queryRef": "DataQuality.expected_condition",
+              "nativeQueryRef": "expected_condition",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "failed_rows"
+                }
+              },
+              "queryRef": "DataQuality.failed_rows",
+              "nativeQueryRef": "failed_rows",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "status"
+                }
+              },
+              "queryRef": "DataQuality.status",
+              "nativeQueryRef": "status",
+              "active": true
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Quality gate detail • inspect evidence before overriding a failed check'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE6EF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,102 @@
+table DataQuality
+	lineageTag: df8e4d34-f619-54b1-a539-e29843447097
+
+	measure 'Checks Evaluated' = COUNTROWS(DataQuality)
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: c8757cbc-0d7d-5183-b608-060deedc07e6
+
+	measure 'Checks Passed' = CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = "PASS")
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 678d6f8d-7fcc-5f29-b1da-446edd017966
+
+	measure 'Checks Failed' = CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = "FAIL")
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: b530eb55-1d63-5575-bb4a-14c314f3a341
+
+	measure 'Affected Rows' = SUM(DataQuality[failed_rows])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 45a748bb-62d6-5a4e-b314-362aff735328
+
+	measure 'Gate Status' = IF([Checks Evaluated] = 0, "NOT LOADED", IF([Checks Failed] = 0, "PASS", "FAIL"))
+		formatString: @
+		displayFolder: KPI Measures
+		lineageTag: f593a620-d0a1-5f4c-9f95-84ca1e345b19
+
+	measure 'Latest Data Date' = MAX(DataQuality[data_through_date])
+		formatString: mmm d, yyyy
+		displayFolder: KPI Measures
+		lineageTag: d77b297e-0ece-54df-9d92-2cab90bd963e
+
+	column check_order
+		dataType: int64
+		lineageTag: 4924155a-35f6-561a-8c05-7957824a66b0
+		summarizeBy: none
+		sourceColumn: check_order
+
+	column category
+		dataType: string
+		lineageTag: 9abb8a0c-bd25-5e7c-b0de-92c146fa1c2d
+		summarizeBy: none
+		sourceColumn: category
+
+	column check_name
+		dataType: string
+		lineageTag: ce6c91db-1ec6-5476-8fa6-6734fa089d1e
+		summarizeBy: none
+		sourceColumn: check_name
+
+	column severity
+		dataType: string
+		lineageTag: e68a317e-b902-586b-8170-0302e9c6cb0a
+		summarizeBy: none
+		sourceColumn: severity
+
+	column status
+		dataType: string
+		lineageTag: b5b132b3-2dae-555a-920e-cb9031734b9c
+		summarizeBy: none
+		sourceColumn: status
+
+	column observed_value
+		dataType: string
+		lineageTag: d77713f4-66d1-5b0e-b8b0-d4201b06282a
+		summarizeBy: none
+		sourceColumn: observed_value
+
+	column expected_condition
+		dataType: string
+		lineageTag: dfd7e476-267f-5edf-aa84-7951ad2af3f6
+		summarizeBy: none
+		sourceColumn: expected_condition
+
+	column failed_rows
+		dataType: int64
+		lineageTag: 79c5f8e9-8ed5-5442-a2e1-44714208dddd
+		summarizeBy: none
+		sourceColumn: failed_rows
+
+	column data_through_date
+		dataType: dateTime
+		lineageTag: 99cd3975-7668-504d-afe6-d5a3a1da41cb
+		summarizeBy: none
+		sourceColumn: data_through_date
+
+	column evidence
+		dataType: string
+		lineageTag: e350e81b-ad0a-57ad-8124-063479ebf107
+		summarizeBy: none
+		sourceColumn: evidence
+
+	partition DataQuality = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\DE-BI-ML-Projects\03-synthetic-generated-data\apac-metasearch-performance-analytics\bi\snapshot\data_quality_checks.csv"), [Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Types = Table.TransformColumnTypes(Headers, {{"check_order", Int64.Type}, {"category", type text}, {"check_name", type text}, {"severity", type text}, {"status", type text}, {"observed_value", type text}, {"expected_condition", type text}, {"failed_rows", Int64.Type}, {"data_through_date", type date}, {"evidence", type text}}, "en-US")
+				in
+				  Types

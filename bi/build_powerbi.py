@@ -43,6 +43,12 @@ EXPERIMENT_COLUMNS = {
     "incremental_conversions": "decimal", "relative_conversion_lift": "double",
     "incremental_revenue": "decimal",
 }
+QUALITY_COLUMNS = {
+    "check_order": "int64", "category": "string", "check_name": "string",
+    "severity": "string", "status": "string", "observed_value": "string",
+    "expected_condition": "string", "failed_rows": "int64",
+    "data_through_date": "dateTime", "evidence": "string",
+}
 CAMPAIGN_MEASURES = {
     "Total Impressions": ("SUM(Campaign[impressions])", "#,0"),
     "Total Clicks": ("SUM(Campaign[clicks])", "#,0"),
@@ -66,6 +72,14 @@ EXPERIMENT_MEASURES = {
     "Incremental Conversions": ("SUM(Experiment[incremental_conversions])", "#,0"),
     "Relative Lift": ("DIVIDE([Treatment CVR], [Control CVR]) - 1", "0.0%"),
     "Incremental Revenue USD": ("SUM(Experiment[incremental_revenue])", "$#,0;($#,0)"),
+}
+QUALITY_MEASURES = {
+    "Checks Evaluated": ("COUNTROWS(DataQuality)", "#,0"),
+    "Checks Passed": ("CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = \"PASS\")", "#,0"),
+    "Checks Failed": ("CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = \"FAIL\")", "#,0"),
+    "Affected Rows": ("SUM(DataQuality[failed_rows])", "#,0"),
+    "Gate Status": ("IF([Checks Evaluated] = 0, \"NOT LOADED\", IF([Checks Failed] = 0, \"PASS\", \"FAIL\"))", "@"),
+    "Latest Data Date": ("MAX(DataQuality[data_through_date])", "mmm d, yyyy"),
 }
 
 
@@ -183,6 +197,87 @@ def table_visual(name: str, table: str, columns: list[tuple[str, str]],
     }, title=title)
 
 
+def build_quality_snapshot() -> Path:
+    """Create a repeatable quality-gate snapshot from the two Gold mart extracts."""
+    campaign_path = SNAPSHOT / "gold_campaign_daily.csv"
+    experiment_path = SNAPSHOT / "gold_incrementality_experiment.csv"
+    with campaign_path.open(newline="", encoding="utf-8") as file:
+        campaign = list(csv.DictReader(file))
+    with experiment_path.open(newline="", encoding="utf-8") as file:
+        experiment = list(csv.DictReader(file))
+
+    campaign_grain = {
+        (row["date"], row["market"], row["channel"], row["campaign_id"], row["device_type"])
+        for row in campaign
+    }
+    null_key_rows = sum(
+        any(not row[column].strip() for column in ("date", "market", "channel", "campaign_id", "device_type"))
+        for row in campaign
+    )
+    invalid_funnel_rows = sum(
+        float(row["clicks"]) > float(row["impressions"])
+        or float(row["conversions"]) > float(row["clicks"])
+        or float(row["sessions"]) > float(row["clicks"])
+        or float(row["ad_spend"]) < 0
+        or float(row["booking_value"]) < 0
+        or float(row["gross_margin"]) < 0
+        or float(row["gross_margin"]) > float(row["booking_value"])
+        for row in campaign
+    )
+    conversion_total = sum(int(row["conversions"]) for row in campaign)
+    confirmed_booking_total = sum(int(row["confirmed_bookings"]) for row in campaign)
+    incrementality_mismatches = sum(
+        round(float(row["treatment_conversions"]) - float(row["control_conversions"]), 6)
+        != round(float(row["incremental_conversions"]), 6)
+        for row in experiment
+    )
+    data_through_date = max(row["date"] for row in campaign)
+
+    def check(order: int, category: str, name: str, severity: str,
+              observed: str, expected: str, failed_rows: int, evidence: str) -> dict[str, str | int]:
+        return {
+            "check_order": order, "category": category, "check_name": name,
+            "severity": severity, "status": "PASS" if failed_rows == 0 else "FAIL",
+            "observed_value": observed, "expected_condition": expected,
+            "failed_rows": failed_rows, "data_through_date": data_through_date,
+            "evidence": evidence,
+        }
+
+    checks = [
+        check(1, "Freshness", "Campaign snapshot freshness", "Warning", data_through_date,
+              "A populated month-end data date", 0 if data_through_date else 1,
+              "MAX(Campaign.date)"),
+        check(2, "Completeness", "Campaign row volume", "Critical", f"{len(campaign):,} rows",
+              "930 rows = 3 markets × 5 channels × 2 devices × 31 days",
+              abs(len(campaign) - 930), "COUNTROWS(Campaign)"),
+        check(3, "Completeness", "Experiment row volume", "Critical", f"{len(experiment):,} rows",
+              "15 rows = 3 markets × 5 channels", abs(len(experiment) - 15), "COUNTROWS(Experiment)"),
+        check(4, "Completeness", "Required campaign keys", "Critical", f"{null_key_rows:,} null-key rows",
+              "0 nulls across date, market, channel, campaign_id, device_type", null_key_rows,
+              "Null-key row count"),
+        check(5, "Validity", "Campaign daily grain uniqueness", "Critical", f"{len(campaign_grain):,} distinct grains",
+              "One row per date, market, channel, campaign_id, device_type", len(campaign) - len(campaign_grain),
+              "Distinct campaign grain versus row count"),
+        check(6, "Validity", "Funnel and economic bounds", "Critical", f"{invalid_funnel_rows:,} invalid rows",
+              "0 rows where clicks > impressions, conversions/sessions > clicks, or economics are invalid",
+              invalid_funnel_rows, "Row-level bounds check"),
+        check(7, "Reconciliation", "Confirmed bookings reconcile", "Critical",
+              f"{conversion_total:,} conversions = {confirmed_booking_total:,} confirmed bookings",
+              "Platform conversions equal confirmed bookings", abs(conversion_total - confirmed_booking_total),
+              "SUM(conversions) versus SUM(confirmed_bookings)"),
+        check(8, "Reconciliation", "Experiment lift arithmetic", "Warning",
+              f"{incrementality_mismatches:,} mismatched experiment rows",
+              "incremental_conversions = treatment_conversions − control_conversions",
+              incrementality_mismatches, "Experiment row-level arithmetic"),
+    ]
+    quality_path = SNAPSHOT / "data_quality_checks.csv"
+    with quality_path.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(file, fieldnames=QUALITY_COLUMNS)
+        writer.writeheader()
+        writer.writerows(checks)
+    return quality_path
+
+
 def tmdl_table(name: str, columns: dict[str, str], measures: dict[str, tuple[str, str]],
                csv_path: Path) -> str:
     collisions = set(columns).intersection(measures)
@@ -238,7 +333,7 @@ def build_model() -> None:
         "model Model\n\tculture: en-US\n\tdefaultPowerBIDataSourceVersion: powerBI_V3\n"
         "\tsourceQueryCulture: en-US\n\tdataAccessOptions\n\t\tlegacyRedirects\n"
         "\t\treturnErrorValuesAsNull\n\nannotation __PBI_TimeIntelligenceEnabled = 0\n\n"
-        "ref table Campaign\nref table Experiment\n", encoding="utf-8")
+        "ref table Campaign\nref table Experiment\nref table DataQuality\n", encoding="utf-8")
     tables = definition / "tables"
     tables.mkdir(exist_ok=True)
     (tables / "Campaign.tmdl").write_text(tmdl_table(
@@ -247,6 +342,9 @@ def build_model() -> None:
     (tables / "Experiment.tmdl").write_text(tmdl_table(
         "Experiment", EXPERIMENT_COLUMNS, EXPERIMENT_MEASURES,
         SNAPSHOT / "gold_incrementality_experiment.csv"), encoding="utf-8")
+    (tables / "DataQuality.tmdl").write_text(tmdl_table(
+        "DataQuality", QUALITY_COLUMNS, QUALITY_MEASURES,
+        SNAPSHOT / "data_quality_checks.csv"), encoding="utf-8")
 
 
 def page(page_name: str, display: str, visuals: list[dict]) -> None:
@@ -315,7 +413,7 @@ def build_report() -> None:
                      "defaultDrillFilterOtherVisuals": True},
     })
 
-    pages = ["overview", "diagnostics", "incrementality"]
+    pages = ["overview", "diagnostics", "incrementality", "quality"]
     write_json(definition / "pages" / "pages.json", {
         "$schema": f"{SCHEMA}/item/report/definition/pagesMetadata/1.1.0/schema.json",
         "pageOrder": pages, "activePageName": pages[0],
@@ -396,11 +494,37 @@ def build_report() -> None:
     ]
     page("incrementality", "03  Incrementality", experiment)
 
+    quality = [
+        textbox("header", "DATA QUALITY GATE  /  CAN WE TRUST THIS PULSE?", 0, 0, 1280, 70,
+                26, PALETTE["navy"], PALETTE["white"], True),
+        textbox("subtitle", "Automated checks on the verified Gold snapshots  •  Resolve critical failures before using performance metrics for a budget decision",
+                0, 70, 1280, 37, 12, PALETTE["pale"], PALETTE["muted"]),
+        slicer("category", "DataQuality", "category", 20, 220),
+        slicer("severity", "DataQuality", "severity", 250, 180),
+        card("gate_status", "DataQuality", "Gate Status", 20, 190, 295),
+        card("checks_evaluated", "DataQuality", "Checks Evaluated", 335, 190, 295),
+        card("checks_passed", "DataQuality", "Checks Passed", 650, 190, 295),
+        card("checks_failed", "DataQuality", "Checks Failed", 965, 190, 295),
+        chart("checks_by_category", "clusteredColumnChart", "DataQuality", "category",
+              ["Checks Passed", "Checks Failed"], "Pass / fail checks by quality category", 20, 315, 600, 190),
+        chart("checks_by_severity", "clusteredBarChart", "DataQuality", "severity",
+              ["Checks Evaluated", "Checks Failed"], "Checks by severity", 640, 315, 620, 190),
+        table_visual("quality_detail", "DataQuality", [
+            ("category", "Column"), ("check_name", "Column"), ("severity", "Column"),
+            ("observed_value", "Column"), ("expected_condition", "Column"),
+            ("failed_rows", "Column"), ("status", "Column")],
+            "Quality gate detail • inspect evidence before overriding a failed check", 520, 140),
+        textbox("gate_rule", "Decision rule: a Critical FAIL blocks performance recommendations; investigate Warning failures before publishing a recurring report. Freshness is based on the latest available Gold snapshot date.",
+                20, 670, 1240, 33, 10, PALETTE["pale"], PALETTE["muted"]),
+    ]
+    page("quality", "04  Data Quality Gate", quality)
+
 
 def main() -> None:
     for name in ("gold_campaign_daily", "gold_incrementality_experiment"):
         if not (SNAPSHOT / f"{name}.csv").exists():
             raise RuntimeError(f"Missing snapshot for {name}; run export_gold.py first")
+    build_quality_snapshot()
     build_model()
     build_report()
     print(PROJECT / f"{NAME}.pbip")

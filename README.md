@@ -83,9 +83,14 @@ All dashboard slicers are dropdowns that allow multiple selections and include S
 
 | # | Page | Storytelling question | Key visuals |
 |---:|---|---|---|
-| 1 | Executive Pulse | Is spend creating profitable bookings, and in which market? | Spend, bookings, margin ROAS, contribution cards; market margin ROAS; daily spend versus booking value. |
-| 2 | Funnel & Campaign | At which point does performance break, and which campaign needs action? | CTR, session rate, CVR, CPA cards; campaign CTR and CVR comparisons; detailed campaign table. |
-| 3 | Incrementality | Did advertising create additional demand? | Treatment versus control CVR, incremental conversions, incremental revenue; market and channel comparisons. |
+  | 1 | Executive Pulse | Is spend creating profitable bookings, and in which market? | Spend, bookings, margin ROAS, contribution cards; market margin ROAS; daily spend versus booking value. |
+  | 2 | Funnel & Campaign | At which point does performance break, and which campaign needs action? | CTR, session rate, CVR, CPA cards; campaign CTR and CVR comparisons; detailed campaign table. |
+  | 3 | Incrementality | Did advertising create additional demand? | Treatment versus control CVR, incremental conversions, incremental revenue; market and channel comparisons. |
+  | 4 | Data Quality Gate | Can the team trust the dataset before it makes a budget decision? | Overall pass/fail status; freshness, completeness, validity and reconciliation checks; severity-filtered evidence table. |
+
+### Data Quality Gate
+
+`build_powerbi.py` generates [`data_quality_checks.csv`](bi/snapshot/data_quality_checks.csv) from the two Gold snapshot files before it generates the model. The page blocks a business recommendation when a Critical check fails. The current checks cover snapshot freshness, expected Campaign and Experiment volumes, required campaign keys, the campaign daily grain, funnel/economic bounds, confirmed-booking reconciliation, and experiment lift arithmetic. This is a dashboard-facing representation of the same quality mindset enforced by the Dataform assertions; it does not replace the Dataform workflow gate.
 
 The visual design uses a clean analyst dashboard treatment: a navy header (`#102A43`), teal for positive performance (`#00A6A6`), coral for attention or deterioration (`#F76C5E`), gold for neutral emphasis (`#F5B841`), a pale background, and consistent USD formatting. All pages include only relevant slicers. Core ratios are DAX measures calculated from aggregated numerators and denominators, so filters do not average daily ratios incorrectly. `CMP003` is named in the Funnel page as the designed high-CTR/low-CVR investigation case.
 
@@ -155,3 +160,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 5 | 2026-09-19 | Generated an import-mode Power BI Desktop PBIP with a TMDL semantic model, 3 pages, 2 Gold-mart snapshots, DAX KPI measures, and a custom theme. Python compilation, 46 JSON/PBI definition files, and the TMDL model passed code-level validation. | Open and visually verify the report in Power BI Desktop; then complete the campaign and incrementality analysis. |
 | 6 | 2026-09-20 | Fixed Power BI's case-insensitive measure/column collisions by renaming measures to `Total Impressions`, `Total Clicks`, `Total Sessions`, `CTR %`, `CVR %`, and `ROAS Multiple`; regenerated all definitions and passed code-level checks. Power BI Desktop opened the corrected PBIP without the prior definition error. | Visually inspect each rendered page and complete the campaign and incrementality analysis. |
 | 7 | 2026-09-20 | Enabled multi-select plus Select all on every dashboard slicer. Diagnosed blank visuals as an empty local Power BI Import cache, refreshed the active model, and verified 930 Campaign rows, 15 Experiment rows, USD 28,062.17 spend, 1,792 bookings, and 1.32 margin ROAS with DAX. | Complete the campaign and incrementality analysis. |
+| 8 | 2026-09-20 | Added the Power BI Data Quality Gate page. `build_powerbi.py` now derives eight reproducible checks from the Gold snapshots, writes a data-quality snapshot, adds the DataQuality semantic-model table and measures, and surfaces pass/fail evidence by category and severity. All eight current checks pass. | Complete the campaign and incrementality analysis. |
