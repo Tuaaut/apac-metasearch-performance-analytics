@@ -23,11 +23,11 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "CTR"
+                  "Property": "CTR %"
                 }
               },
-              "queryRef": "Campaign.CTR",
-              "nativeQueryRef": "CTR"
+              "queryRef": "Campaign.CTR %",
+              "nativeQueryRef": "CTR %"
             }
           ]
         }

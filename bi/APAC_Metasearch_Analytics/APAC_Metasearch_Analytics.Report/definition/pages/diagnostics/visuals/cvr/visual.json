@@ -23,11 +23,11 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "CVR"
+                  "Property": "CVR %"
                 }
               },
-              "queryRef": "Campaign.CVR",
-              "nativeQueryRef": "CVR"
+              "queryRef": "Campaign.CVR %",
+              "nativeQueryRef": "CVR %"
             }
           ]
         }

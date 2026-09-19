@@ -44,20 +44,20 @@ EXPERIMENT_COLUMNS = {
     "incremental_revenue": "decimal",
 }
 CAMPAIGN_MEASURES = {
-    "Impressions": ("SUM(Campaign[impressions])", "#,0"),
-    "Clicks": ("SUM(Campaign[clicks])", "#,0"),
-    "Sessions": ("SUM(Campaign[sessions])", "#,0"),
+    "Total Impressions": ("SUM(Campaign[impressions])", "#,0"),
+    "Total Clicks": ("SUM(Campaign[clicks])", "#,0"),
+    "Total Sessions": ("SUM(Campaign[sessions])", "#,0"),
     "Bookings": ("SUM(Campaign[conversions])", "#,0"),
     "Spend USD": ("SUM(Campaign[ad_spend])", "$#,0;($#,0)"),
     "Booking Value USD": ("SUM(Campaign[booking_value])", "$#,0;($#,0)"),
     "Gross Margin USD": ("SUM(Campaign[gross_margin])", "$#,0;($#,0)"),
     "Contribution USD": ("[Gross Margin USD] - [Spend USD]", "$#,0;($#,0)"),
-    "CTR": ("DIVIDE([Clicks], [Impressions])", "0.0%"),
-    "Session Rate": ("DIVIDE([Sessions], [Clicks])", "0.0%"),
-    "CVR": ("DIVIDE([Bookings], [Clicks])", "0.0%"),
-    "CPC USD": ("DIVIDE([Spend USD], [Clicks])", "$0.00"),
+    "CTR %": ("DIVIDE([Total Clicks], [Total Impressions])", "0.0%"),
+    "Session Rate": ("DIVIDE([Total Sessions], [Total Clicks])", "0.0%"),
+    "CVR %": ("DIVIDE([Bookings], [Total Clicks])", "0.0%"),
+    "CPC USD": ("DIVIDE([Spend USD], [Total Clicks])", "$0.00"),
     "CPA USD": ("DIVIDE([Spend USD], [Bookings])", "$0.00"),
-    "ROAS": ("DIVIDE([Booking Value USD], [Spend USD])", "0.00"),
+    "ROAS Multiple": ("DIVIDE([Booking Value USD], [Spend USD])", "0.00"),
     "Margin ROAS": ("DIVIDE([Gross Margin USD], [Spend USD])", "0.00"),
 }
 EXPERIMENT_MEASURES = {
@@ -174,6 +174,10 @@ def table_visual(name: str, table: str, columns: list[tuple[str, str]],
 
 def tmdl_table(name: str, columns: dict[str, str], measures: dict[str, tuple[str, str]],
                csv_path: Path) -> str:
+    collisions = set(columns).intersection(measures)
+    collisions |= {measure for measure in measures if measure.casefold() in {column.casefold() for column in columns}}
+    if collisions:
+        raise RuntimeError(f"Power BI column/measure name collision in {name}: {sorted(collisions)}")
     with csv_path.open(newline="", encoding="utf-8") as f:
         headers = next(csv.reader(f))
     if list(columns) != headers:
@@ -336,19 +340,19 @@ def build_report() -> None:
         slicer("market", "Campaign", "market", 20, 180),
         slicer("channel", "Campaign", "channel", 210, 250),
         slicer("device", "Campaign", "device_type", 470, 180),
-        card("ctr", "Campaign", "CTR", 20, 190, 295),
+        card("ctr", "Campaign", "CTR %", 20, 190, 295),
         card("session_rate", "Campaign", "Session Rate", 335, 190, 295),
-        card("cvr", "Campaign", "CVR", 650, 190, 295),
+        card("cvr", "Campaign", "CVR %", 650, 190, 295),
         card("cpa", "Campaign", "CPA USD", 965, 190, 295),
         chart("campaign_ctr", "clusteredBarChart", "Campaign", "campaign_id",
-              ["CTR"], "Click appeal: CTR by campaign", 20, 315, 600, 220),
+              ["CTR %"], "Click appeal: CTR by campaign", 20, 315, 600, 220),
         chart("campaign_cvr", "clusteredBarChart", "Campaign", "campaign_id",
-              ["CVR"], "Post-click quality: CVR by campaign", 640, 315, 620, 220),
+              ["CVR %"], "Post-click quality: CVR by campaign", 640, 315, 620, 220),
         table_visual("campaign_table", "Campaign", [
             ("campaign_id", "Column"), ("market", "Column"),
-            ("device_type", "Column"), ("Clicks", "Measure"),
+            ("device_type", "Column"), ("Total Clicks", "Measure"),
             ("Bookings", "Measure"), ("Spend USD", "Measure"),
-            ("CVR", "Measure"), ("CPA USD", "Measure"),
+            ("CVR %", "Measure"), ("CPA USD", "Measure"),
             ("Margin ROAS", "Measure")],
             "Campaign detail • investigate CMP003: high CTR, weak CVR", 545, 148),
     ]

@@ -68,11 +68,11 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "Clicks"
+                  "Property": "Total Clicks"
                 }
               },
-              "queryRef": "Campaign.Clicks",
-              "nativeQueryRef": "Clicks"
+              "queryRef": "Campaign.Total Clicks",
+              "nativeQueryRef": "Total Clicks"
             },
             {
               "field": {
@@ -110,11 +110,11 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "CVR"
+                  "Property": "CVR %"
                 }
               },
-              "queryRef": "Campaign.CVR",
-              "nativeQueryRef": "CVR"
+              "queryRef": "Campaign.CVR %",
+              "nativeQueryRef": "CVR %"
             },
             {
               "field": {

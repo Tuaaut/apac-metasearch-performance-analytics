@@ -1,20 +1,20 @@
 table Campaign
 	lineageTag: f247f816-6275-5cb8-8542-a8c5254ab012
 
-	measure 'Impressions' = SUM(Campaign[impressions])
+	measure 'Total Impressions' = SUM(Campaign[impressions])
 		formatString: #,0
 		displayFolder: KPI Measures
-		lineageTag: bd1e99da-0e54-5b6c-b76a-f36d6b076ead
+		lineageTag: f4c18cc1-93f3-577a-956e-c1f39b1439b3
 
-	measure 'Clicks' = SUM(Campaign[clicks])
+	measure 'Total Clicks' = SUM(Campaign[clicks])
 		formatString: #,0
 		displayFolder: KPI Measures
-		lineageTag: 78063de6-1898-5ff9-b2eb-4ff1d97cac03
+		lineageTag: 525be877-e184-53c8-abbf-4f53206b4ec2
 
-	measure 'Sessions' = SUM(Campaign[sessions])
+	measure 'Total Sessions' = SUM(Campaign[sessions])
 		formatString: #,0
 		displayFolder: KPI Measures
-		lineageTag: ec891a93-4c3e-5960-ad24-26c0fa3146bf
+		lineageTag: 7359a914-8aa5-58dd-b131-2a551ed8bf45
 
 	measure 'Bookings' = SUM(Campaign[conversions])
 		formatString: #,0
@@ -41,22 +41,22 @@ table Campaign
 		displayFolder: KPI Measures
 		lineageTag: 248ebd91-0e93-5756-9d8c-2191b58d534c
 
-	measure 'CTR' = DIVIDE([Clicks], [Impressions])
+	measure 'CTR %' = DIVIDE([Total Clicks], [Total Impressions])
 		formatString: 0.0%
 		displayFolder: KPI Measures
-		lineageTag: d05df17c-5f72-5129-b48f-7b69e529ce6f
+		lineageTag: ef24fb1a-7016-5da4-a470-ed57860ed64d
 
-	measure 'Session Rate' = DIVIDE([Sessions], [Clicks])
+	measure 'Session Rate' = DIVIDE([Total Sessions], [Total Clicks])
 		formatString: 0.0%
 		displayFolder: KPI Measures
 		lineageTag: 727403c7-6612-5e65-9e19-1d50f3f8c4bb
 
-	measure 'CVR' = DIVIDE([Bookings], [Clicks])
+	measure 'CVR %' = DIVIDE([Bookings], [Total Clicks])
 		formatString: 0.0%
 		displayFolder: KPI Measures
-		lineageTag: 40f444ee-d03a-5132-9bfc-ca8d752032fa
+		lineageTag: e0849c76-936c-5b11-a3f2-3fae84140a56
 
-	measure 'CPC USD' = DIVIDE([Spend USD], [Clicks])
+	measure 'CPC USD' = DIVIDE([Spend USD], [Total Clicks])
 		formatString: $0.00
 		displayFolder: KPI Measures
 		lineageTag: c353ef59-d508-5689-8244-54f4d51548c2
@@ -66,10 +66,10 @@ table Campaign
 		displayFolder: KPI Measures
 		lineageTag: 8ad0b788-4a68-50ff-9ee1-c3586f7327a9
 
-	measure 'ROAS' = DIVIDE([Booking Value USD], [Spend USD])
+	measure 'ROAS Multiple' = DIVIDE([Booking Value USD], [Spend USD])
 		formatString: 0.00
 		displayFolder: KPI Measures
-		lineageTag: 8c654779-71db-5713-8ea9-034b1dc268cc
+		lineageTag: b9a05f6b-8304-5ebe-a0b3-e769a65523b4
 
 	measure 'Margin ROAS' = DIVIDE([Gross Margin USD], [Spend USD])
 		formatString: 0.00
