@@ -12,7 +12,7 @@ Follow `impression → ad click → first-party session → booking → revenue 
 | 2 | Load to BigQuery and build ELT model | Complete | BigQuery Bronze/Silver/Gold datasets, Dataform SQL and quality gates |
 | 3 | Analyze campaign, market, and device performance | Next | Findings and CMP003 investigation |
 | 4 | Analyze experiment | Planned | Incremental conversions, relative lift, uncertainty, decision caveats |
-| 5 | Build dashboard and interview case narrative | Planned | Refreshable visuals and recommendations |
+| 5 | Build dashboard and interview case narrative | In progress | Four-page Power BI report; action narrative and rendered review remain |
 
 ## Data contract
 
@@ -77,7 +77,7 @@ The first Dataform execution caught 28 booking-margin rounding mismatches and sk
 
 ## Power BI Desktop dashboard
 
-The version-controlled Power BI project is [`APAC_Metasearch_Analytics.pbip`](bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.pbip). It uses import-mode CSV snapshots of the two verified BigQuery Gold marts so the Desktop report can be opened without storing Google credentials in Git. [`export_gold.py`](bi/export_gold.py) refreshes those snapshots from BigQuery, while [`build_powerbi.py`](bi/build_powerbi.py) generates the PBIP, TMDL semantic model, page layout, visuals, and theme. The report's data model has two intentionally disconnected tables: `Campaign` and `Experiment`. It opened successfully in Power BI Desktop on 2026-09-20 after resolving all measure/column name collisions.
+The version-controlled Power BI project is [`APAC_Metasearch_Analytics.pbip`](bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.pbip). It uses import-mode CSV snapshots of the two verified BigQuery Gold marts so the Desktop report can be opened without storing Google credentials in Git. [`export_gold.py`](bi/export_gold.py) refreshes those snapshots from BigQuery, while [`build_powerbi.py`](bi/build_powerbi.py) generates the PBIP, TMDL semantic model, page layout, visuals, and theme. The report's data model has three intentionally disconnected tables: `Campaign`, `Experiment`, and `DataQuality`. It opened successfully in Power BI Desktop on 2026-09-20 after resolving all measure/column name collisions.
 
 All dashboard slicers are dropdowns that allow multiple selections and include Select all. A PBIP deliberately does not version its local Import cache (`.pbi/cache.abf`), so a new Desktop session must use **Home > Refresh** before cards and charts can show snapshot data. Without that refresh, slicers may show the known values while the import tables have zero loaded rows and every measure visual is blank. A verified refresh loads 930 `Campaign` rows and 15 `Experiment` rows.
 
@@ -90,7 +90,22 @@ All dashboard slicers are dropdowns that allow multiple selections and include S
 
 ### Data Quality Gate
 
-`build_powerbi.py` generates [`data_quality_checks.csv`](bi/snapshot/data_quality_checks.csv) from the two Gold snapshot files before it generates the model. The page blocks a business recommendation when a Critical check fails. The current checks cover snapshot freshness, expected Campaign and Experiment volumes, required campaign keys, the campaign daily grain, funnel/economic bounds, confirmed-booking reconciliation, and experiment lift arithmetic. This is a dashboard-facing representation of the same quality mindset enforced by the Dataform assertions; it does not replace the Dataform workflow gate.
+`build_powerbi.py` generates [`data_quality_checks.csv`](bi/snapshot/data_quality_checks.csv) from the two Gold snapshot files before it generates the model. The page flags failed checks for investigation before a business recommendation; Dataform enforces the actual ELT gate. The eight local checks cover August 2026 period coverage, expected Campaign and Experiment volumes, required campaign keys, campaign daily grain, funnel/economic bounds, confirmed-booking reconciliation, and experiment lift arithmetic. The gate status and headline check counts remain global when category or severity slicers filter the detail views. The latest data date is the end of the historical snapshot, **not** a live freshness or refresh timestamp. Dataform execution and assertion results are not yet imported into this page.
+
+### Report review and next additions (2026-09-20)
+
+The report answers broad performance and experiment questions, but its main decision gap is an explicit list of loss-making segments and the evidence behind each action. Prioritize these additions within the existing four pages:
+
+| # | Priority | Addition | Evidence and decision served |
+|---:|---|---|---|
+| 1 | Now | Add an action queue on Executive Pulse: market × channel × device, spend, bookings, margin ROAS, contribution after spend, and a clear negative-contribution flag. | `CMP003` (TH Skyscanner) has USD -2,808.86 contribution; TH Skyscanner mobile alone has USD -2,252.85. These are the first investigation targets, not an automatic budget-reallocation rule. |
+| 2 | Now | Replace the daily booking-value versus ad-spend comparison with daily gross margin versus ad spend, or show contribution by day. | Monthly booking value is USD 296,589.98 while spend is USD 28,062.17; gross margin is USD 37,081.33, the economically comparable return before ad spend. |
+| 3 | Now | Add absolute funnel counts and step rates (impressions → clicks → sessions → confirmed bookings), plus a same-market peer and device comparison for `CMP003`. | The current Funnel page has rate cards and campaign CTR/CVR bars but no stage volumes. `CMP003` has 4,925 clicks, 4,430 sessions, 86 bookings, and 1.75% click-to-booking CVR. |
+| 4 | Next | Show treatment/control sample sizes, absolute conversion-rate difference, and 95% confidence interval beside experiment lift; interpret all 15 comparisons cautiously. | The current Incrementality page reports lift and modeled incremental value without uncertainty. Its revenue is gross booking value for a separate synthetic population, not margin or incremental ROAS. |
+| 5 | Next | Import latest Dataform invocation and assertion outcomes into Data Quality Gate, and display the actual snapshot export or model refresh time separately from the covered data date. | The current eight checks are computed locally from the Gold CSVs. A passing local snapshot does not itself prove that the latest Dataform run passed or that the Desktop Import model was refreshed. |
+| 6 | Later | Add a comparable prior period or explicit budget target before showing pacing, month-over-month movement, or target variance; then add a date filter and campaign drillthrough. | The current synthetic source covers August 2026 only. A prior-period or budget comparison needs additional source data or stated assumptions. |
+
+Rendered visual review is still needed after reopening the PBIP and refreshing Import tables; code-level validation confirms the files and measures, but cannot establish chart readability or page layout in Desktop.
 
 The visual design uses a clean analyst dashboard treatment: a navy header (`#102A43`), teal for positive performance (`#00A6A6`), coral for attention or deterioration (`#F76C5E`), gold for neutral emphasis (`#F5B841`), a pale background, and consistent USD formatting. All pages include only relevant slicers. Core ratios are DAX measures calculated from aggregated numerators and denominators, so filters do not average daily ratios incorrectly. `CMP003` is named in the Funnel page as the designed high-CTR/low-CVR investigation case.
 
@@ -125,7 +140,7 @@ For booking attribution, join each click to its session, then join bookings on `
 - `CMP003` deliberately has high CTR and low CVR, creating an investigation case.
 - Clicks with no recorded session and organic sessions support realistic attribution checks.
 - Experiment arms are generated as a separate synthetic summary. Their causal interpretation is a practice scenario; the experiment rows are not linked to the observational population. Revenue in that table is gross booking value, not commission or margin.
-- This version has generated CSVs and deployed BigQuery/Dataform tables. It has no live ad platform feed, automated ingestion, dashboard, or scheduled refresh yet.
+- This version has generated CSVs, deployed BigQuery/Dataform tables, and a local Power BI Desktop report. It has no live ad platform feed, automated ingestion, or scheduled refresh yet.
 
 ## Run and validate
 
@@ -161,3 +176,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 6 | 2026-09-20 | Fixed Power BI's case-insensitive measure/column collisions by renaming measures to `Total Impressions`, `Total Clicks`, `Total Sessions`, `CTR %`, `CVR %`, and `ROAS Multiple`; regenerated all definitions and passed code-level checks. Power BI Desktop opened the corrected PBIP without the prior definition error. | Visually inspect each rendered page and complete the campaign and incrementality analysis. |
 | 7 | 2026-09-20 | Enabled multi-select plus Select all on every dashboard slicer. Diagnosed blank visuals as an empty local Power BI Import cache, refreshed the active model, and verified 930 Campaign rows, 15 Experiment rows, USD 28,062.17 spend, 1,792 bookings, and 1.32 margin ROAS with DAX. | Complete the campaign and incrementality analysis. |
 | 8 | 2026-09-20 | Added the Power BI Data Quality Gate page. `build_powerbi.py` now derives eight reproducible checks from the Gold snapshots, writes a data-quality snapshot, adds the DataQuality semantic-model table and measures, and surfaces pass/fail evidence by category and severity. All eight current checks pass. | Complete the campaign and incrementality analysis. |
+| 9 | 2026-09-20 | Reviewed all four report pages against the interview decision flow. Corrected the quality page's date label to historical period coverage and made the overall gate/count cards ignore category and severity filters. Recorded a prioritized report backlog with observed campaign and device evidence. | Add the loss-making segment action queue and a margin-versus-spend trend, then build the funnel and experiment uncertainty views. |

@@ -6,6 +6,7 @@ import csv
 import json
 import shutil
 import uuid
+from datetime import date, timedelta
 from pathlib import Path
 
 
@@ -78,7 +79,10 @@ QUALITY_MEASURES = {
     "Checks Passed": ("CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = \"PASS\")", "#,0"),
     "Checks Failed": ("CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = \"FAIL\")", "#,0"),
     "Affected Rows": ("SUM(DataQuality[failed_rows])", "#,0"),
-    "Gate Status": ("IF([Checks Evaluated] = 0, \"NOT LOADED\", IF([Checks Failed] = 0, \"PASS\", \"FAIL\"))", "@"),
+    "Overall Checks Evaluated": ("CALCULATE(COUNTROWS(DataQuality), REMOVEFILTERS(DataQuality))", "#,0"),
+    "Overall Checks Passed": ("CALCULATE([Checks Passed], REMOVEFILTERS(DataQuality))", "#,0"),
+    "Overall Checks Failed": ("CALCULATE([Checks Failed], REMOVEFILTERS(DataQuality))", "#,0"),
+    "Gate Status": ("IF([Overall Checks Evaluated] = 0, \"NOT LOADED\", IF([Overall Checks Failed] = 0, \"PASS\", \"FAIL\"))", "@"),
     "Latest Data Date": ("MAX(DataQuality[data_through_date])", "mmm d, yyyy"),
 }
 
@@ -231,7 +235,9 @@ def build_quality_snapshot() -> Path:
         != round(float(row["incremental_conversions"]), 6)
         for row in experiment
     )
-    data_through_date = max(row["date"] for row in campaign)
+    campaign_dates = {row["date"] for row in campaign}
+    expected_dates = {(date(2026, 8, 1) + timedelta(days=offset)).isoformat() for offset in range(31)}
+    data_through_date = max(campaign_dates)
 
     def check(order: int, category: str, name: str, severity: str,
               observed: str, expected: str, failed_rows: int, evidence: str) -> dict[str, str | int]:
@@ -244,9 +250,10 @@ def build_quality_snapshot() -> Path:
         }
 
     checks = [
-        check(1, "Freshness", "Campaign snapshot freshness", "Warning", data_through_date,
-              "A populated month-end data date", 0 if data_through_date else 1,
-              "MAX(Campaign.date)"),
+        check(1, "Coverage", "Campaign period coverage", "Critical",
+              f"{min(campaign_dates)} to {data_through_date}; {len(campaign_dates)} dates",
+              "2026-08-01 to 2026-08-31; 31 dates",
+              len(campaign_dates.symmetric_difference(expected_dates)), "Distinct campaign dates"),
         check(2, "Completeness", "Campaign row volume", "Critical", f"{len(campaign):,} rows",
               "930 rows = 3 markets × 5 channels × 2 devices × 31 days",
               abs(len(campaign) - 930), "COUNTROWS(Campaign)"),
@@ -502,9 +509,9 @@ def build_report() -> None:
         slicer("category", "DataQuality", "category", 20, 220),
         slicer("severity", "DataQuality", "severity", 250, 180),
         card("gate_status", "DataQuality", "Gate Status", 20, 190, 295),
-        card("checks_evaluated", "DataQuality", "Checks Evaluated", 335, 190, 295),
-        card("checks_passed", "DataQuality", "Checks Passed", 650, 190, 295),
-        card("checks_failed", "DataQuality", "Checks Failed", 965, 190, 295),
+        card("checks_evaluated", "DataQuality", "Overall Checks Evaluated", 335, 190, 295),
+        card("checks_passed", "DataQuality", "Overall Checks Passed", 650, 190, 295),
+        card("checks_failed", "DataQuality", "Overall Checks Failed", 965, 190, 295),
         chart("checks_by_category", "clusteredColumnChart", "DataQuality", "category",
               ["Checks Passed", "Checks Failed"], "Pass / fail checks by quality category", 20, 315, 600, 190),
         chart("checks_by_severity", "clusteredBarChart", "DataQuality", "severity",
@@ -514,7 +521,7 @@ def build_report() -> None:
             ("observed_value", "Column"), ("expected_condition", "Column"),
             ("failed_rows", "Column"), ("status", "Column")],
             "Quality gate detail • inspect evidence before overriding a failed check", 520, 140),
-        textbox("gate_rule", "Decision rule: a Critical FAIL blocks performance recommendations; investigate Warning failures before publishing a recurring report. Freshness is based on the latest available Gold snapshot date.",
+        textbox("gate_rule", "Decision rule: investigate Critical FAIL before recommending a budget change. These checks cover the fixed August 2026 snapshot; the latest data date is not a live refresh timestamp.",
                 20, 670, 1240, 33, 10, PALETTE["pale"], PALETTE["muted"]),
     ]
     page("quality", "04  Data Quality Gate", quality)

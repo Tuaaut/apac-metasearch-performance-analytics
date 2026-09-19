@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Decision rule: a Critical FAIL blocks performance recommendations; investigate Warning failures before publishing a recurring report. Freshness is based on the latest available Gold snapshot date.",
+                    "value": "Decision rule: investigate Critical FAIL before recommending a budget change. These checks cover the fixed August 2026 snapshot; the latest data date is not a live refresh timestamp.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

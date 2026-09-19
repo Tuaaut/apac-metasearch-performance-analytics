@@ -23,11 +23,11 @@
                       "Entity": "DataQuality"
                     }
                   },
-                  "Property": "Checks Passed"
+                  "Property": "Overall Checks Passed"
                 }
               },
-              "queryRef": "DataQuality.Checks Passed",
-              "nativeQueryRef": "Checks Passed"
+              "queryRef": "DataQuality.Overall Checks Passed",
+              "nativeQueryRef": "Overall Checks Passed"
             }
           ]
         }

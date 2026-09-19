@@ -21,7 +21,22 @@ table DataQuality
 		displayFolder: KPI Measures
 		lineageTag: 45a748bb-62d6-5a4e-b314-362aff735328
 
-	measure 'Gate Status' = IF([Checks Evaluated] = 0, "NOT LOADED", IF([Checks Failed] = 0, "PASS", "FAIL"))
+	measure 'Overall Checks Evaluated' = CALCULATE(COUNTROWS(DataQuality), REMOVEFILTERS(DataQuality))
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 5c99fc09-6c4d-5948-a3b0-fc04efa4907c
+
+	measure 'Overall Checks Passed' = CALCULATE([Checks Passed], REMOVEFILTERS(DataQuality))
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 1379abdd-684f-5bd4-b4b6-1f55c39a1ca7
+
+	measure 'Overall Checks Failed' = CALCULATE([Checks Failed], REMOVEFILTERS(DataQuality))
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: ba660d2c-605d-56fe-bebe-eeea8fa8470c
+
+	measure 'Gate Status' = IF([Overall Checks Evaluated] = 0, "NOT LOADED", IF([Overall Checks Failed] = 0, "PASS", "FAIL"))
 		formatString: @
 		displayFolder: KPI Measures
 		lineageTag: f593a620-d0a1-5f4c-9f95-84ca1e345b19

@@ -1,5 +1,5 @@
 check_order,category,check_name,severity,status,observed_value,expected_condition,failed_rows,data_through_date,evidence
-1,Freshness,Campaign snapshot freshness,Warning,PASS,2026-08-31,A populated month-end data date,0,2026-08-31,MAX(Campaign.date)
+1,Coverage,Campaign period coverage,Critical,PASS,2026-08-01 to 2026-08-31; 31 dates,2026-08-01 to 2026-08-31; 31 dates,0,2026-08-31,Distinct campaign dates
 2,Completeness,Campaign row volume,Critical,PASS,930 rows,930 rows = 3 markets × 5 channels × 2 devices × 31 days,0,2026-08-31,COUNTROWS(Campaign)
 3,Completeness,Experiment row volume,Critical,PASS,15 rows,15 rows = 3 markets × 5 channels,0,2026-08-31,COUNTROWS(Experiment)
 4,Completeness,Required campaign keys,Critical,PASS,0 null-key rows,"0 nulls across date, market, channel, campaign_id, device_type",0,2026-08-31,Null-key row count

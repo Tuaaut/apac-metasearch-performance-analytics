@@ -23,11 +23,11 @@
                       "Entity": "DataQuality"
                     }
                   },
-                  "Property": "Checks Failed"
+                  "Property": "Overall Checks Failed"
                 }
               },
-              "queryRef": "DataQuality.Checks Failed",
-              "nativeQueryRef": "Checks Failed"
+              "queryRef": "DataQuality.Overall Checks Failed",
+              "nativeQueryRef": "Overall Checks Failed"
             }
           ]
         }
