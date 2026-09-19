@@ -75,6 +75,28 @@ The local [`dataform/`](dataform/) files are the source of truth for SQL and wor
 
 The first Dataform execution caught 28 booking-margin rounding mismatches and skipped Gold as designed. [`generate_data.py`](generate_data.py) now uses decimal `ROUND_HALF_UP`, matching the BigQuery check; the latest complete run passed. There is **no scheduled refresh**, because the input is currently a static generated snapshot. Cloud resources already exist; [`cloud_api.py`](dataform/cloud_api.py) does not recreate datasets or the service account from scratch.
 
+## Power BI Desktop dashboard
+
+The version-controlled Power BI project is [`APAC_Metasearch_Analytics.pbip`](bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.pbip). It uses import-mode CSV snapshots of the two verified BigQuery Gold marts so the Desktop report can be opened without storing Google credentials in Git. [`export_gold.py`](bi/export_gold.py) refreshes those snapshots from BigQuery, while [`build_powerbi.py`](bi/build_powerbi.py) generates the PBIP, TMDL semantic model, page layout, visuals, and theme. The report's data model has two intentionally disconnected tables: `Campaign` and `Experiment`.
+
+| # | Page | Storytelling question | Key visuals |
+|---:|---|---|---|
+| 1 | Executive Pulse | Is spend creating profitable bookings, and in which market? | Spend, bookings, margin ROAS, contribution cards; market margin ROAS; daily spend versus booking value. |
+| 2 | Funnel & Campaign | At which point does performance break, and which campaign needs action? | CTR, session rate, CVR, CPA cards; campaign CTR and CVR comparisons; detailed campaign table. |
+| 3 | Incrementality | Did advertising create additional demand? | Treatment versus control CVR, incremental conversions, incremental revenue; market and channel comparisons. |
+
+The visual design uses a clean analyst dashboard treatment: a navy header (`#102A43`), teal for positive performance (`#00A6A6`), coral for attention or deterioration (`#F76C5E`), gold for neutral emphasis (`#F5B841`), a pale background, and consistent USD formatting. All pages include only relevant slicers. Core ratios are DAX measures calculated from aggregated numerators and denominators, so filters do not average daily ratios incorrectly. `CMP003` is named in the Funnel page as the designed high-CTR/low-CVR investigation case.
+
+### Power BI runbook
+
+```powershell
+python bi/export_gold.py
+python bi/build_powerbi.py
+Start-Process 'bi\APAC_Metasearch_Analytics\APAC_Metasearch_Analytics.pbip'
+```
+
+The project opens in Power BI Desktop and loads local snapshot files from [`bi/snapshot/`](bi/snapshot/). When updating the snapshot or PBIP generation, close Power BI Desktop first, run both Python commands, then reopen the PBIP. Do not add credentials or service-account JSON to this repository. A later production-style version can change the model source to the Power BI Google BigQuery connector; this practice version deliberately keeps the reproducible, verified Gold snapshot local.
+
 ### KPI definitions and attribution
 
 | # | Metric | Definition |
@@ -128,3 +150,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 2 | 2026-09-19 | Selected BigQuery ELT with Dataform quality gates as the target architecture. | Load Bronze tables, then implement Silver and Gold SQL. |
 | 3 | 2026-09-19 | Loaded five Bronze tables, built five Silver tables, two Gold marts, and 20 Dataform assertion actions; successful workflow execution had 27/27 actions pass. A gate initially caught 28 USD margin rounding errors and skipped Gold; fixed the generator using decimal rounding and reloaded. Gold campaign mart has 930 rows, 39,171 clicks, 1,792 conversions, and USD 37,081.33 gross margin. | Investigate CMP003 and derive market/device recommendations, then quantify experiment uncertainty. |
 | 4 | 2026-09-19 | Consolidated the cloud snapshot, operational runbook, and Codex/Claude Code handoff into this README. Initialized the project Git repository and committed the baseline. | Stage 3: perform campaign/market/device analysis with reproducible SQL and record findings here. |
+| 5 | 2026-09-19 | Generated an import-mode Power BI Desktop PBIP with a TMDL semantic model, 3 pages, 2 Gold-mart snapshots, DAX KPI measures, and a custom theme. Python compilation, 46 JSON/PBI definition files, and the TMDL model passed code-level validation. | Open and visually verify the report in Power BI Desktop; then complete the campaign and incrementality analysis. |

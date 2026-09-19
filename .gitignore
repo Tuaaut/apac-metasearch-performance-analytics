@@ -4,3 +4,5 @@ dataform/.last_invocation.json
 .env
 *.key.json
 service-account*.json
+**/.pbi/localSettings.json
+**/.pbi/cache.abf

@@ -1,0 +1,124 @@
+table Experiment
+	lineageTag: ada11fc6-98ce-5006-afd8-b6c4e58439f4
+
+	measure 'Treatment CVR' = DIVIDE(SUM(Experiment[treatment_conversions]), SUM(Experiment[treatment_users]))
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: 02677ff6-3a8a-5097-982b-146758b0029d
+
+	measure 'Control CVR' = DIVIDE(SUM(Experiment[control_conversions]), SUM(Experiment[control_users]))
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: c5df653b-b994-5bcc-9598-762ef40c6b4d
+
+	measure 'Incremental Conversions' = SUM(Experiment[incremental_conversions])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: b3be8676-2b61-5839-bad7-d3e004fea1b5
+
+	measure 'Relative Lift' = DIVIDE([Treatment CVR], [Control CVR]) - 1
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: 527eaa7e-ac1d-5899-8648-745734ad9c18
+
+	measure 'Incremental Revenue USD' = SUM(Experiment[incremental_revenue])
+		formatString: $#,0;($#,0)
+		displayFolder: KPI Measures
+		lineageTag: 2399221b-3c07-5281-bf2c-bb3a7c2e6293
+
+	column experiment_id
+		dataType: string
+		lineageTag: 5e0bdfda-6929-55ae-860e-bbb7906d4d1f
+		summarizeBy: none
+		sourceColumn: experiment_id
+
+	column market
+		dataType: string
+		lineageTag: 8327ee5c-fae5-59c5-ba05-174f44e1f049
+		summarizeBy: none
+		sourceColumn: market
+
+	column channel
+		dataType: string
+		lineageTag: 56b47a2b-f1cd-5034-ac27-685ae235f6dd
+		summarizeBy: none
+		sourceColumn: channel
+
+	column treatment_users
+		dataType: int64
+		lineageTag: 1d6c8a69-55b4-51b0-9d16-ef5426656348
+		summarizeBy: none
+		sourceColumn: treatment_users
+
+	column control_users
+		dataType: int64
+		lineageTag: 91646044-6ee7-5b28-9b7d-fc034697e73e
+		summarizeBy: none
+		sourceColumn: control_users
+
+	column treatment_conversions
+		dataType: int64
+		lineageTag: 488d9e7f-2f2c-5593-bc8b-45247663b465
+		summarizeBy: none
+		sourceColumn: treatment_conversions
+
+	column control_conversions
+		dataType: int64
+		lineageTag: 8cf8c3ca-a3ca-5ebc-9cd7-1a8f61e4c968
+		summarizeBy: none
+		sourceColumn: control_conversions
+
+	column treatment_revenue
+		dataType: decimal
+		lineageTag: fe8b9586-2efb-5211-8173-906a4726c4b9
+		summarizeBy: none
+		sourceColumn: treatment_revenue
+
+	column control_revenue
+		dataType: decimal
+		lineageTag: 2e49f4a7-6ef5-53b9-88db-2e5475e0eb3d
+		summarizeBy: none
+		sourceColumn: control_revenue
+
+	column treatment_conversion_rate
+		dataType: double
+		lineageTag: cb291e42-a44b-5e46-830a-255df9811cdd
+		summarizeBy: none
+		sourceColumn: treatment_conversion_rate
+		isHidden
+
+	column control_conversion_rate
+		dataType: double
+		lineageTag: f479d5fa-19d7-5705-92b8-c6432cbf1795
+		summarizeBy: none
+		sourceColumn: control_conversion_rate
+		isHidden
+
+	column incremental_conversions
+		dataType: decimal
+		lineageTag: 8318655d-eebd-5db1-bd78-afaa692f15f2
+		summarizeBy: none
+		sourceColumn: incremental_conversions
+
+	column relative_conversion_lift
+		dataType: double
+		lineageTag: ba90f4b6-6518-53bf-af44-984df3a67af0
+		summarizeBy: none
+		sourceColumn: relative_conversion_lift
+		isHidden
+
+	column incremental_revenue
+		dataType: decimal
+		lineageTag: 4b0f1caa-8192-5be2-b084-ff1bd44ee0fe
+		summarizeBy: none
+		sourceColumn: incremental_revenue
+
+	partition Experiment = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\DE-BI-ML-Projects\03-synthetic-generated-data\apac-metasearch-performance-analytics\bi\snapshot\gold_incrementality_experiment.csv"), [Delimiter=",", Columns=14, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Types = Table.TransformColumnTypes(Headers, {{"experiment_id", type text}, {"market", type text}, {"channel", type text}, {"treatment_users", Int64.Type}, {"control_users", Int64.Type}, {"treatment_conversions", Int64.Type}, {"control_conversions", Int64.Type}, {"treatment_revenue", type number}, {"control_revenue", type number}, {"treatment_conversion_rate", type number}, {"control_conversion_rate", type number}, {"incremental_conversions", type number}, {"relative_conversion_lift", type number}, {"incremental_revenue", type number}}, "en-US")
+				in
+				  Types

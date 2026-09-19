@@ -1,0 +1,219 @@
+table Campaign
+	lineageTag: f247f816-6275-5cb8-8542-a8c5254ab012
+
+	measure 'Impressions' = SUM(Campaign[impressions])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: bd1e99da-0e54-5b6c-b76a-f36d6b076ead
+
+	measure 'Clicks' = SUM(Campaign[clicks])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 78063de6-1898-5ff9-b2eb-4ff1d97cac03
+
+	measure 'Sessions' = SUM(Campaign[sessions])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: ec891a93-4c3e-5960-ad24-26c0fa3146bf
+
+	measure 'Bookings' = SUM(Campaign[conversions])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: c5f9d34e-aecb-569f-ab08-0f9f89856e4b
+
+	measure 'Spend USD' = SUM(Campaign[ad_spend])
+		formatString: $#,0;($#,0)
+		displayFolder: KPI Measures
+		lineageTag: 09b14979-1b9a-5588-b060-f38825dcda2f
+
+	measure 'Booking Value USD' = SUM(Campaign[booking_value])
+		formatString: $#,0;($#,0)
+		displayFolder: KPI Measures
+		lineageTag: 3d6e16bd-0a31-5c28-be20-a8920f84dc09
+
+	measure 'Gross Margin USD' = SUM(Campaign[gross_margin])
+		formatString: $#,0;($#,0)
+		displayFolder: KPI Measures
+		lineageTag: 6d3802e3-6eb8-54e0-a3c5-d90ce5901ab4
+
+	measure 'Contribution USD' = [Gross Margin USD] - [Spend USD]
+		formatString: $#,0;($#,0)
+		displayFolder: KPI Measures
+		lineageTag: 248ebd91-0e93-5756-9d8c-2191b58d534c
+
+	measure 'CTR' = DIVIDE([Clicks], [Impressions])
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: d05df17c-5f72-5129-b48f-7b69e529ce6f
+
+	measure 'Session Rate' = DIVIDE([Sessions], [Clicks])
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: 727403c7-6612-5e65-9e19-1d50f3f8c4bb
+
+	measure 'CVR' = DIVIDE([Bookings], [Clicks])
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: 40f444ee-d03a-5132-9bfc-ca8d752032fa
+
+	measure 'CPC USD' = DIVIDE([Spend USD], [Clicks])
+		formatString: $0.00
+		displayFolder: KPI Measures
+		lineageTag: c353ef59-d508-5689-8244-54f4d51548c2
+
+	measure 'CPA USD' = DIVIDE([Spend USD], [Bookings])
+		formatString: $0.00
+		displayFolder: KPI Measures
+		lineageTag: 8ad0b788-4a68-50ff-9ee1-c3586f7327a9
+
+	measure 'ROAS' = DIVIDE([Booking Value USD], [Spend USD])
+		formatString: 0.00
+		displayFolder: KPI Measures
+		lineageTag: 8c654779-71db-5713-8ea9-034b1dc268cc
+
+	measure 'Margin ROAS' = DIVIDE([Gross Margin USD], [Spend USD])
+		formatString: 0.00
+		displayFolder: KPI Measures
+		lineageTag: c3405ba8-2f3e-530f-b480-651ce97aba05
+
+	column date
+		dataType: dateTime
+		lineageTag: d20ecb5f-e21f-5ca9-9b5c-08215be6d1af
+		summarizeBy: none
+		sourceColumn: date
+
+	column market
+		dataType: string
+		lineageTag: 6e7e17df-c438-5eb1-b4cb-3814b852db4c
+		summarizeBy: none
+		sourceColumn: market
+
+	column channel
+		dataType: string
+		lineageTag: d0938fbb-7511-5c08-b580-0158659e612c
+		summarizeBy: none
+		sourceColumn: channel
+
+	column campaign_id
+		dataType: string
+		lineageTag: 4b6b1c5d-6644-57c7-b8d9-2d17c14737e3
+		summarizeBy: none
+		sourceColumn: campaign_id
+
+	column campaign_name
+		dataType: string
+		lineageTag: 0f9b3192-6e4f-5f36-8cfb-0dbaffa444c1
+		summarizeBy: none
+		sourceColumn: campaign_name
+
+	column device_type
+		dataType: string
+		lineageTag: 63d6c2ef-64bd-5628-877c-6a7446493dcc
+		summarizeBy: none
+		sourceColumn: device_type
+
+	column impressions
+		dataType: int64
+		lineageTag: 612e4c4f-c5a9-5eb2-bf42-ddf396cfc0cb
+		summarizeBy: none
+		sourceColumn: impressions
+
+	column clicks
+		dataType: int64
+		lineageTag: a10b2af3-3665-55d8-809d-d4efd65a98b5
+		summarizeBy: none
+		sourceColumn: clicks
+
+	column ad_spend
+		dataType: decimal
+		lineageTag: 8ee1b142-a696-5ae2-983c-97ab9d3f3253
+		summarizeBy: none
+		sourceColumn: ad_spend
+
+	column conversions
+		dataType: int64
+		lineageTag: c608413e-0714-5941-9540-29092cc24bf8
+		summarizeBy: none
+		sourceColumn: conversions
+
+	column sessions
+		dataType: int64
+		lineageTag: 95e7089a-51b7-563a-ab92-da94d8a56594
+		summarizeBy: none
+		sourceColumn: sessions
+
+	column confirmed_bookings
+		dataType: int64
+		lineageTag: 87b482b0-99bd-53bd-9c10-eb04ac15e01b
+		summarizeBy: none
+		sourceColumn: confirmed_bookings
+
+	column booking_value
+		dataType: decimal
+		lineageTag: 9b426d1a-0db9-50dd-a5c8-2d6478af3840
+		summarizeBy: none
+		sourceColumn: booking_value
+
+	column gross_margin
+		dataType: decimal
+		lineageTag: dcce37ef-48f5-585b-86bb-1ae43d2e6912
+		summarizeBy: none
+		sourceColumn: gross_margin
+
+	column ctr
+		dataType: double
+		lineageTag: 47ffab07-54bf-5242-a47f-2b310165c2ed
+		summarizeBy: none
+		sourceColumn: ctr
+		isHidden
+
+	column cpc
+		dataType: double
+		lineageTag: 764b28fe-151d-5f74-8e1e-0fa75af523ae
+		summarizeBy: none
+		sourceColumn: cpc
+		isHidden
+
+	column cvr
+		dataType: double
+		lineageTag: 1d2c6cc5-829c-5087-8efc-4bfd10b08612
+		summarizeBy: none
+		sourceColumn: cvr
+		isHidden
+
+	column cpa
+		dataType: double
+		lineageTag: 4e375959-7ce1-54ac-afa4-1d9a1f19bb89
+		summarizeBy: none
+		sourceColumn: cpa
+		isHidden
+
+	column roas
+		dataType: double
+		lineageTag: 1b2baeb3-9093-5643-82db-77dc3d0b8b27
+		summarizeBy: none
+		sourceColumn: roas
+		isHidden
+
+	column margin_roas
+		dataType: double
+		lineageTag: f2cc5d73-b5f6-5002-8c2c-5be9be1bd210
+		summarizeBy: none
+		sourceColumn: margin_roas
+		isHidden
+
+	column contribution_after_ad_spend
+		dataType: decimal
+		lineageTag: a9dc6214-67e3-5a80-8a9b-900a1644ed2a
+		summarizeBy: none
+		sourceColumn: contribution_after_ad_spend
+
+	partition Campaign = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\DE-BI-ML-Projects\03-synthetic-generated-data\apac-metasearch-performance-analytics\bi\snapshot\gold_campaign_daily.csv"), [Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Types = Table.TransformColumnTypes(Headers, {{"date", type date}, {"market", type text}, {"channel", type text}, {"campaign_id", type text}, {"campaign_name", type text}, {"device_type", type text}, {"impressions", Int64.Type}, {"clicks", Int64.Type}, {"ad_spend", type number}, {"conversions", Int64.Type}, {"sessions", Int64.Type}, {"confirmed_bookings", Int64.Type}, {"booking_value", type number}, {"gross_margin", type number}, {"ctr", type number}, {"cpc", type number}, {"cvr", type number}, {"cpa", type number}, {"roas", type number}, {"margin_roas", type number}, {"contribution_after_ad_spend", type number}}, "en-US")
+				in
+				  Types

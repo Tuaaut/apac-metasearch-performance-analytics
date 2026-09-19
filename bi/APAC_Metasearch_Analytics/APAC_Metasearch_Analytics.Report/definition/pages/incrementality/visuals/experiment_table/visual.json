@@ -1,0 +1,194 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
+  "name": "experiment_table",
+  "position": {
+    "x": 20,
+    "y": 550,
+    "z": 116,
+    "height": 113,
+    "width": 1240,
+    "tabOrder": 116
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "experiment_id"
+                }
+              },
+              "queryRef": "Experiment.experiment_id",
+              "nativeQueryRef": "experiment_id",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "market"
+                }
+              },
+              "queryRef": "Experiment.market",
+              "nativeQueryRef": "market",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "channel"
+                }
+              },
+              "queryRef": "Experiment.channel",
+              "nativeQueryRef": "channel",
+              "active": true
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Treatment CVR"
+                }
+              },
+              "queryRef": "Experiment.Treatment CVR",
+              "nativeQueryRef": "Treatment CVR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Control CVR"
+                }
+              },
+              "queryRef": "Experiment.Control CVR",
+              "nativeQueryRef": "Control CVR"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Incremental Conversions"
+                }
+              },
+              "queryRef": "Experiment.Incremental Conversions",
+              "nativeQueryRef": "Incremental Conversions"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Relative Lift"
+                }
+              },
+              "queryRef": "Experiment.Relative Lift",
+              "nativeQueryRef": "Relative Lift"
+            }
+          ]
+        }
+      }
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Experiment detail • lift requires uncertainty analysis before budget decisions'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "'true'"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#DCE6EF'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

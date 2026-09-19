@@ -1,0 +1,17 @@
+{
+  "name": "APAC Metasearch",
+  "dataColors": [
+    "#00A6A6",
+    "#377FB6",
+    "#F76C5E",
+    "#F5B841",
+    "#102A43",
+    "#627D98"
+  ],
+  "background": "#F6F8FC",
+  "foreground": "#243B53",
+  "tableAccent": "#00A6A6",
+  "good": "#00A6A6",
+  "neutral": "#F5B841",
+  "bad": "#F76C5E"
+}
