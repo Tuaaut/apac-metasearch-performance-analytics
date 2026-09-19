@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Experiment revenue is gross booking value from separate eligible users. Do not add it to the observational campaign totals or treat observed ROAS as causal lift.",
+                    "value": "Intervals use a normal approximation for independent Bernoulli arms and do not adjust for multiple comparisons. Experiment revenue is gross booking value from a separate population, not campaign margin or incremental ROAS.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

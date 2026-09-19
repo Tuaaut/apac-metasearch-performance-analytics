@@ -1,0 +1,81 @@
+table RefreshMetadata
+	lineageTag: 4ad6e147-f6a4-56ce-acb6-82857d22f880
+
+	measure 'Dataform Workflow State' = MAX(RefreshMetadata[dataform_workflow_state])
+		formatString: @
+		displayFolder: KPI Measures
+		lineageTag: ab8fca08-e918-5ddf-b14b-0cea9e456ea6
+
+	measure 'Data Through Date' = MAX(RefreshMetadata[data_through_date])
+		formatString: mmm d, yyyy
+		displayFolder: KPI Measures
+		lineageTag: caa3d04e-ea8b-54c1-bce7-ea517a904579
+
+	measure 'Snapshot Export UTC' = MAX(RefreshMetadata[snapshot_exported_utc])
+		formatString: yyyy-mm-dd hh:mm:ss
+		displayFolder: KPI Measures
+		lineageTag: e1520d1c-739c-5881-b423-c36a6bf2cd72
+
+	column data_through_date
+		dataType: dateTime
+		lineageTag: 2ab6cb7f-6caf-5ffc-b16b-fb935baad5c2
+		summarizeBy: none
+		sourceColumn: data_through_date
+
+	column snapshot_exported_utc
+		dataType: dateTime
+		lineageTag: db0f34ff-55a2-57ae-91bd-2d2c938a24df
+		summarizeBy: none
+		sourceColumn: snapshot_exported_utc
+
+	column dataform_workflow_state
+		dataType: string
+		lineageTag: c6638724-b151-5458-b11d-76950c532c4c
+		summarizeBy: none
+		sourceColumn: dataform_workflow_state
+
+	column dataform_completed_utc
+		dataType: dateTime
+		lineageTag: 002c9a97-783e-5374-bdd0-1d3efa5c1bbd
+		summarizeBy: none
+		sourceColumn: dataform_completed_utc
+
+	column dataform_total_actions
+		dataType: int64
+		lineageTag: f5599a91-29da-5a88-ac3b-26e743e959ea
+		summarizeBy: none
+		sourceColumn: dataform_total_actions
+
+	column dataform_problem_actions
+		dataType: int64
+		lineageTag: 0831b58a-88b8-5eff-8cbb-b548ae445725
+		summarizeBy: none
+		sourceColumn: dataform_problem_actions
+
+	column dataform_assertion_actions
+		dataType: int64
+		lineageTag: e6ee0f2c-a29f-5156-b0cd-83d78a01658f
+		summarizeBy: none
+		sourceColumn: dataform_assertion_actions
+
+	column dataform_problem_assertions
+		dataType: int64
+		lineageTag: 842c1dd5-057f-594e-88b6-6b07cc3dcf63
+		summarizeBy: none
+		sourceColumn: dataform_problem_assertions
+
+	column powerbi_import_instruction
+		dataType: string
+		lineageTag: b6f5659c-f2ad-5efb-b629-c17a33417659
+		summarizeBy: none
+		sourceColumn: powerbi_import_instruction
+
+	partition RefreshMetadata = m
+		mode: import
+		source =
+				let
+				  Source = Csv.Document(File.Contents("E:\DE-BI-ML-Projects\03-synthetic-generated-data\apac-metasearch-performance-analytics\bi\snapshot\refresh_metadata.csv"), [Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				  Types = Table.TransformColumnTypes(Headers, {{"data_through_date", type datetime}, {"snapshot_exported_utc", type datetime}, {"dataform_workflow_state", type text}, {"dataform_completed_utc", type datetime}, {"dataform_total_actions", Int64.Type}, {"dataform_problem_actions", Int64.Type}, {"dataform_assertion_actions", Int64.Type}, {"dataform_problem_assertions", Int64.Type}, {"powerbi_import_instruction", type text}}, "en-US")
+				in
+				  Types

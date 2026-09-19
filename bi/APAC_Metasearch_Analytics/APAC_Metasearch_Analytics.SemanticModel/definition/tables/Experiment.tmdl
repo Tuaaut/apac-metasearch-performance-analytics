@@ -1,6 +1,16 @@
 table Experiment
 	lineageTag: ada11fc6-98ce-5006-afd8-b6c4e58439f4
 
+	measure 'Treatment Users' = SUM(Experiment[treatment_users])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: ae379c7e-996f-5ca2-93a8-f22031966c0f
+
+	measure 'Control Users' = SUM(Experiment[control_users])
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 1df8aadd-b259-5442-bfd5-71205f6c996e
+
 	measure 'Treatment CVR' = DIVIDE(SUM(Experiment[treatment_conversions]), SUM(Experiment[treatment_users]))
 		formatString: 0.0%
 		displayFolder: KPI Measures
@@ -10,6 +20,26 @@ table Experiment
 		formatString: 0.0%
 		displayFolder: KPI Measures
 		lineageTag: c5df653b-b994-5bcc-9598-762ef40c6b4d
+
+	measure 'CVR Difference pp' = [Treatment CVR] - [Control CVR]
+		formatString: 0.00%
+		displayFolder: KPI Measures
+		lineageTag: 19cb9675-d9c3-5121-96f8-608c6f207b1a
+
+	measure 'CVR Difference SE' = SQRT(DIVIDE([Treatment CVR] * (1 - [Treatment CVR]), [Treatment Users]) + DIVIDE([Control CVR] * (1 - [Control CVR]), [Control Users]))
+		formatString: 0.00%
+		displayFolder: KPI Measures
+		lineageTag: 5f817495-f403-52d8-9b66-4c12483d2fa2
+
+	measure 'CVR Difference 95% Low' = [CVR Difference pp] - 1.96 * [CVR Difference SE]
+		formatString: 0.00%
+		displayFolder: KPI Measures
+		lineageTag: 4781a706-53eb-546d-b2ba-a2514229e4b9
+
+	measure 'CVR Difference 95% High' = [CVR Difference pp] + 1.96 * [CVR Difference SE]
+		formatString: 0.00%
+		displayFolder: KPI Measures
+		lineageTag: 70ea10a5-ef18-5232-acba-4e3434f2d6b9
 
 	measure 'Incremental Conversions' = SUM(Experiment[incremental_conversions])
 		formatString: #,0

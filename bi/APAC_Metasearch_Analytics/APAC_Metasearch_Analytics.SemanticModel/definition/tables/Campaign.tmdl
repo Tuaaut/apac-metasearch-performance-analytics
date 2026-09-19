@@ -76,6 +76,26 @@ table Campaign
 		displayFolder: KPI Measures
 		lineageTag: c3405ba8-2f3e-530f-b480-651ce97aba05
 
+	measure 'Booking per Session %' = DIVIDE([Bookings], [Total Sessions])
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: 94a4aeb5-96ff-5606-8b2e-71cdb7a93fe8
+
+	measure 'Action Status' = IF([Contribution USD] < 0, "INVESTIGATE", "RETAIN / SCALE")
+		formatString: @
+		displayFolder: KPI Measures
+		lineageTag: 4cb0b800-84f2-520e-9b31-26454038eade
+
+	measure 'Import Model Status' = IF(CALCULATE(COUNTROWS(Campaign), REMOVEFILTERS(Campaign)) = 0, "NOT LOADED", "LOADED")
+		formatString: @
+		displayFolder: KPI Measures
+		lineageTag: 6ca4a89d-ea9a-57c1-8128-aa77b9ab24ca
+
+	measure 'Thailand Peer CVR %' = CALCULATE([CVR %], KEEPFILTERS(Campaign[market] = "TH"))
+		formatString: 0.0%
+		displayFolder: KPI Measures
+		lineageTag: f738a073-f36d-581b-b617-ff2d7f691f6c
+
 	column date
 		dataType: dateTime
 		lineageTag: d20ecb5f-e21f-5ca9-9b5c-08215be6d1af
@@ -214,6 +234,6 @@ table Campaign
 				let
 				  Source = Csv.Document(File.Contents("E:\DE-BI-ML-Projects\03-synthetic-generated-data\apac-metasearch-performance-analytics\bi\snapshot\gold_campaign_daily.csv"), [Delimiter=",", Columns=21, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				  Types = Table.TransformColumnTypes(Headers, {{"date", type date}, {"market", type text}, {"channel", type text}, {"campaign_id", type text}, {"campaign_name", type text}, {"device_type", type text}, {"impressions", Int64.Type}, {"clicks", Int64.Type}, {"ad_spend", type number}, {"conversions", Int64.Type}, {"sessions", Int64.Type}, {"confirmed_bookings", Int64.Type}, {"booking_value", type number}, {"gross_margin", type number}, {"ctr", type number}, {"cpc", type number}, {"cvr", type number}, {"cpa", type number}, {"roas", type number}, {"margin_roas", type number}, {"contribution_after_ad_spend", type number}}, "en-US")
+				  Types = Table.TransformColumnTypes(Headers, {{"date", type datetime}, {"market", type text}, {"channel", type text}, {"campaign_id", type text}, {"campaign_name", type text}, {"device_type", type text}, {"impressions", Int64.Type}, {"clicks", Int64.Type}, {"ad_spend", type number}, {"conversions", Int64.Type}, {"sessions", Int64.Type}, {"confirmed_bookings", Int64.Type}, {"booking_value", type number}, {"gross_margin", type number}, {"ctr", type number}, {"cpc", type number}, {"cvr", type number}, {"cpa", type number}, {"roas", type number}, {"margin_roas", type number}, {"contribution_after_ad_spend", type number}}, "en-US")
 				in
 				  Types

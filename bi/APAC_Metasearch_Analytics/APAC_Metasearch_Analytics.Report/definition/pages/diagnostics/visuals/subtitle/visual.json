@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Follow impression → click → session → confirmed booking. Ratios recalculate from totals after every filter.",
+                    "value": "Follow impression → click → session → confirmed booking. Funnel values and rates recalculate from totals after every filter.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "12pt",

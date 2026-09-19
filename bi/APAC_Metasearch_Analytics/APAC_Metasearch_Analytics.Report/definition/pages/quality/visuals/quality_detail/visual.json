@@ -119,6 +119,21 @@
               "queryRef": "DataQuality.status",
               "nativeQueryRef": "status",
               "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "DataQuality"
+                    }
+                  },
+                  "Property": "evidence"
+                }
+              },
+              "queryRef": "DataQuality.evidence",
+              "nativeQueryRef": "evidence",
+              "active": true
             }
           ]
         }
@@ -138,7 +153,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Quality gate detail • inspect evidence before overriding a failed check'"
+                  "Value": "'Quality gate detail • inspect failures, unknown results, and workflow evidence'"
                 }
               }
             }

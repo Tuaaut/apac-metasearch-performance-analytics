@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "incremental_conversions",
   "position": {
-    "x": 20,
+    "x": 965,
     "y": 190,
     "z": 123,
     "height": 108,
-    "width": 400,
+    "width": 295,
     "tabOrder": 123
   },
   "visual": {

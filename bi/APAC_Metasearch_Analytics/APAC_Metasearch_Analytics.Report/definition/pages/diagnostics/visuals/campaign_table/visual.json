@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.11.0/schema.json",
   "name": "campaign_table",
   "position": {
-    "x": 20,
-    "y": 545,
+    "x": 430,
+    "y": 535,
     "z": 114,
-    "height": 148,
-    "width": 1240,
+    "height": 150,
+    "width": 830,
     "tabOrder": 114
   },
   "visual": {
@@ -43,6 +43,21 @@
               },
               "queryRef": "Campaign.market",
               "nativeQueryRef": "market",
+              "active": true
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Campaign"
+                    }
+                  },
+                  "Property": "channel"
+                }
+              },
+              "queryRef": "Campaign.channel",
+              "nativeQueryRef": "channel",
               "active": true
             },
             {
@@ -96,20 +111,6 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "Spend USD"
-                }
-              },
-              "queryRef": "Campaign.Spend USD",
-              "nativeQueryRef": "Spend USD"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Campaign"
-                    }
-                  },
                   "Property": "CVR %"
                 }
               },
@@ -124,11 +125,11 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "CPA USD"
+                  "Property": "Margin ROAS"
                 }
               },
-              "queryRef": "Campaign.CPA USD",
-              "nativeQueryRef": "CPA USD"
+              "queryRef": "Campaign.Margin ROAS",
+              "nativeQueryRef": "Margin ROAS"
             },
             {
               "field": {
@@ -138,14 +139,46 @@
                       "Entity": "Campaign"
                     }
                   },
-                  "Property": "Margin ROAS"
+                  "Property": "Contribution USD"
                 }
               },
-              "queryRef": "Campaign.Margin ROAS",
-              "nativeQueryRef": "Margin ROAS"
+              "queryRef": "Campaign.Contribution USD",
+              "nativeQueryRef": "Contribution USD"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Campaign"
+                    }
+                  },
+                  "Property": "Action Status"
+                }
+              },
+              "queryRef": "Campaign.Action Status",
+              "nativeQueryRef": "Action Status"
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Campaign"
+                  }
+                },
+                "Property": "Contribution USD"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "visualContainerObjects": {
@@ -162,7 +195,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Campaign detail • investigate CMP003: high CTR, weak CVR'"
+                  "Value": "'Campaign and device queue • inspect CMP003 before moving budget'"
                 }
               }
             }

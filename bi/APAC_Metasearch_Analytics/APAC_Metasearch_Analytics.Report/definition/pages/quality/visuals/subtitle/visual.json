@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Automated checks on the verified Gold snapshots  •  Resolve critical failures before using performance metrics for a budget decision",
+                    "value": "Gold snapshot checks plus the latest recorded Dataform workflow and assertion outcomes",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "12pt",

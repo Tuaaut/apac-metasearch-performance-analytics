@@ -1,0 +1,2 @@
+invocation_id,invocation_state,workflow_gate_status,workflow_start_utc,workflow_end_utc,total_actions,non_succeeded_actions,problem_actions,assertion_actions,problem_assertion_actions
+1789818176-60d85246-33c5-4ed1-9d06-e0a3e1cfd98c,SUCCEEDED,PASS,2026-09-19T11:42:56.505211Z,2026-09-19T11:43:14.138481012Z,27,0,0,20,0

@@ -3,9 +3,9 @@
   "name": "experiment_table",
   "position": {
     "x": 20,
-    "y": 550,
+    "y": 520,
     "z": 116,
-    "height": 113,
+    "height": 140,
     "width": 1240,
     "tabOrder": 116
   },
@@ -68,6 +68,34 @@
                       "Entity": "Experiment"
                     }
                   },
+                  "Property": "Treatment Users"
+                }
+              },
+              "queryRef": "Experiment.Treatment Users",
+              "nativeQueryRef": "Treatment Users"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Control Users"
+                }
+              },
+              "queryRef": "Experiment.Control Users",
+              "nativeQueryRef": "Control Users"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
                   "Property": "Treatment CVR"
                 }
               },
@@ -96,11 +124,39 @@
                       "Entity": "Experiment"
                     }
                   },
-                  "Property": "Incremental Conversions"
+                  "Property": "CVR Difference pp"
                 }
               },
-              "queryRef": "Experiment.Incremental Conversions",
-              "nativeQueryRef": "Incremental Conversions"
+              "queryRef": "Experiment.CVR Difference pp",
+              "nativeQueryRef": "CVR Difference pp"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "CVR Difference 95% Low"
+                }
+              },
+              "queryRef": "Experiment.CVR Difference 95% Low",
+              "nativeQueryRef": "CVR Difference 95% Low"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "CVR Difference 95% High"
+                }
+              },
+              "queryRef": "Experiment.CVR Difference 95% High",
+              "nativeQueryRef": "CVR Difference 95% High"
             },
             {
               "field": {
@@ -115,6 +171,34 @@
               },
               "queryRef": "Experiment.Relative Lift",
               "nativeQueryRef": "Relative Lift"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Incremental Conversions"
+                }
+              },
+              "queryRef": "Experiment.Incremental Conversions",
+              "nativeQueryRef": "Incremental Conversions"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Experiment"
+                    }
+                  },
+                  "Property": "Incremental Revenue USD"
+                }
+              },
+              "queryRef": "Experiment.Incremental Revenue USD",
+              "nativeQueryRef": "Incremental Revenue USD"
             }
           ]
         }
@@ -134,7 +218,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Experiment detail • lift requires uncertainty analysis before budget decisions'"
+                  "Value": "'Experiment detail • 95% interval applies to the treatment-control CVR difference'"
                 }
               }
             }

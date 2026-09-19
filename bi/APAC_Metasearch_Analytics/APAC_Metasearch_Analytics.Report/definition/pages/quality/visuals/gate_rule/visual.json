@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "Decision rule: investigate Critical FAIL before recommending a budget change. These checks cover the fixed August 2026 snapshot; the latest data date is not a live refresh timestamp.",
+                    "value": "Decision rule: investigate Critical FAIL before recommending a budget change. Data Through Date is the historical snapshot boundary; Snapshot Export UTC records the file export. Import Model Status changes only after Home > Refresh in Power BI Desktop.",
                     "textStyle": {
                       "fontFamily": "Segoe UI",
                       "fontSize": "10pt",

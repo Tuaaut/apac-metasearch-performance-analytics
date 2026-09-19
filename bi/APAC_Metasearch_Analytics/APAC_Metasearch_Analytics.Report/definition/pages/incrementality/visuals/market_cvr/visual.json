@@ -5,7 +5,7 @@
     "x": 20,
     "y": 315,
     "z": 110,
-    "height": 225,
+    "height": 190,
     "width": 600,
     "tabOrder": 110
   },
@@ -80,7 +80,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Conversion rate by experiment arm and market'"
+                  "Value": "'Observed conversion rate by experiment arm and market'"
                 }
               }
             }

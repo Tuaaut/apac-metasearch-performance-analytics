@@ -16,6 +16,11 @@ table DataQuality
 		displayFolder: KPI Measures
 		lineageTag: b530eb55-1d63-5575-bb4a-14c314f3a341
 
+	measure 'Checks Unknown' = CALCULATE(COUNTROWS(DataQuality), DataQuality[status] = "UNKNOWN")
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: 249c043e-0590-500c-93e7-dcec430766ec
+
 	measure 'Affected Rows' = SUM(DataQuality[failed_rows])
 		formatString: #,0
 		displayFolder: KPI Measures
@@ -36,7 +41,12 @@ table DataQuality
 		displayFolder: KPI Measures
 		lineageTag: ba660d2c-605d-56fe-bebe-eeea8fa8470c
 
-	measure 'Gate Status' = IF([Overall Checks Evaluated] = 0, "NOT LOADED", IF([Overall Checks Failed] = 0, "PASS", "FAIL"))
+	measure 'Overall Checks Unknown' = CALCULATE([Checks Unknown], REMOVEFILTERS(DataQuality))
+		formatString: #,0
+		displayFolder: KPI Measures
+		lineageTag: d8267188-bc3a-5a52-b1c5-706c5cd8266b
+
+	measure 'Gate Status' = IF([Overall Checks Evaluated] = 0, "NOT LOADED", IF([Overall Checks Failed] > 0, "FAIL", IF([Overall Checks Unknown] > 0, "UNKNOWN", "PASS")))
 		formatString: @
 		displayFolder: KPI Measures
 		lineageTag: f593a620-d0a1-5f4c-9f95-84ca1e345b19
@@ -112,6 +122,6 @@ table DataQuality
 				let
 				  Source = Csv.Document(File.Contents("E:\DE-BI-ML-Projects\03-synthetic-generated-data\apac-metasearch-performance-analytics\bi\snapshot\data_quality_checks.csv"), [Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
 				  Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
-				  Types = Table.TransformColumnTypes(Headers, {{"check_order", Int64.Type}, {"category", type text}, {"check_name", type text}, {"severity", type text}, {"status", type text}, {"observed_value", type text}, {"expected_condition", type text}, {"failed_rows", Int64.Type}, {"data_through_date", type date}, {"evidence", type text}}, "en-US")
+				  Types = Table.TransformColumnTypes(Headers, {{"check_order", Int64.Type}, {"category", type text}, {"check_name", type text}, {"severity", type text}, {"status", type text}, {"observed_value", type text}, {"expected_condition", type text}, {"failed_rows", Int64.Type}, {"data_through_date", type datetime}, {"evidence", type text}}, "en-US")
 				in
 				  Types
