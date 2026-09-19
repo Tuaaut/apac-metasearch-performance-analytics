@@ -1,0 +1,15 @@
+config { type: "assertion" }
+
+WITH click_counts AS (
+  SELECT DATE(event_timestamp) AS date, market, channel, campaign_id, device_type,
+         COUNT(*) AS actual_clicks
+  FROM ${ref("silver_ad_click_events")}
+  GROUP BY 1, 2, 3, 4, 5
+)
+SELECT COALESCE(p.campaign_id, c.campaign_id) AS campaign_id,
+       COALESCE(p.date, c.date) AS date
+FROM ${ref("silver_ad_platform_performance")} p
+FULL OUTER JOIN click_counts c
+  ON p.date = c.date AND p.market = c.market AND p.channel = c.channel
+ AND p.campaign_id = c.campaign_id AND p.device_type = c.device_type
+WHERE p.date IS NULL OR c.date IS NULL OR p.clicks != c.actual_clicks

@@ -1,0 +1,931 @@
+date,market,channel,campaign_id,campaign_name,device_type,impressions,clicks,ad_spend,conversions
+2026-08-01,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2100,69,53.38,3
+2026-08-01,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,1024,27,19.72,1
+2026-08-02,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2232,75,66.35,4
+2026-08-02,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,1119,26,17.48,4
+2026-08-03,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1480,53,43.78,3
+2026-08-03,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,783,23,17.29,1
+2026-08-04,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1535,55,45.10,3
+2026-08-04,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,922,22,13.67,1
+2026-08-05,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2052,73,62.24,3
+2026-08-05,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,839,23,15.42,5
+2026-08-06,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1785,71,60.05,5
+2026-08-06,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,890,23,15.61,3
+2026-08-07,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1718,62,45.55,5
+2026-08-07,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,940,27,19.31,1
+2026-08-08,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1924,72,53.48,3
+2026-08-08,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,881,22,16.57,2
+2026-08-09,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2135,79,67.26,5
+2026-08-09,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,885,25,15.89,1
+2026-08-10,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1834,60,52.31,4
+2026-08-10,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,860,24,17.39,2
+2026-08-11,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1579,57,47.51,8
+2026-08-11,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,718,20,13.06,2
+2026-08-12,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1715,64,54.02,3
+2026-08-12,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,953,22,14.28,1
+2026-08-13,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1610,63,53.76,1
+2026-08-13,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,779,21,13.55,0
+2026-08-14,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1522,50,39.47,4
+2026-08-14,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,751,18,13.01,3
+2026-08-15,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2183,77,67.18,4
+2026-08-15,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,900,25,15.66,2
+2026-08-16,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1771,73,58.55,3
+2026-08-16,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,1027,28,19.45,2
+2026-08-17,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1752,71,52.92,3
+2026-08-17,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,890,26,16.29,3
+2026-08-18,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1687,60,46.67,3
+2026-08-18,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,790,18,12.57,0
+2026-08-19,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1936,63,49.52,1
+2026-08-19,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,852,22,13.83,4
+2026-08-20,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2031,80,62.68,6
+2026-08-20,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,771,20,13.75,0
+2026-08-21,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2060,84,72.58,4
+2026-08-21,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,853,20,13.99,2
+2026-08-22,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2286,75,66.18,3
+2026-08-22,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,1126,29,21.98,2
+2026-08-23,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1658,62,45.44,1
+2026-08-23,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,934,24,15.83,1
+2026-08-24,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1875,63,51.34,1
+2026-08-24,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,884,25,18.83,4
+2026-08-25,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1815,71,61.34,3
+2026-08-25,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,758,19,13.57,3
+2026-08-26,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1838,66,55.64,5
+2026-08-26,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,851,23,15.54,2
+2026-08-27,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1529,59,45.67,6
+2026-08-27,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,763,18,12.32,3
+2026-08-28,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1795,64,54.82,4
+2026-08-28,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,937,24,16.77,4
+2026-08-29,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2327,82,69.27,3
+2026-08-29,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,1017,29,21.84,3
+2026-08-30,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,2304,93,76.48,2
+2026-08-30,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,1090,28,19.10,2
+2026-08-31,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,mobile,1779,69,54.73,2
+2026-08-31,TH,Google Hotel Ads,CMP001,TH Google Hotel Ads Always On,desktop,807,20,13.52,5
+2026-08-01,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1463,56,47.33,5
+2026-08-01,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,722,19,13.34,3
+2026-08-02,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1336,53,44.65,3
+2026-08-02,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,691,17,11.94,1
+2026-08-03,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1234,47,38.58,2
+2026-08-03,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,783,20,14.61,0
+2026-08-04,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1429,57,42.59,6
+2026-08-04,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,786,18,12.96,2
+2026-08-05,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1192,42,32.05,2
+2026-08-05,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,614,15,9.75,1
+2026-08-06,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1459,57,42.47,4
+2026-08-06,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,784,19,11.80,2
+2026-08-07,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1608,58,47.41,3
+2026-08-07,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,668,17,10.88,1
+2026-08-08,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1881,78,66.90,6
+2026-08-08,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,693,20,14.15,1
+2026-08-09,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1322,51,39.68,4
+2026-08-09,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,811,22,15.08,2
+2026-08-10,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1460,49,38.51,6
+2026-08-10,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,657,16,10.66,2
+2026-08-11,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1222,40,34.55,3
+2026-08-11,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,738,18,13.62,1
+2026-08-12,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1650,67,49.78,2
+2026-08-12,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,797,22,16.04,2
+2026-08-13,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1289,45,34.44,1
+2026-08-13,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,703,17,11.83,1
+2026-08-14,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1335,51,40.50,2
+2026-08-14,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,787,20,12.93,2
+2026-08-15,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1713,57,42.88,5
+2026-08-15,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,885,21,15.30,3
+2026-08-16,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1697,57,46.60,4
+2026-08-16,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,899,21,14.67,0
+2026-08-17,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1433,58,43.46,5
+2026-08-17,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,770,19,14.06,4
+2026-08-18,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1432,48,37.15,4
+2026-08-18,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,744,18,12.78,0
+2026-08-19,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1203,43,34.63,2
+2026-08-19,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,754,19,14.12,4
+2026-08-20,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1606,57,47.99,2
+2026-08-20,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,649,17,12.51,1
+2026-08-21,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1482,61,46.71,6
+2026-08-21,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,702,19,14.22,1
+2026-08-22,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1363,56,49.02,1
+2026-08-22,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,692,16,11.00,2
+2026-08-23,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1597,57,47.57,8
+2026-08-23,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,804,21,15.85,2
+2026-08-24,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1581,55,48.96,4
+2026-08-24,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,689,17,10.86,3
+2026-08-25,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1380,47,37.65,1
+2026-08-25,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,637,16,10.83,0
+2026-08-26,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1599,65,48.71,0
+2026-08-26,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,764,21,14.57,5
+2026-08-27,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1403,50,39.89,2
+2026-08-27,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,736,20,12.68,2
+2026-08-28,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1649,67,54.48,4
+2026-08-28,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,649,17,11.12,1
+2026-08-29,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1423,59,52.27,1
+2026-08-29,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,673,17,11.83,3
+2026-08-30,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1666,61,52.96,3
+2026-08-30,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,687,17,12.46,1
+2026-08-31,TH,Google Flights,CMP002,TH Google Flights Always On,mobile,1554,63,48.48,3
+2026-08-31,TH,Google Flights,CMP002,TH Google Flights Always On,desktop,790,19,11.90,1
+2026-08-01,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1980,134,103.44,2
+2026-08-01,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,840,44,30.12,1
+2026-08-02,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1695,129,108.69,0
+2026-08-02,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,969,49,33.95,0
+2026-08-03,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1512,109,88.93,0
+2026-08-03,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,838,44,32.92,1
+2026-08-04,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1588,111,88.88,0
+2026-08-04,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,843,38,24.31,0
+2026-08-05,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1564,103,82.94,4
+2026-08-05,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,666,35,24.17,2
+2026-08-06,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1765,133,117.92,2
+2026-08-06,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,715,38,28.00,0
+2026-08-07,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1514,115,92.47,3
+2026-08-07,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,894,39,24.43,2
+2026-08-08,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1667,123,108.87,3
+2026-08-08,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,859,42,28.86,2
+2026-08-09,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1733,105,93.44,2
+2026-08-09,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,1007,46,29.44,2
+2026-08-10,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1615,118,94.52,3
+2026-08-10,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,684,35,25.32,1
+2026-08-11,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1775,132,99.75,0
+2026-08-11,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,808,39,29.28,0
+2026-08-12,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1451,89,79.23,0
+2026-08-12,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,873,43,30.16,0
+2026-08-13,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1765,129,114.92,3
+2026-08-13,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,784,36,26.56,0
+2026-08-14,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1515,110,83.97,2
+2026-08-14,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,829,37,23.13,1
+2026-08-15,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,2106,138,102.34,2
+2026-08-15,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,901,40,28.80,1
+2026-08-16,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,2146,143,122.20,2
+2026-08-16,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,782,39,29.48,0
+2026-08-17,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1783,127,107.79,4
+2026-08-17,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,837,43,29.34,1
+2026-08-18,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1817,116,94.53,3
+2026-08-18,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,885,40,29.17,0
+2026-08-19,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1597,99,84.55,2
+2026-08-19,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,697,31,20.55,0
+2026-08-20,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1387,89,77.23,1
+2026-08-20,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,828,37,26.64,3
+2026-08-21,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1714,113,86.11,0
+2026-08-21,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,866,43,30.33,1
+2026-08-22,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1670,115,86.21,5
+2026-08-22,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,895,43,29.11,0
+2026-08-23,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1742,127,107.48,1
+2026-08-23,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,768,35,23.17,0
+2026-08-24,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1809,135,103.79,4
+2026-08-24,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,835,43,26.81,0
+2026-08-25,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1400,107,86.80,3
+2026-08-25,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,736,34,24.37,1
+2026-08-26,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1636,113,97.95,3
+2026-08-26,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,875,46,31.73,0
+2026-08-27,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1781,133,103.86,1
+2026-08-27,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,701,36,24.26,3
+2026-08-28,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1583,104,82.97,0
+2026-08-28,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,817,35,24.93,0
+2026-08-29,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1900,138,118.69,4
+2026-08-29,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,749,32,20.05,1
+2026-08-30,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1994,148,110.83,3
+2026-08-30,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,941,46,34.71,0
+2026-08-31,TH,Skyscanner,CMP003,TH Skyscanner Always On,mobile,1547,114,83.33,1
+2026-08-31,TH,Skyscanner,CMP003,TH Skyscanner Always On,desktop,707,38,26.25,0
+2026-08-01,TH,Trivago,CMP004,TH Trivago Always On,mobile,1835,61,46.38,4
+2026-08-01,TH,Trivago,CMP004,TH Trivago Always On,desktop,849,22,13.79,2
+2026-08-02,TH,Trivago,CMP004,TH Trivago Always On,mobile,1630,56,48.55,4
+2026-08-02,TH,Trivago,CMP004,TH Trivago Always On,desktop,896,23,15.93,3
+2026-08-03,TH,Trivago,CMP004,TH Trivago Always On,mobile,1430,58,51.41,3
+2026-08-03,TH,Trivago,CMP004,TH Trivago Always On,desktop,795,22,16.55,1
+2026-08-04,TH,Trivago,CMP004,TH Trivago Always On,mobile,1292,48,35.62,4
+2026-08-04,TH,Trivago,CMP004,TH Trivago Always On,desktop,599,16,11.13,3
+2026-08-05,TH,Trivago,CMP004,TH Trivago Always On,mobile,1702,64,50.35,2
+2026-08-05,TH,Trivago,CMP004,TH Trivago Always On,desktop,638,16,10.85,0
+2026-08-06,TH,Trivago,CMP004,TH Trivago Always On,mobile,1588,65,57.58,4
+2026-08-06,TH,Trivago,CMP004,TH Trivago Always On,desktop,725,20,13.03,2
+2026-08-07,TH,Trivago,CMP004,TH Trivago Always On,mobile,1334,55,46.13,3
+2026-08-07,TH,Trivago,CMP004,TH Trivago Always On,desktop,702,16,10.00,3
+2026-08-08,TH,Trivago,CMP004,TH Trivago Always On,mobile,1943,70,60.73,5
+2026-08-08,TH,Trivago,CMP004,TH Trivago Always On,desktop,806,22,15.83,0
+2026-08-09,TH,Trivago,CMP004,TH Trivago Always On,mobile,1422,48,37.94,1
+2026-08-09,TH,Trivago,CMP004,TH Trivago Always On,desktop,715,17,11.75,2
+2026-08-10,TH,Trivago,CMP004,TH Trivago Always On,mobile,1659,62,46.26,4
+2026-08-10,TH,Trivago,CMP004,TH Trivago Always On,desktop,739,18,13.41,1
+2026-08-11,TH,Trivago,CMP004,TH Trivago Always On,mobile,1425,48,41.80,4
+2026-08-11,TH,Trivago,CMP004,TH Trivago Always On,desktop,640,17,10.95,1
+2026-08-12,TH,Trivago,CMP004,TH Trivago Always On,mobile,1431,50,39.18,3
+2026-08-12,TH,Trivago,CMP004,TH Trivago Always On,desktop,729,17,12.30,2
+2026-08-13,TH,Trivago,CMP004,TH Trivago Always On,mobile,1337,51,40.94,3
+2026-08-13,TH,Trivago,CMP004,TH Trivago Always On,desktop,666,16,11.64,2
+2026-08-14,TH,Trivago,CMP004,TH Trivago Always On,mobile,1683,62,51.88,2
+2026-08-14,TH,Trivago,CMP004,TH Trivago Always On,desktop,681,17,12.31,1
+2026-08-15,TH,Trivago,CMP004,TH Trivago Always On,mobile,1769,62,49.98,1
+2026-08-15,TH,Trivago,CMP004,TH Trivago Always On,desktop,806,23,16.22,0
+2026-08-16,TH,Trivago,CMP004,TH Trivago Always On,mobile,1770,64,47.00,1
+2026-08-16,TH,Trivago,CMP004,TH Trivago Always On,desktop,853,24,17.13,3
+2026-08-17,TH,Trivago,CMP004,TH Trivago Always On,mobile,1492,61,45.71,5
+2026-08-17,TH,Trivago,CMP004,TH Trivago Always On,desktop,669,16,12.05,1
+2026-08-18,TH,Trivago,CMP004,TH Trivago Always On,mobile,1249,50,37.85,4
+2026-08-18,TH,Trivago,CMP004,TH Trivago Always On,desktop,678,16,11.98,1
+2026-08-19,TH,Trivago,CMP004,TH Trivago Always On,mobile,1581,60,47.03,7
+2026-08-19,TH,Trivago,CMP004,TH Trivago Always On,desktop,803,22,15.44,2
+2026-08-20,TH,Trivago,CMP004,TH Trivago Always On,mobile,1472,52,42.51,4
+2026-08-20,TH,Trivago,CMP004,TH Trivago Always On,desktop,702,19,13.79,1
+2026-08-21,TH,Trivago,CMP004,TH Trivago Always On,mobile,1287,44,36.94,1
+2026-08-21,TH,Trivago,CMP004,TH Trivago Always On,desktop,690,18,12.63,2
+2026-08-22,TH,Trivago,CMP004,TH Trivago Always On,mobile,1931,65,52.30,4
+2026-08-22,TH,Trivago,CMP004,TH Trivago Always On,desktop,687,17,11.08,0
+2026-08-23,TH,Trivago,CMP004,TH Trivago Always On,mobile,1638,54,46.31,1
+2026-08-23,TH,Trivago,CMP004,TH Trivago Always On,desktop,682,20,14.70,2
+2026-08-24,TH,Trivago,CMP004,TH Trivago Always On,mobile,1245,47,40.73,0
+2026-08-24,TH,Trivago,CMP004,TH Trivago Always On,desktop,811,21,13.28,0
+2026-08-25,TH,Trivago,CMP004,TH Trivago Always On,mobile,1610,61,44.71,4
+2026-08-25,TH,Trivago,CMP004,TH Trivago Always On,desktop,741,18,12.38,3
+2026-08-26,TH,Trivago,CMP004,TH Trivago Always On,mobile,1370,53,44.99,5
+2026-08-26,TH,Trivago,CMP004,TH Trivago Always On,desktop,710,19,13.95,3
+2026-08-27,TH,Trivago,CMP004,TH Trivago Always On,mobile,1395,51,41.68,6
+2026-08-27,TH,Trivago,CMP004,TH Trivago Always On,desktop,839,22,14.19,2
+2026-08-28,TH,Trivago,CMP004,TH Trivago Always On,mobile,1377,53,45.18,2
+2026-08-28,TH,Trivago,CMP004,TH Trivago Always On,desktop,674,18,11.55,1
+2026-08-29,TH,Trivago,CMP004,TH Trivago Always On,mobile,1679,67,58.88,3
+2026-08-29,TH,Trivago,CMP004,TH Trivago Always On,desktop,731,17,11.18,0
+2026-08-30,TH,Trivago,CMP004,TH Trivago Always On,mobile,1877,76,56.79,2
+2026-08-30,TH,Trivago,CMP004,TH Trivago Always On,desktop,715,17,12.44,0
+2026-08-31,TH,Trivago,CMP004,TH Trivago Always On,mobile,1275,50,40.96,5
+2026-08-31,TH,Trivago,CMP004,TH Trivago Always On,desktop,640,15,10.36,1
+2026-08-01,TH,Wego,CMP005,TH Wego Always On,mobile,1661,68,57.04,5
+2026-08-01,TH,Wego,CMP005,TH Wego Always On,desktop,585,13,9.25,1
+2026-08-02,TH,Wego,CMP005,TH Wego Always On,mobile,1365,56,46.66,4
+2026-08-02,TH,Wego,CMP005,TH Wego Always On,desktop,776,21,13.24,2
+2026-08-03,TH,Wego,CMP005,TH Wego Always On,mobile,1274,50,43.53,1
+2026-08-03,TH,Wego,CMP005,TH Wego Always On,desktop,589,14,10.48,2
+2026-08-04,TH,Wego,CMP005,TH Wego Always On,mobile,1418,56,40.92,3
+2026-08-04,TH,Wego,CMP005,TH Wego Always On,desktop,622,14,9.69,3
+2026-08-05,TH,Wego,CMP005,TH Wego Always On,mobile,1140,45,35.07,2
+2026-08-05,TH,Wego,CMP005,TH Wego Always On,desktop,662,19,12.13,1
+2026-08-06,TH,Wego,CMP005,TH Wego Always On,mobile,1180,43,35.50,1
+2026-08-06,TH,Wego,CMP005,TH Wego Always On,desktop,696,18,11.65,1
+2026-08-07,TH,Wego,CMP005,TH Wego Always On,mobile,1519,50,42.46,6
+2026-08-07,TH,Wego,CMP005,TH Wego Always On,desktop,629,16,10.02,1
+2026-08-08,TH,Wego,CMP005,TH Wego Always On,mobile,1240,42,33.10,5
+2026-08-08,TH,Wego,CMP005,TH Wego Always On,desktop,815,20,12.85,3
+2026-08-09,TH,Wego,CMP005,TH Wego Always On,mobile,1694,63,50.19,0
+2026-08-09,TH,Wego,CMP005,TH Wego Always On,desktop,644,19,12.38,1
+2026-08-10,TH,Wego,CMP005,TH Wego Always On,mobile,1271,41,30.67,2
+2026-08-10,TH,Wego,CMP005,TH Wego Always On,desktop,704,19,13.52,3
+2026-08-11,TH,Wego,CMP005,TH Wego Always On,mobile,1079,35,26.32,1
+2026-08-11,TH,Wego,CMP005,TH Wego Always On,desktop,604,14,9.81,1
+2026-08-12,TH,Wego,CMP005,TH Wego Always On,mobile,1468,52,41.12,4
+2026-08-12,TH,Wego,CMP005,TH Wego Always On,desktop,666,16,10.71,4
+2026-08-13,TH,Wego,CMP005,TH Wego Always On,mobile,1318,44,37.50,2
+2026-08-13,TH,Wego,CMP005,TH Wego Always On,desktop,572,13,9.08,0
+2026-08-14,TH,Wego,CMP005,TH Wego Always On,mobile,1203,40,29.88,2
+2026-08-14,TH,Wego,CMP005,TH Wego Always On,desktop,571,15,9.96,2
+2026-08-15,TH,Wego,CMP005,TH Wego Always On,mobile,1394,49,41.24,0
+2026-08-15,TH,Wego,CMP005,TH Wego Always On,desktop,589,15,10.40,1
+2026-08-16,TH,Wego,CMP005,TH Wego Always On,mobile,1480,56,41.66,4
+2026-08-16,TH,Wego,CMP005,TH Wego Always On,desktop,720,21,15.47,1
+2026-08-17,TH,Wego,CMP005,TH Wego Always On,mobile,1491,61,52.32,4
+2026-08-17,TH,Wego,CMP005,TH Wego Always On,desktop,555,16,11.08,2
+2026-08-18,TH,Wego,CMP005,TH Wego Always On,mobile,1207,43,32.34,3
+2026-08-18,TH,Wego,CMP005,TH Wego Always On,desktop,535,13,8.58,2
+2026-08-19,TH,Wego,CMP005,TH Wego Always On,mobile,1179,40,33.52,6
+2026-08-19,TH,Wego,CMP005,TH Wego Always On,desktop,690,16,10.19,1
+2026-08-20,TH,Wego,CMP005,TH Wego Always On,mobile,1452,56,48.76,0
+2026-08-20,TH,Wego,CMP005,TH Wego Always On,desktop,547,15,11.22,1
+2026-08-21,TH,Wego,CMP005,TH Wego Always On,mobile,1372,50,40.93,1
+2026-08-21,TH,Wego,CMP005,TH Wego Always On,desktop,511,13,9.67,0
+2026-08-22,TH,Wego,CMP005,TH Wego Always On,mobile,1557,57,47.42,5
+2026-08-22,TH,Wego,CMP005,TH Wego Always On,desktop,708,16,10.43,0
+2026-08-23,TH,Wego,CMP005,TH Wego Always On,mobile,1584,52,44.60,2
+2026-08-23,TH,Wego,CMP005,TH Wego Always On,desktop,739,17,11.57,2
+2026-08-24,TH,Wego,CMP005,TH Wego Always On,mobile,1480,57,48.82,3
+2026-08-24,TH,Wego,CMP005,TH Wego Always On,desktop,709,20,13.00,1
+2026-08-25,TH,Wego,CMP005,TH Wego Always On,mobile,1070,36,28.20,2
+2026-08-25,TH,Wego,CMP005,TH Wego Always On,desktop,677,18,12.31,1
+2026-08-26,TH,Wego,CMP005,TH Wego Always On,mobile,1392,54,43.59,1
+2026-08-26,TH,Wego,CMP005,TH Wego Always On,desktop,576,15,10.18,0
+2026-08-27,TH,Wego,CMP005,TH Wego Always On,mobile,1366,48,38.67,1
+2026-08-27,TH,Wego,CMP005,TH Wego Always On,desktop,535,15,9.75,0
+2026-08-28,TH,Wego,CMP005,TH Wego Always On,mobile,1417,51,37.99,6
+2026-08-28,TH,Wego,CMP005,TH Wego Always On,desktop,534,13,9.32,0
+2026-08-29,TH,Wego,CMP005,TH Wego Always On,mobile,1466,57,50.51,3
+2026-08-29,TH,Wego,CMP005,TH Wego Always On,desktop,734,20,14.19,1
+2026-08-30,TH,Wego,CMP005,TH Wego Always On,mobile,1239,42,31.71,2
+2026-08-30,TH,Wego,CMP005,TH Wego Always On,desktop,692,17,11.37,1
+2026-08-31,TH,Wego,CMP005,TH Wego Always On,mobile,1148,41,36.02,2
+2026-08-31,TH,Wego,CMP005,TH Wego Always On,desktop,542,14,9.87,1
+2026-08-01,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2542,94,39.58,3
+2026-08-01,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1580,40,16.04,2
+2026-08-02,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3216,108,51.41,2
+2026-08-02,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1454,35,12.54,3
+2026-08-03,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2341,87,44.38,5
+2026-08-03,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1211,30,12.66,1
+2026-08-04,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2432,99,45.97,3
+2026-08-04,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1469,41,17.21,2
+2026-08-05,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2392,97,40.75,1
+2026-08-05,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1159,33,11.99,1
+2026-08-06,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3190,119,54.71,9
+2026-08-06,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1327,31,11.62,1
+2026-08-07,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2435,92,43.86,3
+2026-08-07,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1434,37,15.72,1
+2026-08-08,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3614,121,58.04,6
+2026-08-08,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1253,35,12.94,1
+2026-08-09,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3083,106,47.32,7
+2026-08-09,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1266,33,13.42,1
+2026-08-10,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3152,121,60.40,3
+2026-08-10,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1191,33,13.23,1
+2026-08-11,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2705,99,42.05,5
+2026-08-11,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1311,38,14.28,1
+2026-08-12,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3175,126,55.87,3
+2026-08-12,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1342,32,13.18,1
+2026-08-13,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2805,101,43.11,2
+2026-08-13,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1490,36,13.62,2
+2026-08-14,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3146,128,58.03,4
+2026-08-14,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1273,37,14.38,2
+2026-08-15,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2640,106,45.22,2
+2026-08-15,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1635,41,15.68,2
+2026-08-16,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3432,133,65.08,4
+2026-08-16,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1303,33,12.61,2
+2026-08-17,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2750,107,51.64,7
+2026-08-17,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1489,43,17.13,5
+2026-08-18,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3081,119,50.30,6
+2026-08-18,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1305,35,13.40,3
+2026-08-19,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2691,109,49.24,5
+2026-08-19,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1497,39,13.96,3
+2026-08-20,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2638,88,40.61,7
+2026-08-20,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1316,37,15.81,3
+2026-08-21,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2460,100,47.29,6
+2026-08-21,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1194,30,11.80,4
+2026-08-22,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2740,90,44.85,2
+2026-08-22,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1586,44,17.73,3
+2026-08-23,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2686,105,51.48,2
+2026-08-23,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1586,41,16.85,3
+2026-08-24,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3041,115,51.16,2
+2026-08-24,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1199,29,10.79,0
+2026-08-25,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2949,112,56.27,2
+2026-08-25,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1283,32,11.75,3
+2026-08-26,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2614,92,46.43,0
+2026-08-26,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1272,32,12.14,1
+2026-08-27,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2894,112,47.11,3
+2026-08-27,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1436,40,16.24,1
+2026-08-28,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2286,81,41.29,4
+2026-08-28,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1163,27,11.05,2
+2026-08-29,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2710,89,40.52,3
+2026-08-29,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1252,32,11.87,4
+2026-08-30,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,3294,124,56.79,2
+2026-08-30,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1255,30,12.20,5
+2026-08-31,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,mobile,2988,113,48.07,4
+2026-08-31,ID,Google Hotel Ads,CMP006,ID Google Hotel Ads Always On,desktop,1389,35,15.16,0
+2026-08-01,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2913,113,48.89,6
+2026-08-01,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1247,32,11.64,5
+2026-08-02,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2449,82,34.48,4
+2026-08-02,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1137,29,10.98,1
+2026-08-03,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2256,83,41.37,1
+2026-08-03,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1157,33,12.44,2
+2026-08-04,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,1853,68,30.76,5
+2026-08-04,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1225,28,11.25,3
+2026-08-05,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2446,91,39.57,10
+2026-08-05,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1084,30,12.04,3
+2026-08-06,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2092,86,40.30,2
+2026-08-06,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,919,26,11.00,2
+2026-08-07,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2168,73,31.53,3
+2026-08-07,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,967,25,10.83,2
+2026-08-08,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2816,107,51.09,6
+2026-08-08,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1216,35,14.67,4
+2026-08-09,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2492,89,38.01,4
+2026-08-09,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1352,33,14.11,5
+2026-08-10,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2369,96,47.94,6
+2026-08-10,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1044,30,10.95,1
+2026-08-11,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2290,82,38.52,5
+2026-08-11,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1122,26,10.45,4
+2026-08-12,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2431,92,39.15,5
+2026-08-12,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,965,25,10.67,1
+2026-08-13,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2454,93,42.29,5
+2026-08-13,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1139,32,13.05,0
+2026-08-14,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2173,72,32.10,5
+2026-08-14,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,942,26,10.25,0
+2026-08-15,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2864,110,49.07,3
+2026-08-15,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1340,31,12.53,2
+2026-08-16,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2740,106,51.37,2
+2026-08-16,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,994,29,11.46,1
+2026-08-17,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2117,75,32.37,3
+2026-08-17,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1031,24,9.43,0
+2026-08-18,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2183,74,34.98,1
+2026-08-18,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,995,27,10.89,1
+2026-08-19,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,1958,76,34.52,6
+2026-08-19,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1026,29,10.34,1
+2026-08-20,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2140,88,44.67,5
+2026-08-20,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1189,32,13.51,4
+2026-08-21,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2227,73,34.64,3
+2026-08-21,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1217,32,12.57,2
+2026-08-22,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2171,86,41.93,3
+2026-08-22,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1047,29,11.84,0
+2026-08-23,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2364,88,44.60,4
+2026-08-23,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1178,27,10.78,5
+2026-08-24,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2159,83,41.11,1
+2026-08-24,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1225,31,11.49,4
+2026-08-25,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2091,76,37.95,4
+2026-08-25,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,990,25,10.62,1
+2026-08-26,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2373,93,45.37,3
+2026-08-26,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1038,28,10.70,1
+2026-08-27,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,1967,81,40.60,7
+2026-08-27,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,935,21,8.11,0
+2026-08-28,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2426,96,40.47,3
+2026-08-28,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,942,26,10.78,2
+2026-08-29,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2224,88,43.90,3
+2026-08-29,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1255,31,13.31,3
+2026-08-30,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2193,76,32.88,2
+2026-08-30,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1171,30,11.66,1
+2026-08-31,ID,Google Flights,CMP007,ID Google Flights Always On,mobile,2026,84,40.23,5
+2026-08-31,ID,Google Flights,CMP007,ID Google Flights Always On,desktop,1112,30,12.80,4
+2026-08-01,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,3130,128,58.11,5
+2026-08-01,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1220,30,12.09,1
+2026-08-02,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2740,104,51.55,2
+2026-08-02,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1328,33,12.97,1
+2026-08-03,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2462,100,47.33,1
+2026-08-03,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1121,32,13.71,3
+2026-08-04,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2287,81,39.76,1
+2026-08-04,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1363,31,11.84,2
+2026-08-05,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2704,94,47.50,9
+2026-08-05,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1080,28,12.16,2
+2026-08-06,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2506,82,37.25,4
+2026-08-06,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1349,36,13.64,1
+2026-08-07,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2416,93,40.10,3
+2026-08-07,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1390,40,17.27,3
+2026-08-08,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,3007,100,48.14,5
+2026-08-08,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1461,37,15.71,1
+2026-08-09,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2355,94,42.34,4
+2026-08-09,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1246,34,13.39,3
+2026-08-10,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2545,90,45.56,3
+2026-08-10,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1041,27,10.73,2
+2026-08-11,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2520,86,43.48,7
+2026-08-11,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1344,35,13.19,1
+2026-08-12,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2856,116,51.75,4
+2026-08-12,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1352,39,15.65,3
+2026-08-13,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2434,86,39.18,2
+2026-08-13,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1168,31,11.49,3
+2026-08-14,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2212,77,34.30,4
+2026-08-14,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1179,29,10.41,1
+2026-08-15,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2920,120,60.36,8
+2026-08-15,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1579,37,13.46,1
+2026-08-16,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2962,121,50.88,3
+2026-08-16,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1408,37,14.26,2
+2026-08-17,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2456,88,38.60,3
+2026-08-17,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1272,37,13.22,3
+2026-08-18,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2940,104,48.62,5
+2026-08-18,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1070,25,10.22,3
+2026-08-19,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2745,96,47.21,2
+2026-08-19,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1251,31,11.49,1
+2026-08-20,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2626,93,45.66,2
+2026-08-20,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1417,38,14.04,1
+2026-08-21,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2321,80,37.73,5
+2026-08-21,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1350,35,13.97,0
+2026-08-22,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2660,104,45.12,8
+2026-08-22,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1444,38,14.81,1
+2026-08-23,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2620,92,44.21,3
+2026-08-23,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1327,37,15.44,1
+2026-08-24,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2540,91,43.11,4
+2026-08-24,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1410,33,13.98,1
+2026-08-25,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2543,105,51.86,2
+2026-08-25,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1413,38,15.92,2
+2026-08-26,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2931,112,48.48,6
+2026-08-26,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1223,28,11.46,1
+2026-08-27,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2661,103,44.15,4
+2026-08-27,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1146,28,12.00,2
+2026-08-28,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2431,100,47.79,6
+2026-08-28,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1264,29,11.60,1
+2026-08-29,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2439,84,41.30,12
+2026-08-29,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1231,34,13.74,0
+2026-08-30,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,3244,125,62.83,9
+2026-08-30,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1201,32,13.08,0
+2026-08-31,ID,Skyscanner,CMP008,ID Skyscanner Always On,mobile,2547,102,46.46,6
+2026-08-31,ID,Skyscanner,CMP008,ID Skyscanner Always On,desktop,1028,28,11.81,1
+2026-08-01,ID,Trivago,CMP009,ID Trivago Always On,mobile,2144,72,32.83,2
+2026-08-01,ID,Trivago,CMP009,ID Trivago Always On,desktop,1144,32,12.99,1
+2026-08-02,ID,Trivago,CMP009,ID Trivago Always On,mobile,2945,119,57.09,5
+2026-08-02,ID,Trivago,CMP009,ID Trivago Always On,desktop,1452,35,13.01,1
+2026-08-03,ID,Trivago,CMP009,ID Trivago Always On,mobile,1963,78,36.18,4
+2026-08-03,ID,Trivago,CMP009,ID Trivago Always On,desktop,1062,28,10.73,3
+2026-08-04,ID,Trivago,CMP009,ID Trivago Always On,mobile,2113,87,36.53,1
+2026-08-04,ID,Trivago,CMP009,ID Trivago Always On,desktop,1060,29,10.69,1
+2026-08-05,ID,Trivago,CMP009,ID Trivago Always On,mobile,2552,94,44.89,4
+2026-08-05,ID,Trivago,CMP009,ID Trivago Always On,desktop,964,27,11.73,4
+2026-08-06,ID,Trivago,CMP009,ID Trivago Always On,mobile,2490,100,46.25,4
+2026-08-06,ID,Trivago,CMP009,ID Trivago Always On,desktop,1204,31,13.08,2
+2026-08-07,ID,Trivago,CMP009,ID Trivago Always On,mobile,2535,85,38.35,4
+2026-08-07,ID,Trivago,CMP009,ID Trivago Always On,desktop,1071,26,10.44,4
+2026-08-08,ID,Trivago,CMP009,ID Trivago Always On,mobile,2327,95,39.87,2
+2026-08-08,ID,Trivago,CMP009,ID Trivago Always On,desktop,1335,38,14.95,2
+2026-08-09,ID,Trivago,CMP009,ID Trivago Always On,mobile,3009,110,54.16,3
+2026-08-09,ID,Trivago,CMP009,ID Trivago Always On,desktop,1091,29,11.22,2
+2026-08-10,ID,Trivago,CMP009,ID Trivago Always On,mobile,1994,74,32.67,2
+2026-08-10,ID,Trivago,CMP009,ID Trivago Always On,desktop,1104,29,11.50,1
+2026-08-11,ID,Trivago,CMP009,ID Trivago Always On,mobile,2298,88,42.65,4
+2026-08-11,ID,Trivago,CMP009,ID Trivago Always On,desktop,1262,33,13.90,3
+2026-08-12,ID,Trivago,CMP009,ID Trivago Always On,mobile,2191,84,39.86,4
+2026-08-12,ID,Trivago,CMP009,ID Trivago Always On,desktop,1013,23,9.73,1
+2026-08-13,ID,Trivago,CMP009,ID Trivago Always On,mobile,2693,101,45.30,6
+2026-08-13,ID,Trivago,CMP009,ID Trivago Always On,desktop,1193,28,12.13,0
+2026-08-14,ID,Trivago,CMP009,ID Trivago Always On,mobile,2342,91,44.24,6
+2026-08-14,ID,Trivago,CMP009,ID Trivago Always On,desktop,1041,28,11.67,0
+2026-08-15,ID,Trivago,CMP009,ID Trivago Always On,mobile,2188,74,34.67,4
+2026-08-15,ID,Trivago,CMP009,ID Trivago Always On,desktop,1460,34,12.13,4
+2026-08-16,ID,Trivago,CMP009,ID Trivago Always On,mobile,2399,87,38.04,2
+2026-08-16,ID,Trivago,CMP009,ID Trivago Always On,desktop,1343,39,14.86,3
+2026-08-17,ID,Trivago,CMP009,ID Trivago Always On,mobile,2544,91,44.10,4
+2026-08-17,ID,Trivago,CMP009,ID Trivago Always On,desktop,1233,32,12.95,2
+2026-08-18,ID,Trivago,CMP009,ID Trivago Always On,mobile,2039,66,32.81,3
+2026-08-18,ID,Trivago,CMP009,ID Trivago Always On,desktop,1035,29,11.27,3
+2026-08-19,ID,Trivago,CMP009,ID Trivago Always On,mobile,2314,91,44.40,3
+2026-08-19,ID,Trivago,CMP009,ID Trivago Always On,desktop,973,28,10.90,1
+2026-08-20,ID,Trivago,CMP009,ID Trivago Always On,mobile,2544,93,43.46,3
+2026-08-20,ID,Trivago,CMP009,ID Trivago Always On,desktop,1003,27,11.44,3
+2026-08-21,ID,Trivago,CMP009,ID Trivago Always On,mobile,2059,70,30.19,3
+2026-08-21,ID,Trivago,CMP009,ID Trivago Always On,desktop,1010,28,11.77,2
+2026-08-22,ID,Trivago,CMP009,ID Trivago Always On,mobile,2296,88,42.76,6
+2026-08-22,ID,Trivago,CMP009,ID Trivago Always On,desktop,1056,26,11.28,3
+2026-08-23,ID,Trivago,CMP009,ID Trivago Always On,mobile,2618,92,43.52,3
+2026-08-23,ID,Trivago,CMP009,ID Trivago Always On,desktop,1415,37,15.41,2
+2026-08-24,ID,Trivago,CMP009,ID Trivago Always On,mobile,1965,64,27.15,1
+2026-08-24,ID,Trivago,CMP009,ID Trivago Always On,desktop,984,23,9.81,3
+2026-08-25,ID,Trivago,CMP009,ID Trivago Always On,mobile,2519,92,40.36,2
+2026-08-25,ID,Trivago,CMP009,ID Trivago Always On,desktop,1227,31,13.48,4
+2026-08-26,ID,Trivago,CMP009,ID Trivago Always On,mobile,2403,82,36.83,2
+2026-08-26,ID,Trivago,CMP009,ID Trivago Always On,desktop,1155,32,13.17,3
+2026-08-27,ID,Trivago,CMP009,ID Trivago Always On,mobile,2453,81,40.85,3
+2026-08-27,ID,Trivago,CMP009,ID Trivago Always On,desktop,1139,33,14.17,4
+2026-08-28,ID,Trivago,CMP009,ID Trivago Always On,mobile,1937,76,34.68,6
+2026-08-28,ID,Trivago,CMP009,ID Trivago Always On,desktop,1205,29,11.47,3
+2026-08-29,ID,Trivago,CMP009,ID Trivago Always On,mobile,3012,103,50.90,1
+2026-08-29,ID,Trivago,CMP009,ID Trivago Always On,desktop,1455,35,13.05,1
+2026-08-30,ID,Trivago,CMP009,ID Trivago Always On,mobile,2426,81,40.93,2
+2026-08-30,ID,Trivago,CMP009,ID Trivago Always On,desktop,1477,35,15.09,3
+2026-08-31,ID,Trivago,CMP009,ID Trivago Always On,mobile,2271,94,39.37,4
+2026-08-31,ID,Trivago,CMP009,ID Trivago Always On,desktop,936,26,10.45,1
+2026-08-01,ID,Wego,CMP010,ID Wego Always On,mobile,2505,98,42.57,5
+2026-08-01,ID,Wego,CMP010,ID Wego Always On,desktop,1089,30,13.04,1
+2026-08-02,ID,Wego,CMP010,ID Wego Always On,mobile,2073,77,32.85,2
+2026-08-02,ID,Wego,CMP010,ID Wego Always On,desktop,1156,32,13.32,3
+2026-08-03,ID,Wego,CMP010,ID Wego Always On,mobile,2323,81,37.96,7
+2026-08-03,ID,Wego,CMP010,ID Wego Always On,desktop,876,25,10.23,2
+2026-08-04,ID,Wego,CMP010,ID Wego Always On,mobile,1993,65,32.88,2
+2026-08-04,ID,Wego,CMP010,ID Wego Always On,desktop,961,23,9.87,1
+2026-08-05,ID,Wego,CMP010,ID Wego Always On,mobile,2138,80,39.32,1
+2026-08-05,ID,Wego,CMP010,ID Wego Always On,desktop,1046,28,10.05,0
+2026-08-06,ID,Wego,CMP010,ID Wego Always On,mobile,1843,69,30.17,4
+2026-08-06,ID,Wego,CMP010,ID Wego Always On,desktop,1132,30,12.03,1
+2026-08-07,ID,Wego,CMP010,ID Wego Always On,mobile,1811,62,27.35,3
+2026-08-07,ID,Wego,CMP010,ID Wego Always On,desktop,795,22,9.17,2
+2026-08-08,ID,Wego,CMP010,ID Wego Always On,mobile,2334,88,44.23,7
+2026-08-08,ID,Wego,CMP010,ID Wego Always On,desktop,1140,30,10.71,1
+2026-08-09,ID,Wego,CMP010,ID Wego Always On,mobile,2464,84,40.19,4
+2026-08-09,ID,Wego,CMP010,ID Wego Always On,desktop,904,25,10.84,1
+2026-08-10,ID,Wego,CMP010,ID Wego Always On,mobile,1787,62,29.16,1
+2026-08-10,ID,Wego,CMP010,ID Wego Always On,desktop,879,20,7.38,1
+2026-08-11,ID,Wego,CMP010,ID Wego Always On,mobile,2173,75,32.42,2
+2026-08-11,ID,Wego,CMP010,ID Wego Always On,desktop,1090,29,12.48,2
+2026-08-12,ID,Wego,CMP010,ID Wego Always On,mobile,1922,66,32.94,2
+2026-08-12,ID,Wego,CMP010,ID Wego Always On,desktop,798,23,9.56,0
+2026-08-13,ID,Wego,CMP010,ID Wego Always On,mobile,2028,81,41.29,5
+2026-08-13,ID,Wego,CMP010,ID Wego Always On,desktop,865,22,8.37,0
+2026-08-14,ID,Wego,CMP010,ID Wego Always On,mobile,2206,85,41.76,3
+2026-08-14,ID,Wego,CMP010,ID Wego Always On,desktop,1090,26,10.41,0
+2026-08-15,ID,Wego,CMP010,ID Wego Always On,mobile,2239,88,42.75,6
+2026-08-15,ID,Wego,CMP010,ID Wego Always On,desktop,986,23,9.12,1
+2026-08-16,ID,Wego,CMP010,ID Wego Always On,mobile,2180,77,32.92,3
+2026-08-16,ID,Wego,CMP010,ID Wego Always On,desktop,1089,29,12.16,2
+2026-08-17,ID,Wego,CMP010,ID Wego Always On,mobile,2290,89,44.97,1
+2026-08-17,ID,Wego,CMP010,ID Wego Always On,desktop,1026,29,11.47,0
+2026-08-18,ID,Wego,CMP010,ID Wego Always On,mobile,1802,66,32.65,3
+2026-08-18,ID,Wego,CMP010,ID Wego Always On,desktop,818,23,8.64,1
+2026-08-19,ID,Wego,CMP010,ID Wego Always On,mobile,1996,67,29.23,0
+2026-08-19,ID,Wego,CMP010,ID Wego Always On,desktop,951,25,10.59,1
+2026-08-20,ID,Wego,CMP010,ID Wego Always On,mobile,1700,67,28.66,2
+2026-08-20,ID,Wego,CMP010,ID Wego Always On,desktop,955,26,9.99,0
+2026-08-21,ID,Wego,CMP010,ID Wego Always On,mobile,1900,71,34.04,2
+2026-08-21,ID,Wego,CMP010,ID Wego Always On,desktop,901,25,9.65,2
+2026-08-22,ID,Wego,CMP010,ID Wego Always On,mobile,2327,89,44.55,3
+2026-08-22,ID,Wego,CMP010,ID Wego Always On,desktop,927,22,9.54,1
+2026-08-23,ID,Wego,CMP010,ID Wego Always On,mobile,2558,94,46.39,2
+2026-08-23,ID,Wego,CMP010,ID Wego Always On,desktop,1163,30,10.81,2
+2026-08-24,ID,Wego,CMP010,ID Wego Always On,mobile,1736,66,33.38,4
+2026-08-24,ID,Wego,CMP010,ID Wego Always On,desktop,973,28,10.36,3
+2026-08-25,ID,Wego,CMP010,ID Wego Always On,mobile,2231,73,34.69,2
+2026-08-25,ID,Wego,CMP010,ID Wego Always On,desktop,1002,24,8.56,1
+2026-08-26,ID,Wego,CMP010,ID Wego Always On,mobile,1733,60,29.59,3
+2026-08-26,ID,Wego,CMP010,ID Wego Always On,desktop,1060,27,9.67,1
+2026-08-27,ID,Wego,CMP010,ID Wego Always On,mobile,2178,84,42.45,5
+2026-08-27,ID,Wego,CMP010,ID Wego Always On,desktop,817,19,6.79,3
+2026-08-28,ID,Wego,CMP010,ID Wego Always On,mobile,1836,71,35.24,0
+2026-08-28,ID,Wego,CMP010,ID Wego Always On,desktop,969,25,9.63,0
+2026-08-29,ID,Wego,CMP010,ID Wego Always On,mobile,2297,94,43.28,5
+2026-08-29,ID,Wego,CMP010,ID Wego Always On,desktop,940,23,8.63,2
+2026-08-30,ID,Wego,CMP010,ID Wego Always On,mobile,2051,84,41.46,1
+2026-08-30,ID,Wego,CMP010,ID Wego Always On,desktop,1023,27,11.10,2
+2026-08-31,ID,Wego,CMP010,ID Wego Always On,mobile,2050,82,38.99,3
+2026-08-31,ID,Wego,CMP010,ID Wego Always On,desktop,959,27,11.29,0
+2026-08-01,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,891,32,51.26,0
+2026-08-01,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,515,13,14.65,2
+2026-08-02,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,837,32,45.84,1
+2026-08-02,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,521,15,20.02,1
+2026-08-03,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,821,28,43.05,0
+2026-08-03,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,354,9,12.19,0
+2026-08-04,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,714,28,38.89,0
+2026-08-04,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,356,9,11.00,0
+2026-08-05,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,931,32,45.79,4
+2026-08-05,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,442,11,13.57,0
+2026-08-06,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,946,33,45.95,2
+2026-08-06,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,424,11,14.50,0
+2026-08-07,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,976,35,48.47,1
+2026-08-07,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,453,12,15.00,1
+2026-08-08,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,1083,42,65.06,2
+2026-08-08,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,474,13,16.08,1
+2026-08-09,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,944,39,61.92,0
+2026-08-09,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,514,15,16.84,1
+2026-08-10,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,893,30,47.46,0
+2026-08-10,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,404,10,11.42,0
+2026-08-11,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,958,33,52.71,1
+2026-08-11,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,381,11,12.53,1
+2026-08-12,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,905,31,46.74,0
+2026-08-12,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,355,9,12.19,0
+2026-08-13,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,768,30,47.14,1
+2026-08-13,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,395,11,12.48,1
+2026-08-14,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,698,27,40.37,1
+2026-08-14,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,404,9,11.35,0
+2026-08-15,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,1073,39,58.26,1
+2026-08-15,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,487,12,16.23,2
+2026-08-16,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,1112,40,61.15,1
+2026-08-16,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,403,10,11.48,2
+2026-08-17,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,860,33,48.51,1
+2026-08-17,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,428,10,12.18,1
+2026-08-18,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,988,39,60.86,0
+2026-08-18,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,451,11,12.71,0
+2026-08-19,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,998,41,62.91,1
+2026-08-19,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,454,12,14.58,2
+2026-08-20,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,828,29,42.53,2
+2026-08-20,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,462,12,14.48,1
+2026-08-21,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,863,32,51.06,1
+2026-08-21,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,389,10,12.06,1
+2026-08-22,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,969,38,55.97,2
+2026-08-22,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,475,12,14.06,0
+2026-08-23,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,1018,34,51.96,1
+2026-08-23,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,509,13,16.02,1
+2026-08-24,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,926,38,52.36,4
+2026-08-24,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,445,12,13.50,1
+2026-08-25,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,813,32,46.55,0
+2026-08-25,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,346,8,9.17,0
+2026-08-26,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,927,36,51.60,1
+2026-08-26,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,462,11,12.99,2
+2026-08-27,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,965,34,50.39,2
+2026-08-27,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,468,12,14.57,2
+2026-08-28,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,875,29,39.15,0
+2026-08-28,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,393,11,12.54,0
+2026-08-29,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,859,31,42.66,0
+2026-08-29,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,491,13,15.92,1
+2026-08-30,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,867,34,47.46,2
+2026-08-30,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,489,13,14.92,0
+2026-08-31,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,mobile,899,37,52.14,3
+2026-08-31,SG,Google Hotel Ads,CMP011,SG Google Hotel Ads Always On,desktop,439,11,13.90,0
+2026-08-01,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,764,29,45.17,1
+2026-08-01,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,325,9,11.25,0
+2026-08-02,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,694,26,40.69,2
+2026-08-02,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,410,10,13.08,2
+2026-08-03,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,630,24,36.26,3
+2026-08-03,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,327,8,9.24,0
+2026-08-04,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,559,21,30.21,1
+2026-08-04,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,342,9,11.21,0
+2026-08-05,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,763,31,49.21,2
+2026-08-05,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,288,7,8.56,0
+2026-08-06,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,629,25,33.19,1
+2026-08-06,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,323,8,10.19,1
+2026-08-07,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,631,25,36.67,0
+2026-08-07,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,305,7,9.02,0
+2026-08-08,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,725,27,37.70,2
+2026-08-08,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,419,11,13.85,1
+2026-08-09,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,779,30,46.27,1
+2026-08-09,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,304,8,9.04,0
+2026-08-10,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,698,24,32.62,0
+2026-08-10,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,360,9,10.80,1
+2026-08-11,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,672,26,37.76,0
+2026-08-11,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,357,8,9.15,0
+2026-08-12,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,743,29,39.00,0
+2026-08-12,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,297,7,8.25,0
+2026-08-13,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,650,21,30.64,3
+2026-08-13,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,300,8,9.49,1
+2026-08-14,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,693,28,38.81,0
+2026-08-14,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,364,9,11.01,0
+2026-08-15,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,716,24,32.77,0
+2026-08-15,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,369,10,11.45,0
+2026-08-16,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,699,28,36.80,2
+2026-08-16,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,392,11,13.14,1
+2026-08-17,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,698,24,38.18,1
+2026-08-17,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,283,7,9.32,0
+2026-08-18,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,739,28,37.24,3
+2026-08-18,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,380,9,10.90,0
+2026-08-19,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,695,23,32.38,1
+2026-08-19,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,314,7,9.48,0
+2026-08-20,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,723,29,40.55,0
+2026-08-20,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,366,10,11.35,0
+2026-08-21,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,800,28,43.03,1
+2026-08-21,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,315,7,7.97,1
+2026-08-22,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,875,30,44.46,0
+2026-08-22,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,336,9,11.44,1
+2026-08-23,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,864,29,39.82,1
+2026-08-23,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,378,11,12.61,1
+2026-08-24,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,777,26,34.60,0
+2026-08-24,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,294,8,10.28,0
+2026-08-25,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,796,32,42.11,0
+2026-08-25,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,294,8,10.91,0
+2026-08-26,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,794,27,38.78,1
+2026-08-26,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,286,8,10.70,1
+2026-08-27,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,642,22,30.17,0
+2026-08-27,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,328,10,12.10,2
+2026-08-28,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,785,29,45.65,2
+2026-08-28,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,322,8,9.60,0
+2026-08-29,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,876,35,47.50,2
+2026-08-29,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,363,10,12.84,0
+2026-08-30,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,793,26,38.04,1
+2026-08-30,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,371,9,11.09,0
+2026-08-31,SG,Google Flights,CMP012,SG Google Flights Always On,mobile,613,21,32.94,1
+2026-08-31,SG,Google Flights,CMP012,SG Google Flights Always On,desktop,344,8,10.76,1
+2026-08-01,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,1005,37,58.01,4
+2026-08-01,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,383,10,11.47,0
+2026-08-02,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,817,33,48.16,0
+2026-08-02,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,456,11,14.97,1
+2026-08-03,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,821,31,44.80,1
+2026-08-03,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,399,11,14.55,1
+2026-08-04,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,874,34,48.68,0
+2026-08-04,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,400,10,12.06,3
+2026-08-05,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,791,27,37.88,1
+2026-08-05,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,392,10,11.81,0
+2026-08-06,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,698,24,37.49,1
+2026-08-06,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,353,10,11.59,2
+2026-08-07,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,807,32,49.34,2
+2026-08-07,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,314,9,11.99,0
+2026-08-08,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,915,35,50.83,0
+2026-08-08,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,353,9,11.71,1
+2026-08-09,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,993,37,49.57,0
+2026-08-09,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,406,10,12.42,0
+2026-08-10,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,864,30,45.07,3
+2026-08-10,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,372,10,11.53,2
+2026-08-11,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,686,26,35.74,1
+2026-08-11,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,405,11,13.91,2
+2026-08-12,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,806,29,45.11,0
+2026-08-12,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,430,12,16.05,1
+2026-08-13,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,902,30,45.91,2
+2026-08-13,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,346,8,10.52,1
+2026-08-14,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,688,27,42.98,0
+2026-08-14,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,377,9,10.28,0
+2026-08-15,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,729,24,34.91,0
+2026-08-15,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,423,11,12.98,1
+2026-08-16,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,840,29,44.88,1
+2026-08-16,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,371,9,11.53,0
+2026-08-17,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,749,29,38.96,2
+2026-08-17,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,428,12,16.11,1
+2026-08-18,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,908,37,55.98,2
+2026-08-18,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,383,9,10.37,1
+2026-08-19,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,637,23,35.36,0
+2026-08-19,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,373,10,11.19,0
+2026-08-20,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,828,33,50.99,3
+2026-08-20,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,350,8,10.44,0
+2026-08-21,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,775,27,42.07,1
+2026-08-21,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,350,10,13.13,1
+2026-08-22,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,965,38,52.79,1
+2026-08-22,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,467,12,14.30,1
+2026-08-23,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,949,37,50.18,0
+2026-08-23,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,456,12,14.88,1
+2026-08-24,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,737,26,39.24,1
+2026-08-24,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,407,10,12.93,0
+2026-08-25,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,690,24,37.71,1
+2026-08-25,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,388,10,12.94,1
+2026-08-26,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,747,29,42.09,0
+2026-08-26,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,373,10,11.65,0
+2026-08-27,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,700,28,39.78,0
+2026-08-27,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,388,9,10.38,0
+2026-08-28,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,743,28,40.14,0
+2026-08-28,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,420,11,12.54,0
+2026-08-29,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,791,27,37.57,1
+2026-08-29,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,431,11,13.85,3
+2026-08-30,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,739,28,39.41,1
+2026-08-30,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,411,10,12.07,0
+2026-08-31,SG,Skyscanner,CMP013,SG Skyscanner Always On,mobile,796,30,44.17,0
+2026-08-31,SG,Skyscanner,CMP013,SG Skyscanner Always On,desktop,377,9,10.10,0
+2026-08-01,SG,Trivago,CMP014,SG Trivago Always On,mobile,892,31,48.84,2
+2026-08-01,SG,Trivago,CMP014,SG Trivago Always On,desktop,403,9,11.02,2
+2026-08-02,SG,Trivago,CMP014,SG Trivago Always On,mobile,746,26,40.20,0
+2026-08-02,SG,Trivago,CMP014,SG Trivago Always On,desktop,328,9,10.97,0
+2026-08-03,SG,Trivago,CMP014,SG Trivago Always On,mobile,838,31,45.57,2
+2026-08-03,SG,Trivago,CMP014,SG Trivago Always On,desktop,388,10,13.41,0
+2026-08-04,SG,Trivago,CMP014,SG Trivago Always On,mobile,755,30,46.56,0
+2026-08-04,SG,Trivago,CMP014,SG Trivago Always On,desktop,370,11,14.51,2
+2026-08-05,SG,Trivago,CMP014,SG Trivago Always On,mobile,613,24,38.10,0
+2026-08-05,SG,Trivago,CMP014,SG Trivago Always On,desktop,313,8,9.43,2
+2026-08-06,SG,Trivago,CMP014,SG Trivago Always On,mobile,659,22,34.93,0
+2026-08-06,SG,Trivago,CMP014,SG Trivago Always On,desktop,389,9,10.59,0
+2026-08-07,SG,Trivago,CMP014,SG Trivago Always On,mobile,626,23,35.00,1
+2026-08-07,SG,Trivago,CMP014,SG Trivago Always On,desktop,404,10,11.86,2
+2026-08-08,SG,Trivago,CMP014,SG Trivago Always On,mobile,864,34,50.72,0
+2026-08-08,SG,Trivago,CMP014,SG Trivago Always On,desktop,449,13,14.93,0
+2026-08-09,SG,Trivago,CMP014,SG Trivago Always On,mobile,858,30,40.35,0
+2026-08-09,SG,Trivago,CMP014,SG Trivago Always On,desktop,368,10,12.61,0
+2026-08-10,SG,Trivago,CMP014,SG Trivago Always On,mobile,770,29,42.10,1
+2026-08-10,SG,Trivago,CMP014,SG Trivago Always On,desktop,394,11,13.06,2
+2026-08-11,SG,Trivago,CMP014,SG Trivago Always On,mobile,642,26,35.23,1
+2026-08-11,SG,Trivago,CMP014,SG Trivago Always On,desktop,339,8,10.81,1
+2026-08-12,SG,Trivago,CMP014,SG Trivago Always On,mobile,735,29,42.75,2
+2026-08-12,SG,Trivago,CMP014,SG Trivago Always On,desktop,305,7,9.21,0
+2026-08-13,SG,Trivago,CMP014,SG Trivago Always On,mobile,672,27,42.52,1
+2026-08-13,SG,Trivago,CMP014,SG Trivago Always On,desktop,324,8,10.66,0
+2026-08-14,SG,Trivago,CMP014,SG Trivago Always On,mobile,619,21,28.17,1
+2026-08-14,SG,Trivago,CMP014,SG Trivago Always On,desktop,314,9,10.61,0
+2026-08-15,SG,Trivago,CMP014,SG Trivago Always On,mobile,848,34,49.47,1
+2026-08-15,SG,Trivago,CMP014,SG Trivago Always On,desktop,436,11,14.95,1
+2026-08-16,SG,Trivago,CMP014,SG Trivago Always On,mobile,941,33,45.13,2
+2026-08-16,SG,Trivago,CMP014,SG Trivago Always On,desktop,403,10,13.41,1
+2026-08-17,SG,Trivago,CMP014,SG Trivago Always On,mobile,802,26,36.69,0
+2026-08-17,SG,Trivago,CMP014,SG Trivago Always On,desktop,375,10,12.39,1
+2026-08-18,SG,Trivago,CMP014,SG Trivago Always On,mobile,598,21,30.34,0
+2026-08-18,SG,Trivago,CMP014,SG Trivago Always On,desktop,306,8,10.25,0
+2026-08-19,SG,Trivago,CMP014,SG Trivago Always On,mobile,626,25,39.23,0
+2026-08-19,SG,Trivago,CMP014,SG Trivago Always On,desktop,362,9,10.74,0
+2026-08-20,SG,Trivago,CMP014,SG Trivago Always On,mobile,623,22,29.47,0
+2026-08-20,SG,Trivago,CMP014,SG Trivago Always On,desktop,307,7,9.52,0
+2026-08-21,SG,Trivago,CMP014,SG Trivago Always On,mobile,780,28,44.16,0
+2026-08-21,SG,Trivago,CMP014,SG Trivago Always On,desktop,360,10,12.97,2
+2026-08-22,SG,Trivago,CMP014,SG Trivago Always On,mobile,911,32,46.69,2
+2026-08-22,SG,Trivago,CMP014,SG Trivago Always On,desktop,330,8,9.29,0
+2026-08-23,SG,Trivago,CMP014,SG Trivago Always On,mobile,755,28,42.86,0
+2026-08-23,SG,Trivago,CMP014,SG Trivago Always On,desktop,395,10,13.16,0
+2026-08-24,SG,Trivago,CMP014,SG Trivago Always On,mobile,802,28,38.57,0
+2026-08-24,SG,Trivago,CMP014,SG Trivago Always On,desktop,383,9,11.60,0
+2026-08-25,SG,Trivago,CMP014,SG Trivago Always On,mobile,650,24,36.33,2
+2026-08-25,SG,Trivago,CMP014,SG Trivago Always On,desktop,395,11,13.29,0
+2026-08-26,SG,Trivago,CMP014,SG Trivago Always On,mobile,823,31,49.57,0
+2026-08-26,SG,Trivago,CMP014,SG Trivago Always On,desktop,345,8,9.20,1
+2026-08-27,SG,Trivago,CMP014,SG Trivago Always On,mobile,694,27,40.41,2
+2026-08-27,SG,Trivago,CMP014,SG Trivago Always On,desktop,334,8,9.39,3
+2026-08-28,SG,Trivago,CMP014,SG Trivago Always On,mobile,782,26,40.92,1
+2026-08-28,SG,Trivago,CMP014,SG Trivago Always On,desktop,301,7,8.01,0
+2026-08-29,SG,Trivago,CMP014,SG Trivago Always On,mobile,667,24,37.61,1
+2026-08-29,SG,Trivago,CMP014,SG Trivago Always On,desktop,351,9,11.79,0
+2026-08-30,SG,Trivago,CMP014,SG Trivago Always On,mobile,943,35,55.09,1
+2026-08-30,SG,Trivago,CMP014,SG Trivago Always On,desktop,383,9,11.13,0
+2026-08-31,SG,Trivago,CMP014,SG Trivago Always On,mobile,758,28,42.02,2
+2026-08-31,SG,Trivago,CMP014,SG Trivago Always On,desktop,403,10,11.25,0
+2026-08-01,SG,Wego,CMP015,SG Wego Always On,mobile,822,32,44.12,2
+2026-08-01,SG,Wego,CMP015,SG Wego Always On,desktop,388,9,10.92,0
+2026-08-02,SG,Wego,CMP015,SG Wego Always On,mobile,706,29,38.21,0
+2026-08-02,SG,Wego,CMP015,SG Wego Always On,desktop,348,8,9.43,0
+2026-08-03,SG,Wego,CMP015,SG Wego Always On,mobile,722,25,33.20,0
+2026-08-03,SG,Wego,CMP015,SG Wego Always On,desktop,283,6,7.62,0
+2026-08-04,SG,Wego,CMP015,SG Wego Always On,mobile,590,23,35.43,1
+2026-08-04,SG,Wego,CMP015,SG Wego Always On,desktop,254,6,7.16,0
+2026-08-05,SG,Wego,CMP015,SG Wego Always On,mobile,657,23,34.77,2
+2026-08-05,SG,Wego,CMP015,SG Wego Always On,desktop,309,9,10.72,0
+2026-08-06,SG,Wego,CMP015,SG Wego Always On,mobile,684,22,31.60,2
+2026-08-06,SG,Wego,CMP015,SG Wego Always On,desktop,292,8,9.72,0
+2026-08-07,SG,Wego,CMP015,SG Wego Always On,mobile,533,22,35.10,1
+2026-08-07,SG,Wego,CMP015,SG Wego Always On,desktop,333,8,10.60,0
+2026-08-08,SG,Wego,CMP015,SG Wego Always On,mobile,655,26,39.04,1
+2026-08-08,SG,Wego,CMP015,SG Wego Always On,desktop,339,10,12.36,0
+2026-08-09,SG,Wego,CMP015,SG Wego Always On,mobile,669,22,33.10,0
+2026-08-09,SG,Wego,CMP015,SG Wego Always On,desktop,350,10,11.98,1
+2026-08-10,SG,Wego,CMP015,SG Wego Always On,mobile,627,21,30.21,0
+2026-08-10,SG,Wego,CMP015,SG Wego Always On,desktop,252,6,8.13,0
+2026-08-11,SG,Wego,CMP015,SG Wego Always On,mobile,714,28,43.01,1
+2026-08-11,SG,Wego,CMP015,SG Wego Always On,desktop,345,8,9.88,0
+2026-08-12,SG,Wego,CMP015,SG Wego Always On,mobile,624,23,32.46,1
+2026-08-12,SG,Wego,CMP015,SG Wego Always On,desktop,310,7,9.55,0
+2026-08-13,SG,Wego,CMP015,SG Wego Always On,mobile,540,18,28.17,1
+2026-08-13,SG,Wego,CMP015,SG Wego Always On,desktop,293,8,9.02,0
+2026-08-14,SG,Wego,CMP015,SG Wego Always On,mobile,706,25,37.26,4
+2026-08-14,SG,Wego,CMP015,SG Wego Always On,desktop,301,8,10.55,1
+2026-08-15,SG,Wego,CMP015,SG Wego Always On,mobile,807,27,41.99,0
+2026-08-15,SG,Wego,CMP015,SG Wego Always On,desktop,370,11,14.83,0
+2026-08-16,SG,Wego,CMP015,SG Wego Always On,mobile,591,22,31.48,1
+2026-08-16,SG,Wego,CMP015,SG Wego Always On,desktop,391,10,11.50,0
+2026-08-17,SG,Wego,CMP015,SG Wego Always On,mobile,532,20,27.81,0
+2026-08-17,SG,Wego,CMP015,SG Wego Always On,desktop,280,8,10.05,1
+2026-08-18,SG,Wego,CMP015,SG Wego Always On,mobile,619,24,35.44,2
+2026-08-18,SG,Wego,CMP015,SG Wego Always On,desktop,321,8,10.45,1
+2026-08-19,SG,Wego,CMP015,SG Wego Always On,mobile,527,19,27.21,0
+2026-08-19,SG,Wego,CMP015,SG Wego Always On,desktop,297,8,9.63,0
+2026-08-20,SG,Wego,CMP015,SG Wego Always On,mobile,587,23,31.24,0
+2026-08-20,SG,Wego,CMP015,SG Wego Always On,desktop,335,8,9.04,2
+2026-08-21,SG,Wego,CMP015,SG Wego Always On,mobile,572,21,32.98,1
+2026-08-21,SG,Wego,CMP015,SG Wego Always On,desktop,249,6,7.43,0
+2026-08-22,SG,Wego,CMP015,SG Wego Always On,mobile,639,22,33.82,0
+2026-08-22,SG,Wego,CMP015,SG Wego Always On,desktop,298,8,9.90,0
+2026-08-23,SG,Wego,CMP015,SG Wego Always On,mobile,656,22,33.46,1
+2026-08-23,SG,Wego,CMP015,SG Wego Always On,desktop,338,8,10.27,1
+2026-08-24,SG,Wego,CMP015,SG Wego Always On,mobile,569,23,33.25,1
+2026-08-24,SG,Wego,CMP015,SG Wego Always On,desktop,346,9,11.10,0
+2026-08-25,SG,Wego,CMP015,SG Wego Always On,mobile,704,27,37.46,0
+2026-08-25,SG,Wego,CMP015,SG Wego Always On,desktop,341,10,11.96,0
+2026-08-26,SG,Wego,CMP015,SG Wego Always On,mobile,621,21,33.38,0
+2026-08-26,SG,Wego,CMP015,SG Wego Always On,desktop,264,6,7.93,0
+2026-08-27,SG,Wego,CMP015,SG Wego Always On,mobile,560,22,33.65,1
+2026-08-27,SG,Wego,CMP015,SG Wego Always On,desktop,300,7,8.43,0
+2026-08-28,SG,Wego,CMP015,SG Wego Always On,mobile,659,26,40.28,2
+2026-08-28,SG,Wego,CMP015,SG Wego Always On,desktop,291,7,8.95,0
+2026-08-29,SG,Wego,CMP015,SG Wego Always On,mobile,791,31,41.10,0
+2026-08-29,SG,Wego,CMP015,SG Wego Always On,desktop,307,8,9.56,1
+2026-08-30,SG,Wego,CMP015,SG Wego Always On,mobile,751,25,34.65,0
+2026-08-30,SG,Wego,CMP015,SG Wego Always On,desktop,307,8,9.59,1
+2026-08-31,SG,Wego,CMP015,SG Wego Always On,mobile,651,25,34.86,1
+2026-08-31,SG,Wego,CMP015,SG Wego Always On,desktop,301,8,10.35,0

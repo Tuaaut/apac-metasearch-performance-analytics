@@ -1,0 +1,15 @@
+config { type: "assertion" }
+
+WITH booking_counts AS (
+  SELECT DATE(c.event_timestamp) AS date, c.market, c.channel, c.campaign_id, c.device_type,
+         COUNTIF(b.booking_status = 'confirmed' AND b.payment_status = 'paid') AS actual_conversions
+  FROM ${ref("silver_ad_click_events")} c
+  LEFT JOIN ${ref("silver_bookings")} b ON c.session_id = b.session_id
+  GROUP BY 1, 2, 3, 4, 5
+)
+SELECT p.campaign_id, p.date
+FROM ${ref("silver_ad_platform_performance")} p
+FULL OUTER JOIN booking_counts b
+  ON p.date = b.date AND p.market = b.market AND p.channel = b.channel
+ AND p.campaign_id = b.campaign_id AND p.device_type = b.device_type
+WHERE p.date IS NULL OR b.date IS NULL OR p.conversions != b.actual_conversions

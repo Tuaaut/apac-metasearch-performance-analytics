@@ -1,0 +1,49 @@
+config {
+  type: "table",
+  schema: "apac_meta_gold",
+  dependOnDependencyAssertions: true,
+  dependencies: [
+    "assert_click_session_integrity",
+    "assert_booking_session_integrity",
+    "assert_paid_session_one_click",
+    "assert_platform_click_reconciliation",
+    "assert_platform_booking_reconciliation"
+  ],
+  assertions: {
+    uniqueKey: ["date", "market", "channel", "campaign_id", "device_type"],
+    nonNull: ["date", "market", "channel", "campaign_id", "device_type", "impressions", "clicks", "ad_spend", "conversions", "sessions", "booking_value", "gross_margin"],
+    rowConditions: ["clicks >= sessions", "conversions <= sessions", "booking_value >= 0", "gross_margin >= 0"]
+  }
+}
+
+WITH attributed AS (
+  SELECT
+    DATE(c.event_timestamp) AS date,
+    c.market, c.channel, c.campaign_id, c.device_type,
+    COUNTIF(s.session_id IS NOT NULL) AS sessions,
+    COUNTIF(b.booking_status = 'confirmed' AND b.payment_status = 'paid') AS confirmed_bookings,
+    SUM(IF(b.booking_status = 'confirmed' AND b.payment_status = 'paid', b.booking_value, 0)) AS booking_value,
+    SUM(IF(b.booking_status = 'confirmed' AND b.payment_status = 'paid', b.gross_margin, 0)) AS gross_margin
+  FROM ${ref("silver_ad_click_events")} c
+  LEFT JOIN ${ref("silver_user_sessions")} s ON c.session_id = s.session_id
+  LEFT JOIN ${ref("silver_bookings")} b ON s.session_id = b.session_id
+  GROUP BY 1, 2, 3, 4, 5
+)
+SELECT
+  p.date, p.market, p.channel, p.campaign_id, p.campaign_name, p.device_type,
+  p.impressions, p.clicks, p.ad_spend, p.conversions,
+  IFNULL(a.sessions, 0) AS sessions,
+  IFNULL(a.confirmed_bookings, 0) AS confirmed_bookings,
+  IFNULL(a.booking_value, 0) AS booking_value,
+  IFNULL(a.gross_margin, 0) AS gross_margin,
+  SAFE_DIVIDE(p.clicks, p.impressions) AS ctr,
+  SAFE_DIVIDE(p.ad_spend, p.clicks) AS cpc,
+  SAFE_DIVIDE(p.conversions, p.clicks) AS cvr,
+  SAFE_DIVIDE(p.ad_spend, p.conversions) AS cpa,
+  SAFE_DIVIDE(a.booking_value, p.ad_spend) AS roas,
+  SAFE_DIVIDE(a.gross_margin, p.ad_spend) AS margin_roas,
+  IFNULL(a.gross_margin, 0) - p.ad_spend AS contribution_after_ad_spend
+FROM ${ref("silver_ad_platform_performance")} p
+LEFT JOIN attributed a
+  ON p.date = a.date AND p.market = a.market AND p.channel = a.channel
+ AND p.campaign_id = a.campaign_id AND p.device_type = a.device_type

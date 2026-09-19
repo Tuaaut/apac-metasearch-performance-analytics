@@ -1,0 +1,7 @@
+/.gitattributes text eol=lf
+/.gitignore text eol=lf
+*.py text eol=lf
+*.sqlx text eol=lf
+*.yaml text eol=lf
+*.md text eol=lf
+*.csv text eol=crlf

@@ -1,0 +1,8 @@
+config { type: "assertion" }
+
+SELECT experiment_id
+FROM ${ref("silver_incrementality_experiment")}
+GROUP BY experiment_id
+HAVING COUNT(*) != 2
+   OR COUNTIF(experiment_group = 'Treatment') != 1
+   OR COUNTIF(experiment_group = 'Control') != 1

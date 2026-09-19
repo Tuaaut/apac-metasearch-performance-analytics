@@ -1,0 +1,6 @@
+__pycache__/
+dataform/.last_invocation.json
+.venv/
+.env
+*.key.json
+service-account*.json

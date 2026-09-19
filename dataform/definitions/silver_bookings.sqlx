@@ -1,0 +1,23 @@
+config {
+  type: "table",
+  schema: "apac_meta_silver",
+  assertions: {
+    uniqueKey: ["booking_id"],
+    nonNull: ["booking_id", "user_id", "session_id", "booking_timestamp", "product_type", "booking_value", "commission_rate", "gross_margin", "booking_status", "payment_status"],
+    rowConditions: ["booking_value > 0", "commission_rate BETWEEN 0 AND 1", "gross_margin >= 0", "booking_status IN ('confirmed','cancelled','pending')", "booking_status != 'confirmed' OR payment_status = 'paid'", "booking_status = 'confirmed' OR gross_margin = 0"]
+  }
+}
+
+SELECT
+  booking_id,
+  user_id,
+  session_id,
+  SAFE_CAST(booking_timestamp AS TIMESTAMP) AS booking_timestamp,
+  product_type,
+  destination,
+  SAFE_CAST(booking_value AS NUMERIC) AS booking_value,
+  SAFE_CAST(commission_rate AS NUMERIC) AS commission_rate,
+  SAFE_CAST(gross_margin AS NUMERIC) AS gross_margin,
+  booking_status,
+  payment_status
+FROM ${ref("bookings")}

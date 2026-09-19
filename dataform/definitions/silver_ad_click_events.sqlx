@@ -1,0 +1,20 @@
+config {
+  type: "table",
+  schema: "apac_meta_silver",
+  assertions: {
+    uniqueKey: ["click_id"],
+    nonNull: ["click_id", "event_timestamp", "campaign_id", "market", "channel", "device_type"],
+    rowConditions: ["market IN ('TH','ID','SG')", "device_type IN ('mobile','desktop')"]
+  }
+}
+
+SELECT
+  click_id,
+  SAFE_CAST(event_timestamp AS TIMESTAMP) AS event_timestamp,
+  campaign_id,
+  market,
+  channel,
+  device_type,
+  landing_page,
+  NULLIF(session_id, '') AS session_id
+FROM ${ref("ad_click_events")}

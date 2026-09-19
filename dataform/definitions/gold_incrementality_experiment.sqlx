@@ -1,0 +1,36 @@
+config {
+  type: "table",
+  schema: "apac_meta_gold",
+  dependOnDependencyAssertions: true,
+  dependencies: ["assert_experiment_arms"],
+  assertions: {
+    uniqueKey: ["experiment_id"],
+    nonNull: ["experiment_id", "market", "channel", "treatment_users", "control_users", "treatment_conversions", "control_conversions", "incremental_conversions"]
+  }
+}
+
+WITH arms AS (
+  SELECT experiment_id, market, channel,
+    MAX(IF(experiment_group = 'Treatment', eligible_users, NULL)) AS treatment_users,
+    MAX(IF(experiment_group = 'Control', eligible_users, NULL)) AS control_users,
+    MAX(IF(experiment_group = 'Treatment', conversions, NULL)) AS treatment_conversions,
+    MAX(IF(experiment_group = 'Control', conversions, NULL)) AS control_conversions,
+    MAX(IF(experiment_group = 'Treatment', revenue, NULL)) AS treatment_revenue,
+    MAX(IF(experiment_group = 'Control', revenue, NULL)) AS control_revenue
+  FROM ${ref("silver_incrementality_experiment")}
+  GROUP BY 1, 2, 3
+)
+SELECT *,
+  SAFE_DIVIDE(treatment_conversions, treatment_users) AS treatment_conversion_rate,
+  SAFE_DIVIDE(control_conversions, control_users) AS control_conversion_rate,
+  ROUND(treatment_users * (
+    SAFE_DIVIDE(treatment_conversions, treatment_users)
+    - SAFE_DIVIDE(control_conversions, control_users)
+  ), 2) AS incremental_conversions,
+  SAFE_DIVIDE(SAFE_DIVIDE(treatment_conversions, treatment_users),
+              SAFE_DIVIDE(control_conversions, control_users)) - 1 AS relative_conversion_lift,
+  ROUND(treatment_users * (
+    SAFE_DIVIDE(treatment_revenue, treatment_users)
+    - SAFE_DIVIDE(control_revenue, control_users)
+  ), 2) AS incremental_revenue
+FROM arms

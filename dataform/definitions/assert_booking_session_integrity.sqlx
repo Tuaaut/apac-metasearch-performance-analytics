@@ -1,0 +1,10 @@
+config { type: "assertion" }
+
+SELECT b.booking_id
+FROM ${ref("silver_bookings")} b
+LEFT JOIN ${ref("silver_user_sessions")} s USING (session_id)
+WHERE s.session_id IS NULL
+   OR b.user_id != s.user_id
+   OR b.booking_timestamp < s.session_start_timestamp
+   OR (b.booking_status = 'confirmed'
+       AND b.gross_margin != ROUND(b.booking_value * b.commission_rate, 2))

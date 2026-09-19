@@ -1,0 +1,7 @@
+config { type: "assertion" }
+
+SELECT session_id
+FROM ${ref("silver_ad_click_events")}
+WHERE session_id IS NOT NULL
+GROUP BY session_id
+HAVING COUNT(*) != 1

@@ -1,0 +1,11 @@
+config { type: "assertion" }
+
+SELECT c.click_id
+FROM ${ref("silver_ad_click_events")} c
+LEFT JOIN ${ref("silver_user_sessions")} s USING (session_id)
+WHERE c.session_id IS NOT NULL
+  AND (s.session_id IS NULL
+       OR s.traffic_source != 'paid_metasearch'
+       OR c.market != s.market
+       OR c.device_type != s.device_type
+       OR c.event_timestamp > s.session_start_timestamp)

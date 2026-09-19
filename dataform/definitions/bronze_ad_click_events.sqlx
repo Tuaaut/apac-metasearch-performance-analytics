@@ -1,0 +1,1 @@
+config { type: "declaration", database: "bq-dataform-sg", schema: "apac_meta_bronze", name: "ad_click_events" }

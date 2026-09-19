@@ -1,0 +1,5 @@
+defaultProject: bq-dataform-sg
+defaultDataset: apac_meta_silver
+defaultAssertionDataset: apac_meta_assertions
+defaultLocation: asia-southeast1
+dataformCoreVersion: 3.0.43

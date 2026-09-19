@@ -1,0 +1,22 @@
+config {
+  type: "table",
+  schema: "apac_meta_silver",
+  assertions: {
+    uniqueKey: ["date", "market", "channel", "campaign_id", "device_type"],
+    nonNull: ["date", "market", "channel", "campaign_id", "device_type", "impressions", "clicks", "ad_spend", "conversions"],
+    rowConditions: ["impressions >= clicks", "clicks >= conversions", "conversions >= 0", "ad_spend >= 0"]
+  }
+}
+
+SELECT
+  SAFE_CAST(date AS DATE) AS date,
+  market,
+  channel,
+  campaign_id,
+  campaign_name,
+  device_type,
+  SAFE_CAST(impressions AS INT64) AS impressions,
+  SAFE_CAST(clicks AS INT64) AS clicks,
+  SAFE_CAST(ad_spend AS NUMERIC) AS ad_spend,
+  SAFE_CAST(conversions AS INT64) AS conversions
+FROM ${ref("ad_platform_performance")}
