@@ -1,1 +1,0 @@
-config { type: "declaration", database: "bq-dataform-sg", schema: "apac_meta_bronze", name: "incrementality_experiment" }

@@ -7,5 +7,5 @@ check_order,category,check_name,severity,status,observed_value,expected_conditio
 6,Validity,Funnel and economic bounds,Critical,PASS,0 invalid rows,"0 rows where clicks > impressions, conversions/sessions > clicks, or economics are invalid",0,2026-08-31,Row-level bounds check
 7,Reconciliation,Confirmed bookings reconcile,Critical,PASS,"1,792 conversions = 1,792 confirmed bookings",Platform conversions equal confirmed bookings,0,2026-08-31,SUM(conversions) versus SUM(confirmed_bookings)
 8,Reconciliation,Experiment lift arithmetic,Warning,PASS,0 mismatched experiment rows,incremental_conversions = treatment_conversions − control_conversions,0,2026-08-31,Experiment row-level arithmetic
-9,Pipeline,Dataform workflow invocation,Critical,PASS,SUCCEEDED; 27 actions,SUCCEEDED with every action completed,0,2026-08-31,1789818176-60d85246-33c5-4ed1-9d06-e0a3e1cfd98c
-10,Pipeline,Dataform assertion actions,Critical,PASS,20 assertions; 0 problems,All assertion actions SUCCEEDED,0,2026-08-31,apac_meta_assertions action summary
+9,Pipeline,Dataform workflow invocation,Critical,PASS,SUCCEEDED; 31 actions,SUCCEEDED with every action completed,0,2026-08-31,1789905980-ef8a4782-fceb-4dbf-8e8e-c75ce1e89ab6
+10,Pipeline,Dataform assertion actions,Critical,PASS,23 assertions; 0 problems,All assertion actions SUCCEEDED,0,2026-08-31,apac_meta_assertions action summary

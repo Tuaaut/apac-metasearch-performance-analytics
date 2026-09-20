@@ -1,2 +1,2 @@
 data_through_date,snapshot_exported_utc,dataform_workflow_state,dataform_completed_utc,dataform_total_actions,dataform_problem_actions,dataform_assertion_actions,dataform_problem_assertions,powerbi_import_instruction
-2026-08-31,2026-09-19T18:14:27,SUCCEEDED,2026-09-19T11:43:14,27,0,20,0,Open the PBIP and select Home > Refresh to load this snapshot.
+2026-08-31,2026-09-20T12:07:28,SUCCEEDED,2026-09-20T12:06:41,31,0,23,0,Open the PBIP and select Home > Refresh to load this snapshot.

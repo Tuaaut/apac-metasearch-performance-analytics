@@ -27,6 +27,10 @@ BASE = "https://dataform.googleapis.com/v1/"
 LAST_RUN = ROOT / ".last_invocation.json"
 DASHBOARD_STATUS = ROOT.parent / "bi" / "snapshot" / "dataform_workflow_status.csv"
 PROBLEM_STATES = {"FAILED", "CANCELLED", "SKIPPED"}
+OBSOLETE_WORKSPACE_FILES = (
+    "definitions/bronze_incrementality_experiment.sqlx",
+    "definitions/silver_incrementality_experiment.sqlx",
+)
 
 
 def access_token() -> str:
@@ -86,6 +90,13 @@ def provision_and_sync() -> None:
             raise
         request("POST", BASE + f"{REPO_PATH}/workspaces?workspaceId={WORKSPACE}", {})
         print(f"Created workspace {WORKSPACE}")
+    for relative in OBSOLETE_WORKSPACE_FILES:
+        try:
+            request("POST", BASE + workspace_path + ":removeFile", {"path": relative})
+            print(f"Removed retired workspace file {relative}")
+        except RuntimeError as exc:
+            if "HTTP 404" not in str(exc):
+                raise
     files = [ROOT / "workflow_settings.yaml", *sorted((ROOT / "definitions").glob("*.sqlx"))]
     for path in files:
         relative = path.relative_to(ROOT).as_posix()

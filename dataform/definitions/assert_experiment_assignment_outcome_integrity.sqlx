@@ -1,0 +1,51 @@
+config { type: "assertion" }
+
+WITH joined AS (
+  SELECT
+    a.experiment_id AS assignment_experiment_id,
+    a.user_id AS assignment_user_id,
+    a.experiment_group,
+    a.assignment_timestamp,
+    o.experiment_id AS outcome_experiment_id,
+    o.user_id AS outcome_user_id,
+    o.test_ad_exposed,
+    o.test_ad_clicked,
+    o.click_id,
+    o.click_timestamp,
+    o.session_id,
+    o.session_start_timestamp,
+    o.session_source,
+    o.booking_id,
+    o.booking_timestamp,
+    o.booking_status,
+    o.payment_status,
+    o.booking_value
+  FROM ${ref("silver_experiment_assignments")} a
+  FULL OUTER JOIN ${ref("silver_experiment_user_outcomes")} o
+    ON a.experiment_id = o.experiment_id
+   AND a.user_id = o.user_id
+)
+SELECT
+  COALESCE(assignment_experiment_id, outcome_experiment_id) AS experiment_id,
+  COALESCE(assignment_user_id, outcome_user_id) AS user_id
+FROM joined
+WHERE assignment_user_id IS NULL
+   OR outcome_user_id IS NULL
+   OR (experiment_group = 'Treatment' AND test_ad_exposed IS NOT TRUE)
+   OR (experiment_group = 'Control' AND test_ad_exposed IS NOT FALSE)
+   OR (test_ad_clicked AND (click_id IS NULL OR click_timestamp IS NULL OR session_id IS NULL OR session_start_timestamp IS NULL))
+   OR (NOT test_ad_clicked AND (click_id IS NOT NULL OR click_timestamp IS NOT NULL))
+   OR (session_source = 'none' AND (session_id IS NOT NULL OR session_start_timestamp IS NOT NULL))
+   OR (session_source != 'none' AND (session_id IS NULL OR session_start_timestamp IS NULL))
+   OR (session_source = 'test_ad_click' AND test_ad_clicked IS NOT TRUE)
+   OR (booking_status = 'confirmed' AND (
+        booking_id IS NULL OR booking_timestamp IS NULL OR session_id IS NULL
+        OR payment_status != 'paid' OR booking_value <= 0
+      ))
+   OR (booking_status = 'not_booked' AND (
+        booking_id IS NOT NULL OR booking_timestamp IS NOT NULL
+        OR payment_status != 'not_applicable' OR booking_value != 0
+      ))
+   OR (click_timestamp IS NOT NULL AND click_timestamp < assignment_timestamp)
+   OR (click_timestamp IS NOT NULL AND session_start_timestamp < click_timestamp)
+   OR (booking_timestamp IS NOT NULL AND booking_timestamp < session_start_timestamp)

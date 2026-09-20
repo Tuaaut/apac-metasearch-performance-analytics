@@ -1,0 +1,23 @@
+config {
+  type: "table",
+  schema: "apac_meta_silver",
+  assertions: {
+    uniqueKey: ["experiment_id", "user_id"],
+    nonNull: ["experiment_id", "user_id", "market", "channel", "experiment_group", "assignment_timestamp", "eligible_flag"],
+    rowConditions: [
+      "market IN ('TH','ID','SG')",
+      "experiment_group IN ('Treatment','Control')",
+      "eligible_flag = TRUE"
+    ]
+  }
+}
+
+SELECT
+  experiment_id,
+  user_id,
+  market,
+  channel,
+  experiment_group,
+  SAFE_CAST(assignment_timestamp AS TIMESTAMP) AS assignment_timestamp,
+  CASE WHEN eligible_flag = '1' THEN TRUE WHEN eligible_flag = '0' THEN FALSE ELSE NULL END AS eligible_flag
+FROM ${ref("experiment_assignments")}

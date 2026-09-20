@@ -1,0 +1,34 @@
+config {
+  type: "table",
+  schema: "apac_meta_silver",
+  assertions: {
+    uniqueKey: ["experiment_id", "user_id"],
+    nonNull: ["experiment_id", "user_id", "test_ad_exposed", "test_ad_clicked", "session_source", "booking_status", "payment_status", "booking_value"],
+    rowConditions: [
+      "session_source IN ('test_ad_click','organic_or_direct','none')",
+      "booking_status IN ('confirmed','not_booked')",
+      "payment_status IN ('paid','not_applicable')",
+      "test_ad_clicked = FALSE OR test_ad_exposed = TRUE",
+      "booking_status != 'confirmed' OR payment_status = 'paid'",
+      "booking_status = 'confirmed' OR booking_value = 0",
+      "booking_value >= 0"
+    ]
+  }
+}
+
+SELECT
+  experiment_id,
+  user_id,
+  CASE WHEN test_ad_exposed = '1' THEN TRUE WHEN test_ad_exposed = '0' THEN FALSE ELSE NULL END AS test_ad_exposed,
+  CASE WHEN test_ad_clicked = '1' THEN TRUE WHEN test_ad_clicked = '0' THEN FALSE ELSE NULL END AS test_ad_clicked,
+  NULLIF(click_id, '') AS click_id,
+  SAFE_CAST(NULLIF(click_timestamp, '') AS TIMESTAMP) AS click_timestamp,
+  NULLIF(session_id, '') AS session_id,
+  SAFE_CAST(NULLIF(session_start_timestamp, '') AS TIMESTAMP) AS session_start_timestamp,
+  session_source,
+  NULLIF(booking_id, '') AS booking_id,
+  SAFE_CAST(NULLIF(booking_timestamp, '') AS TIMESTAMP) AS booking_timestamp,
+  booking_status,
+  payment_status,
+  SAFE_CAST(booking_value AS NUMERIC) AS booking_value
+FROM ${ref("experiment_user_outcomes")}

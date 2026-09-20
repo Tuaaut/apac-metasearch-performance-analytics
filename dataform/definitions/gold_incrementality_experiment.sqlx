@@ -2,14 +2,39 @@ config {
   type: "table",
   schema: "apac_meta_gold",
   dependOnDependencyAssertions: true,
-  dependencies: ["assert_experiment_arms"],
+  dependencies: ["assert_experiment_arms", "assert_experiment_assignment_outcome_integrity"],
   assertions: {
     uniqueKey: ["experiment_id"],
     nonNull: ["experiment_id", "market", "channel", "treatment_users", "control_users", "treatment_conversions", "control_conversions", "incremental_conversions"]
   }
 }
 
-WITH arms AS (
+WITH cohort AS (
+  SELECT
+    a.experiment_id,
+    a.market,
+    a.channel,
+    a.experiment_group,
+    a.user_id,
+    o.booking_status,
+    o.payment_status,
+    o.booking_value
+  FROM ${ref("silver_experiment_assignments")} a
+  LEFT JOIN ${ref("silver_experiment_user_outcomes")} o
+    ON a.experiment_id = o.experiment_id
+   AND a.user_id = o.user_id
+), arm_outcomes AS (
+  SELECT
+    experiment_id,
+    market,
+    channel,
+    experiment_group,
+    COUNT(*) AS eligible_users,
+    COUNTIF(booking_status = 'confirmed' AND payment_status = 'paid') AS conversions,
+    SUM(IF(booking_status = 'confirmed' AND payment_status = 'paid', booking_value, 0)) AS revenue
+  FROM cohort
+  GROUP BY 1, 2, 3, 4
+), arms AS (
   SELECT experiment_id, market, channel,
     MAX(IF(experiment_group = 'Treatment', eligible_users, NULL)) AS treatment_users,
     MAX(IF(experiment_group = 'Control', eligible_users, NULL)) AS control_users,
@@ -17,7 +42,7 @@ WITH arms AS (
     MAX(IF(experiment_group = 'Control', conversions, NULL)) AS control_conversions,
     MAX(IF(experiment_group = 'Treatment', revenue, NULL)) AS treatment_revenue,
     MAX(IF(experiment_group = 'Control', revenue, NULL)) AS control_revenue
-  FROM ${ref("silver_incrementality_experiment")}
+  FROM arm_outcomes
   GROUP BY 1, 2, 3
 )
 SELECT *,
