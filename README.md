@@ -2,9 +2,49 @@
 
 Interview practice project for a Senior Analyst, Digital Marketing role in travel. All records are **synthetic** and do not represent Traveloka, its users, or its actual campaigns.
 
+## Project at a glance
+
+| # | Area | What this project demonstrates |
+|---:|---|---|
+| 1 | Business journey | `Impression → click → first-party session → confirmed paid booking → booking value / gross margin` across APAC metasearch campaigns. |
+| 2 | Markets and channels | Thailand, Indonesia, and Singapore; Google Hotel Ads, Google Flights, Skyscanner, Trivago, and Wego. |
+| 3 | Data architecture | A BigQuery Bronze → Silver → Gold ELT workflow, versioned in Dataform SQLX. |
+| 4 | Trust controls | 23 Dataform assertions block a Gold refresh when an upstream quality check fails. |
+| 5 | Causal measurement | A separate user-level Treatment/Control experiment measures incremental conversions and revenue. |
+| 6 | Decision layer | A four-page Power BI Desktop report with campaign performance, funnel, incrementality, and data-quality views. |
+
+## Start here
+
+| # | Open | Use it for |
+|---:|---|---|
+| 1 | [BigQuery project](https://console.cloud.google.com/bigquery?project=bq-dataform-sg) | Browse all Bronze, Silver, Gold, and assertion datasets. |
+| 2 | [Gold Campaign Daily mart](https://console.cloud.google.com/bigquery?project=bq-dataform-sg&d=apac_meta_gold&t=gold_campaign_daily&page=table) | Explore the KPI-ready campaign table used by Power BI. |
+| 3 | [Gold Incrementality Experiment mart](https://console.cloud.google.com/bigquery?project=bq-dataform-sg&d=apac_meta_gold&t=gold_incrementality_experiment&page=table) | Inspect Treatment/Control experiment results. |
+| 4 | [Dataform workspace](https://console.cloud.google.com/bigquery/dataform/locations/asia-southeast1/repositories/apac-metasearch-performance/workspaces/development?project=bq-dataform-sg) | Review the deployed SQLX workflow and invocation graph. |
+| 5 | [Power BI Desktop project](bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.pbip) | Open the local report, then use **Home > Refresh** to load its CSV snapshots. |
+
+### First BigQuery query
+
+BigQuery needs a full `project.dataset.table` reference. Because this project ID has hyphens, wrap the entire reference in backticks. For example:
+
+```sql
+SELECT *
+FROM `bq-dataform-sg.apac_meta_bronze.ad_click_events`
+LIMIT 100;
+```
+
+To inspect the campaign mart that feeds the dashboard:
+
+```sql
+SELECT *
+FROM `bq-dataform-sg.apac_meta_gold.gold_campaign_daily`
+ORDER BY date, market, channel, campaign_id, device_type
+LIMIT 100;
+```
+
 ## Objective and workflow
 
-Follow `impression → ad click → first-party session → booking → revenue / margin`, then compare observational marketing KPIs with a separate randomized incrementality experiment.
+Follow `impression → ad click → first-party session → booking → revenue / margin`, then compare observational marketing key performance indicators (KPIs) with a separate randomized incrementality experiment.
 
 ## Gold data lineage
 
@@ -68,8 +108,9 @@ Gold actions explicitly depend on upstream Dataform assertions, so a failed gate
 | 3 | Dataform repository / workspace | `apac-metasearch-performance` / `development` |
 | 4 | Dataform runner | `apac-metasearch-dataform@bq-dataform-sg.iam.gserviceaccount.com`; dataset-scoped read on Bronze, write on Silver/Gold/assertions, project-scoped BigQuery Job User |
 | 5 | Local deployment files | [`load_bronze.py`](load_bronze.py), [`dataform/cloud_api.py`](dataform/cloud_api.py), [`dataform/definitions/`](dataform/definitions/) |
+| 6 | Cloud consoles | [BigQuery](https://console.cloud.google.com/bigquery?project=bq-dataform-sg), [Bronze dataset](https://console.cloud.google.com/bigquery?project=bq-dataform-sg&d=apac_meta_bronze&page=dataset), [Silver dataset](https://console.cloud.google.com/bigquery?project=bq-dataform-sg&d=apac_meta_silver&page=dataset), [Gold dataset](https://console.cloud.google.com/bigquery?project=bq-dataform-sg&d=apac_meta_gold&page=dataset), [Dataform](https://console.cloud.google.com/bigquery/dataform?project=bq-dataform-sg) |
 
-[Open this GCP project in BigQuery](https://console.cloud.google.com/bigquery?project=bq-dataform-sg). The active `gcloud` default project on this computer was **not** `bq-dataform-sg` when this project was deployed. Always specify the project explicitly in cloud commands; do not change or use another GCP project by accident.
+The active `gcloud` default project on this computer was **not** `bq-dataform-sg` when this project was deployed. Always specify the project explicitly in cloud commands; do not change or use another GCP project by accident.
 
 With an authenticated Google Cloud CLI and BigQuery CLI, rerun the snapshot and transformation from this directory:
 
@@ -104,10 +145,10 @@ All dashboard slicers are dropdowns that allow multiple selections and include S
 
 | # | Page | Storytelling question | Key visuals |
 |---:|---|---|---|
-  | 1 | Executive Pulse | Is spend creating profitable bookings, and which segment needs action? | Spend, bookings, margin ROAS, contribution cards; market margin ROAS; daily gross margin versus spend; loss-making market × channel × device action queue. |
-  | 2 | Funnel & Campaign | At which point does performance break, and which campaign needs action? | Impression → click → session → confirmed booking volumes and step rates; `CMP003` Thailand peer CVR comparison; campaign/device action table. |
-  | 3 | Incrementality | Did advertising create additional demand, and is the result precise enough to act on? | Treatment/control sample sizes, CVR, absolute CVR difference, 95% confidence interval, incremental conversions, and incremental revenue. |
-  | 4 | Data Quality Gate | Can the team trust the dataset before it makes a budget decision? | Overall pass/fail status; Dataform workflow and assertion result; historical coverage, snapshot-export time, Desktop import status; severity-filtered evidence table. |
+| 1 | Executive Pulse | Is spend creating profitable bookings, and which segment needs action? | Spend, bookings, margin ROAS, contribution cards; market margin ROAS; daily gross margin versus spend; loss-making market × channel × device action queue. |
+| 2 | Funnel & Campaign | At which point does performance break, and which campaign needs action? | Impression → click → session → confirmed booking volumes and step rates; `CMP003` Thailand peer CVR comparison; campaign/device action table. |
+| 3 | Incrementality | Did advertising create additional demand, and is the result precise enough to act on? | Treatment/control sample sizes, CVR, absolute CVR difference, 95% confidence interval, incremental conversions, and incremental revenue. |
+| 4 | Data Quality Gate | Can the team trust the dataset before it makes a budget decision? | Overall pass/fail status; Dataform workflow and assertion result; historical coverage, snapshot-export time, Desktop import status; severity-filtered evidence table. |
 
 ### Data Quality Gate
 
@@ -179,7 +220,7 @@ Optional parameters: `--seed`, `--start-date YYYY-MM-DD`, `--days`, and `--outpu
 
 ## Handoff for Codex or Claude Code
 
-Read this README first. Continue from **stage 3** in the workflow table; stages 1–2 are complete. Use the local files as the versioned source, and inspect the current BigQuery/Dataform state before changing cloud resources.
+Read this README first. Continue from **stage 3** in the workflow table: campaign analysis and the interview narrative remain. Stages 1–2 are complete. Use the local files as the versioned source, and inspect the current BigQuery/Dataform state before changing cloud resources.
 
 1. Run `python generate_data.py --validate-only` to verify the checked-in CSV snapshot. Run `python dataform/cloud_api.py status` to inspect the last locally recorded invocation; on a fresh clone that has no `.last_invocation.json`, inspect the Dataform repository `apac-metasearch-performance` in project `bq-dataform-sg`, region `asia-southeast1`.
 2. Investigate `CMP003` using [`gold_campaign_daily.sqlx`](dataform/definitions/gold_campaign_daily.sqlx) and the BigQuery Gold table `bq-dataform-sg.apac_meta_gold.gold_campaign_daily`. Compare CTR, session rate, CVR, CPA, ROAS, margin ROAS, and device splits with other Thailand campaigns and the same channel in Indonesia/Singapore. Write findings and evidence into this README's progress log or an analysis section here.
@@ -204,3 +245,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 10 | 2026-09-20 | Completed the five report upgrades: decision action queue, gross-margin versus spend trend, funnel volume/rate and `CMP003` peer analysis, experiment sample-size/CI views, and Data Quality Gate integration with the latest Dataform workflow/assertion status plus refresh metadata. Regenerated the PBIP and snapshots; all 10 quality checks pass. | Refresh and visually review the report in Power BI Desktop, then use the evidence to write the interview case narrative. |
 | 11 | 2026-09-20 | Replaced the 30-row aggregate experiment source with 150,000 assignments and 150,000 user-level outcomes: 15 experiments × 5,000 Treatment and 5,000 Control users. Added Bronze/Silver models and Dataform gates for arms and assignment/outcome integrity; rebuilt Gold, snapshots, and PBIP. The verified cloud invocation passed 31/31 actions with 23 assertions and zero problems. | Open the refreshed report, use the Incrementality page to trace the user-level calculation, then complete the campaign and experiment interview narrative. |
 | 12 | 2026-09-20 | Added a version-controlled white-background SVG that maps the six Bronze source tables through Silver transformations to the Campaign Daily and Incrementality Experiment Gold marts. Embedded it in this README for GitHub rendering. | Continue the Bronze → Silver → Gold technical walkthrough, then review DAX and TMDL. |
+| 13 | 2026-09-20 | Polished this root README as the GitHub front page: added an at-a-glance overview, direct BigQuery/Dataform/Power BI links, and corrected copy-ready BigQuery table queries. | Complete the DAX and TMDL technical walkthrough, then write the interview case narrative from the Gold marts. |
