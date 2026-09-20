@@ -139,11 +139,25 @@ The first Dataform execution caught 28 booking-margin rounding mismatches and sk
 
 ## Power BI Desktop dashboard
 
-### Dashboard preview
+### Dashboard previews
 
-![Power BI Desktop screenshot of the populated Executive Pulse page](assets/powerbi-executive-pulse.jpg)
+These refreshed report-canvas captures show all four pages with their slicers set to **All**.
 
-*Executive Pulse after Import refresh, with every slicer set to **All**. It presents spend, confirmed paid bookings, Margin Return on Ad Spend (Margin ROAS), contribution, market comparison, daily economics, and the segment action queue.*
+#### 1. Executive Pulse
+
+![Executive Pulse showing spend, bookings, Margin Return on Ad Spend, contribution, market comparison, daily economics, and action queue](assets/powerbi-01-executive-pulse.png)
+
+#### 2. Funnel and Campaign Diagnostics
+
+![Campaign Diagnostics showing the impression-to-booking funnel, Thailand peer conversion-rate comparison, and campaign device queue](assets/powerbi-02-funnel-campaign.png)
+
+#### 3. Incrementality
+
+![Incrementality page showing treatment and control conversion rates, conversion-rate difference, incremental conversions, and experiment detail](assets/powerbi-03-incrementality.png)
+
+#### 4. Data Quality Gate
+
+![Data Quality Gate showing overall pass status, workflow status, import status, quality checks, and detailed evidence](assets/powerbi-04-data-quality-gate.png)
 
 The version-controlled Power BI project is [`APAC_Metasearch_Analytics.pbip`](bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.pbip). It uses import-mode CSV snapshots of the two verified BigQuery Gold marts so the Desktop report can be opened without storing Google credentials in Git. [`export_gold.py`](bi/export_gold.py) refreshes those snapshots from BigQuery, while [`build_powerbi.py`](bi/build_powerbi.py) generates the PBIP, TMDL semantic model, page layout, visuals, and theme. The report's five intentionally disconnected tables are `Campaign`, `Experiment`, `DataQuality`, `FunnelStage`, and `RefreshMetadata`. It opened successfully in Power BI Desktop on 2026-09-20 after resolving all measure/column name collisions.
 
@@ -253,3 +267,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 12 | 2026-09-20 | Added a version-controlled white-background SVG that maps the six Bronze source tables through Silver transformations to the Campaign Daily and Incrementality Experiment Gold marts. Embedded it in this README for GitHub rendering. | Continue the Bronze → Silver → Gold technical walkthrough, then review DAX and TMDL. |
 | 13 | 2026-09-20 | Polished this root README as the GitHub front page: added an at-a-glance overview, direct BigQuery/Dataform/Power BI links, and corrected copy-ready BigQuery table queries. | Complete the DAX and TMDL technical walkthrough, then write the interview case narrative from the Gold marts. |
 | 14 | 2026-09-20 | Captured the refreshed Power BI Executive Pulse report and embedded the screenshot in this GitHub README. It shows populated cards, visualizations, and the action queue with all slicers set to All. | Complete the DAX and TMDL technical walkthrough, then write the interview case narrative from the Gold marts. |
+| 15 | 2026-09-21 | Replaced the single Desktop-window capture with four clean report-canvas screenshots supplied from Power BI: Executive Pulse, Funnel and Campaign Diagnostics, Incrementality, and Data Quality Gate. Embedded all four in this README. | Complete the DAX and TMDL technical walkthrough, then write the interview case narrative from the Gold marts. |
