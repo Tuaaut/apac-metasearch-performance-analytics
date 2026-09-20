@@ -139,6 +139,12 @@ The first Dataform execution caught 28 booking-margin rounding mismatches and sk
 
 ## Power BI Desktop dashboard
 
+### Dashboard preview
+
+![Power BI Desktop screenshot of the populated Executive Pulse page](assets/powerbi-executive-pulse.jpg)
+
+*Executive Pulse after Import refresh, with every slicer set to **All**. It presents spend, confirmed paid bookings, Margin Return on Ad Spend (Margin ROAS), contribution, market comparison, daily economics, and the segment action queue.*
+
 The version-controlled Power BI project is [`APAC_Metasearch_Analytics.pbip`](bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.pbip). It uses import-mode CSV snapshots of the two verified BigQuery Gold marts so the Desktop report can be opened without storing Google credentials in Git. [`export_gold.py`](bi/export_gold.py) refreshes those snapshots from BigQuery, while [`build_powerbi.py`](bi/build_powerbi.py) generates the PBIP, TMDL semantic model, page layout, visuals, and theme. The report's five intentionally disconnected tables are `Campaign`, `Experiment`, `DataQuality`, `FunnelStage`, and `RefreshMetadata`. It opened successfully in Power BI Desktop on 2026-09-20 after resolving all measure/column name collisions.
 
 All dashboard slicers are dropdowns that allow multiple selections and include Select all. A PBIP deliberately does not version its local Import cache (`.pbi/cache.abf`), so a new Desktop session must use **Home > Refresh** before cards and charts can show snapshot data. Without that refresh, slicers may show the known values while the import tables have zero loaded rows and every measure visual is blank. A verified refresh loads 930 `Campaign` rows and 15 `Experiment` rows.
@@ -246,3 +252,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 11 | 2026-09-20 | Replaced the 30-row aggregate experiment source with 150,000 assignments and 150,000 user-level outcomes: 15 experiments × 5,000 Treatment and 5,000 Control users. Added Bronze/Silver models and Dataform gates for arms and assignment/outcome integrity; rebuilt Gold, snapshots, and PBIP. The verified cloud invocation passed 31/31 actions with 23 assertions and zero problems. | Open the refreshed report, use the Incrementality page to trace the user-level calculation, then complete the campaign and experiment interview narrative. |
 | 12 | 2026-09-20 | Added a version-controlled white-background SVG that maps the six Bronze source tables through Silver transformations to the Campaign Daily and Incrementality Experiment Gold marts. Embedded it in this README for GitHub rendering. | Continue the Bronze → Silver → Gold technical walkthrough, then review DAX and TMDL. |
 | 13 | 2026-09-20 | Polished this root README as the GitHub front page: added an at-a-glance overview, direct BigQuery/Dataform/Power BI links, and corrected copy-ready BigQuery table queries. | Complete the DAX and TMDL technical walkthrough, then write the interview case narrative from the Gold marts. |
+| 14 | 2026-09-20 | Captured the refreshed Power BI Executive Pulse report and embedded the screenshot in this GitHub README. It shows populated cards, visualizations, and the action queue with all slicers set to All. | Complete the DAX and TMDL technical walkthrough, then write the interview case narrative from the Gold marts. |
