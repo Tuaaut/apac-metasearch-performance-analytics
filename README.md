@@ -6,6 +6,12 @@ Interview practice project for a Senior Analyst, Digital Marketing role in trave
 
 Follow `impression → ad click → first-party session → booking → revenue / margin`, then compare observational marketing KPIs with a separate randomized incrementality experiment.
 
+## Gold data lineage
+
+![Gold data lineage: Campaign Daily and Incrementality Experiment marts](assets/gold-data-lineage.svg)
+
+The diagram is a GitHub-ready summary of how the six Bronze sources pass through Silver transformations into the two independent Gold marts. It is a learning aid; the Dataform SQLX definitions remain the executable source of truth.
+
 | # | Stage | Status | Deliverable |
 |---:|---|---|---|
 | 1 | Generate linked synthetic data | Complete | Six CSV tables in [`data/`](data/) and deterministic [`generate_data.py`](generate_data.py) |
@@ -197,3 +203,4 @@ Do not treat null `ad_click_events.session_id`, organic sessions, `CMP003`'s wea
 | 9 | 2026-09-20 | Reviewed all four report pages against the interview decision flow. Corrected the quality page's date label to historical period coverage and made the overall gate/count cards ignore category and severity filters. Recorded a prioritized report backlog with observed campaign and device evidence. | Add the loss-making segment action queue and a margin-versus-spend trend, then build the funnel and experiment uncertainty views. |
 | 10 | 2026-09-20 | Completed the five report upgrades: decision action queue, gross-margin versus spend trend, funnel volume/rate and `CMP003` peer analysis, experiment sample-size/CI views, and Data Quality Gate integration with the latest Dataform workflow/assertion status plus refresh metadata. Regenerated the PBIP and snapshots; all 10 quality checks pass. | Refresh and visually review the report in Power BI Desktop, then use the evidence to write the interview case narrative. |
 | 11 | 2026-09-20 | Replaced the 30-row aggregate experiment source with 150,000 assignments and 150,000 user-level outcomes: 15 experiments × 5,000 Treatment and 5,000 Control users. Added Bronze/Silver models and Dataform gates for arms and assignment/outcome integrity; rebuilt Gold, snapshots, and PBIP. The verified cloud invocation passed 31/31 actions with 23 assertions and zero problems. | Open the refreshed report, use the Incrementality page to trace the user-level calculation, then complete the campaign and experiment interview narrative. |
+| 12 | 2026-09-20 | Added a version-controlled white-background SVG that maps the six Bronze source tables through Silver transformations to the Campaign Daily and Incrementality Experiment Gold marts. Embedded it in this README for GitHub rendering. | Continue the Bronze → Silver → Gold technical walkthrough, then review DAX and TMDL. |

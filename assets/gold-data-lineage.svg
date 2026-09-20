@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080" role="img" aria-labelledby="title description">
+  <title id="title">APAC Metasearch Performance Analytics Gold data lineage</title>
+  <desc id="description">Two data lineage maps. The campaign daily Gold mart is derived from advertising performance, click events, user sessions, and bookings. The incrementality experiment Gold mart is derived from experiment assignments and user outcomes.</desc>
+  <defs>
+    <linearGradient id="header" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#102A43"/>
+      <stop offset="100%" stop-color="#1F4E79"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#102A43" flood-opacity="0.12"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#60758C"/>
+    </marker>
+    <style>
+      .title { font-family: Segoe UI, Arial, sans-serif; font-size: 32px; font-weight: 700; fill: #FFFFFF; letter-spacing: .3px; }
+      .subtitle { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; fill: #C9D8E8; }
+      .panel-title { font-family: Segoe UI, Arial, sans-serif; font-size: 23px; font-weight: 700; fill: #102A43; }
+      .panel-subtitle { font-family: Segoe UI, Arial, sans-serif; font-size: 14px; fill: #627D98; }
+      .card-title { font-family: Segoe UI, Arial, sans-serif; font-size: 16px; font-weight: 700; fill: #102A43; }
+      .card-text { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #486581; }
+      .badge { font-family: Segoe UI, Arial, sans-serif; font-size: 10px; font-weight: 700; fill: #FFFFFF; letter-spacing: 1px; }
+      .step { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; font-weight: 700; fill: #334E68; }
+      .join { font-family: Segoe UI, Arial, sans-serif; font-size: 11px; font-weight: 600; fill: #627D98; }
+      .gold-title { font-family: Segoe UI, Arial, sans-serif; font-size: 20px; font-weight: 700; fill: #663C00; }
+      .gold-text { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #7C4A03; }
+      .legend { font-family: Segoe UI, Arial, sans-serif; font-size: 12px; fill: #486581; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1080" fill="#FFFFFF"/>
+  <rect x="0" y="0" width="1600" height="118" fill="url(#header)"/>
+  <text x="64" y="56" class="title">APAC METASEARCH / GOLD DATA LINEAGE</text>
+  <text x="64" y="86" class="subtitle">Two independent analytical marts: observational campaign performance and randomized incrementality measurement</text>
+
+  <g transform="translate(64 142)">
+    <rect x="0" y="0" width="236" height="30" rx="15" fill="#E7EEF5"/>
+    <rect x="10" y="9" width="12" height="12" rx="2" fill="#D9F2ED" stroke="#23836A"/>
+    <text x="30" y="20" class="legend">Bronze: raw source</text>
+    <rect x="250" y="0" width="232" height="30" rx="15" fill="#E7EEF5"/>
+    <rect x="260" y="9" width="12" height="12" rx="2" fill="#DCEAFF" stroke="#2F6FBA"/>
+    <text x="280" y="20" class="legend">Silver: typed + validated</text>
+    <rect x="496" y="0" width="206" height="30" rx="15" fill="#E7EEF5"/>
+    <rect x="506" y="9" width="12" height="12" rx="2" fill="#FFE6A6" stroke="#C98D00"/>
+    <text x="526" y="20" class="legend">Gold: KPI-ready mart</text>
+  </g>
+
+  <!-- Campaign panel -->
+  <g transform="translate(48 206)">
+    <rect x="0" y="0" width="744" height="812" rx="18" fill="#F8FAFC" stroke="#D9E2EC"/>
+    <text x="34" y="48" class="panel-title">1 / Campaign Daily mart</text>
+    <text x="34" y="74" class="panel-subtitle">Observed campaign attribution: impression → click → session → booking</text>
+
+    <text x="34" y="120" class="step">BRONZE SOURCES</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="138" width="310" height="94" rx="12" fill="#ECF9F5" stroke="#79C9B6"/>
+      <rect x="52" y="154" width="72" height="19" rx="9" fill="#23836A"/>
+      <text x="62" y="168" class="badge">BRONZE</text>
+      <text x="52" y="195" class="card-title">Ad Platform Performance</text>
+      <text x="52" y="216" class="card-text">Daily impressions, clicks, spend, conversions</text>
+
+      <rect x="34" y="278" width="200" height="104" rx="12" fill="#ECF9F5" stroke="#79C9B6"/>
+      <rect x="50" y="294" width="72" height="19" rx="9" fill="#23836A"/>
+      <text x="60" y="308" class="badge">BRONZE</text>
+      <text x="50" y="334" class="card-title">Ad Click Events</text>
+      <text x="50" y="354" class="card-text">One row per paid click</text>
+      <text x="50" y="371" class="card-text">Key: click_id</text>
+
+      <rect x="270" y="278" width="200" height="104" rx="12" fill="#ECF9F5" stroke="#79C9B6"/>
+      <rect x="286" y="294" width="72" height="19" rx="9" fill="#23836A"/>
+      <text x="296" y="308" class="badge">BRONZE</text>
+      <text x="286" y="334" class="card-title">User Sessions</text>
+      <text x="286" y="354" class="card-text">One row per session</text>
+      <text x="286" y="371" class="card-text">Key: session_id</text>
+
+      <rect x="506" y="278" width="200" height="104" rx="12" fill="#ECF9F5" stroke="#79C9B6"/>
+      <rect x="522" y="294" width="72" height="19" rx="9" fill="#23836A"/>
+      <text x="532" y="308" class="badge">BRONZE</text>
+      <text x="522" y="334" class="card-title">Bookings</text>
+      <text x="522" y="354" class="card-text">One row per booking</text>
+      <text x="522" y="371" class="card-text">Key: booking_id</text>
+    </g>
+
+    <path d="M234 330 H270" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="237" y="319" class="join">session_id</text>
+    <path d="M470 330 H506" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="473" y="319" class="join">session_id</text>
+
+    <path d="M134 382 V430 H370 V452" fill="none" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M370 382 V452" fill="none" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M606 382 V430 H370" fill="none" stroke="#60758C" stroke-width="2"/>
+
+    <text x="34" y="434" class="step">SILVER TRANSFORMATION</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="452" width="672" height="94" rx="12" fill="#EDF4FF" stroke="#8CB6E8"/>
+      <rect x="52" y="468" width="67" height="19" rx="9" fill="#2F6FBA"/>
+      <text x="62" y="482" class="badge">SILVER</text>
+      <text x="52" y="509" class="card-title">Type, validate, and attribute the campaign journey</text>
+      <text x="52" y="530" class="card-text">Cast dates and numeric values • validate keys • link click → session → confirmed paid booking</text>
+    </g>
+
+    <path d="M370 546 V588" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="389" y="573" class="join">GROUP BY click date + market + channel + campaign + device</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="606" width="672" height="84" rx="12" fill="#F2F7FC" stroke="#A8C2D8"/>
+      <text x="52" y="637" class="card-title">Attributed journey aggregate</text>
+      <text x="52" y="659" class="card-text">Sessions • confirmed bookings • booking value • gross margin</text>
+    </g>
+
+    <path d="M189 232 V716 H350" fill="none" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="73" y="707" class="join">Join daily platform metrics</text>
+    <path d="M370 690 V716" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="390" y="708" class="join">same five campaign-day keys</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="734" width="672" height="52" rx="12" fill="#FFF4D6" stroke="#D9A822"/>
+      <text x="52" y="766" class="gold-title">Gold Campaign Daily</text>
+      <text x="321" y="764" class="gold-text">930 rows • KPIs: CTR, CPC, CVR, CPA, ROAS, Margin ROAS</text>
+    </g>
+  </g>
+
+  <!-- Experiment panel -->
+  <g transform="translate(808 206)">
+    <rect x="0" y="0" width="744" height="812" rx="18" fill="#F8FAFC" stroke="#D9E2EC"/>
+    <text x="34" y="48" class="panel-title">2 / Incrementality Experiment mart</text>
+    <text x="34" y="74" class="panel-subtitle">Randomized comparison: Treatment versus Control</text>
+
+    <text x="34" y="120" class="step">BRONZE SOURCES</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="138" width="310" height="112" rx="12" fill="#ECF9F5" stroke="#79C9B6"/>
+      <rect x="52" y="154" width="72" height="19" rx="9" fill="#23836A"/>
+      <text x="62" y="168" class="badge">BRONZE</text>
+      <text x="52" y="195" class="card-title">Experiment Assignments</text>
+      <text x="52" y="216" class="card-text">Eligible users and Treatment / Control group</text>
+      <text x="52" y="234" class="card-text">Key: experiment_id + user_id</text>
+
+      <rect x="398" y="138" width="310" height="112" rx="12" fill="#ECF9F5" stroke="#79C9B6"/>
+      <rect x="416" y="154" width="72" height="19" rx="9" fill="#23836A"/>
+      <text x="426" y="168" class="badge">BRONZE</text>
+      <text x="416" y="195" class="card-title">Experiment User Outcomes</text>
+      <text x="416" y="216" class="card-text">Exposure, click, session, booking, value</text>
+      <text x="416" y="234" class="card-text">Key: experiment_id + user_id</text>
+    </g>
+
+    <path d="M189 250 V304 H371 V326" fill="none" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M553 250 V304 H371" fill="none" stroke="#60758C" stroke-width="2"/>
+    <text x="245" y="294" class="join">Join on experiment_id + user_id</text>
+
+    <text x="34" y="308" class="step">SILVER TRANSFORMATION</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="326" width="672" height="94" rx="12" fill="#EDF4FF" stroke="#8CB6E8"/>
+      <rect x="52" y="342" width="67" height="19" rx="9" fill="#2F6FBA"/>
+      <text x="62" y="356" class="badge">SILVER</text>
+      <text x="52" y="383" class="card-title">Type and validate assignment and outcome records</text>
+      <text x="52" y="404" class="card-text">5,000 eligible users per arm • valid exposure rules • complete assignment/outcome pairs</text>
+    </g>
+
+    <path d="M370 420 V458" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <g filter="url(#shadow)">
+      <rect x="34" y="476" width="672" height="90" rx="12" fill="#F2F7FC" stroke="#A8C2D8"/>
+      <text x="52" y="507" class="card-title">Experiment cohort</text>
+      <text x="52" y="529" class="card-text">Every assigned user receives their group and observed outcome</text>
+      <text x="52" y="547" class="card-text">Treatment can be exposed without clicking; Control can still book organically</text>
+    </g>
+
+    <path d="M370 566 V606" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="389" y="590" class="join">Aggregate by experiment + group, then pivot arms</text>
+    <g filter="url(#shadow)">
+      <rect x="34" y="624" width="672" height="70" rx="12" fill="#F2F7FC" stroke="#A8C2D8"/>
+      <text x="52" y="653" class="card-title">Treatment and Control comparison</text>
+      <text x="52" y="674" class="card-text">Users • conversions • revenue • conversion rates • incremental impact</text>
+    </g>
+
+    <path d="M370 694 V726" stroke="#60758C" stroke-width="2" marker-end="url(#arrow)"/>
+    <g filter="url(#shadow)">
+      <rect x="34" y="744" width="672" height="42" rx="12" fill="#FFF4D6" stroke="#D9A822"/>
+      <text x="52" y="772" class="gold-title">Gold Incrementality Experiment</text>
+      <text x="399" y="771" class="gold-text">15 rows • one row per market × channel experiment</text>
+    </g>
+  </g>
+
+  <text x="64" y="1052" class="panel-subtitle">Dataform runs quality assertions before Gold refresh. Gold marts stay separate because campaign attribution and experiment results measure different populations.</text>
+</svg>
