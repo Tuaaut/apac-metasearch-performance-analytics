@@ -39,9 +39,9 @@ This report page shows quality evidence. Dataform enforces the upstream block on
 
 The project currently covers August 2026 only. A prior period or budget target would be needed for a meaningful pacing or month-over-month view. Date filtering and campaign drillthrough are possible future report work.
 
-## Screenshot reconciliation issue to resolve
+## Screenshot reconciliation issue
 
-The user-supplied Incrementality screenshot on the [front page](../README.md#report-preview) shows **600K Treatment users**, **600K Control users**, and **5K incremental conversions**. The checked-in [Gold experiment snapshot](../bi/snapshot/gold_incrementality_experiment.csv) has 15 experiment rows with **75,000 users per arm** and **656 incremental conversions**. The current [DAX definitions](../bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.SemanticModel/definition/tables/Experiment.tmdl) sum those Gold fields. The reason for the displayed eightfold difference has not been verified. Treat the screenshot as a layout preview and reconcile the Desktop Import model before using the Incrementality page as numerical evidence in an interview. The warehouse snapshot and Dataform result are the documented source values.
+The Incrementality screenshot on the [front page](../README.md#report-preview) shows **600K Treatment users**, **600K Control users**, and **5K incremental conversions**. The checked-in [Gold experiment snapshot](../bi/snapshot/gold_incrementality_experiment.csv) has 15 experiment rows with **75,000 users per arm** and **656 incremental conversions**. The current [DAX definitions](../bi/APAC_Metasearch_Analytics/APAC_Metasearch_Analytics.SemanticModel/definition/tables/Experiment.tmdl) sum those Gold fields. The eightfold difference comes from a stale Power BI Import cache: the screenshot was captured while the model still held the earlier 30-row aggregate experiment table (commit `f2994e5`, 600K users per arm). Refresh the Desktop model and recapture the page before using it as numerical evidence. The warehouse snapshot and Dataform result are the documented source values.
 
 ## Refresh procedure
 

@@ -82,4 +82,4 @@ For example, assignment `EXP-TH-01` + `EXPUSR0000167` is in Treatment. Its outco
 
 Indonesia has the largest traffic and lower cost per click. Singapore has less traffic, higher cost per click, and higher booking value. Mobile has higher click-through rate and slightly lower session conversion propensity than desktop. `CMP003` intentionally has high click-through rate and low conversion rate for investigation.
 
-The experiment is a synthetic randomized practice scenario. Incremental revenue is gross booking value from its separate population, not campaign margin or incremental return on ad spend. The displayed 95% interval assumes independent Bernoulli observations and does not adjust for multiple comparisons. There is one month of generated data and no live ad feed.
+The experiment is a synthetic randomized scenario. Incremental revenue is gross booking value from its separate population, not campaign margin or incremental return on ad spend. The displayed 95% interval assumes independent Bernoulli observations and does not adjust for multiple comparisons. There is one month of generated data and no live ad feed.

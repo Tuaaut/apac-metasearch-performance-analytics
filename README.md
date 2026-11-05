@@ -1,6 +1,6 @@
-# APAC Metasearch Performance Analytics
+# Metasearch Marketing Performance Analytics
 
-An interview practice project for a Senior Analyst, Digital Marketing role in travel. **Every record is synthetic**; the data and findings do not describe Traveloka, its users, or its campaigns.
+A portfolio project on marketing performance analytics for a travel marketplace. **Every record is synthetic**; the data and findings do not describe any real company, its users, or its campaigns.
 
 ## Business objective
 
@@ -31,7 +31,7 @@ An example investigation is `CMP003` (Thailand Skyscanner): it attracted 4,925 c
 
 ![Incrementality report page with Treatment and Control conversion rates and experiment detail](assets/powerbi-03-incrementality.png)
 
-**Screenshot note:** This captured page shows 600K users per arm and 5K incremental conversions. The checked-in Gold snapshot has **75,000 users per arm and 656 incremental conversions**. The cause of the displayed difference is still being investigated; use the [Gold snapshot](bi/snapshot/gold_incrementality_experiment.csv) for numerical analysis until the Desktop model is reconciled. See the [report guide](docs/report.md#screenshot-reconciliation-issue-to-resolve).
+**Screenshot note:** This captured page shows 600K users per arm and 5K incremental conversions. The checked-in Gold snapshot has **75,000 users per arm and 656 incremental conversions**. The screenshot was captured from a stale Power BI Import cache that still held an earlier aggregate version of the experiment table; refreshing the model and recapturing the page will align it. Use the [Gold snapshot](bi/snapshot/gold_incrementality_experiment.csv) for numerical analysis. See the [report guide](docs/report.md#screenshot-reconciliation-issue).
 
 ### 4. Data Quality Gate — can we trust the snapshot?
 
@@ -51,7 +51,7 @@ The campaign mart connects ad platform performance, clicks, first-party sessions
 
 ## Last verified data snapshot
 
-Verified in BigQuery on 2026-09-20 (Asia/Bangkok); this is a static practice snapshot, not a live feed.
+Verified in BigQuery on 2026-09-20 (Asia/Bangkok); this is a static snapshot, not a live feed.
 
 | # | Result | Value |
 |---:|---|---:|
@@ -77,4 +77,4 @@ To validate the checked-in generated data locally, run `python generate_data.py 
 
 ## Project status
 
-The synthetic data, BigQuery/Dataform transformations, quality gate, and four report pages are built. The next work is to reconcile the Incrementality page's displayed totals, analyze `CMP003` and the experiment, and write the final interview decision narrative. The [progress log](docs/operations.md#progress-log) records completed steps and the next action.
+The synthetic data, BigQuery/Dataform transformations, quality gate, and four report pages are built. The next work is to refresh and recapture the Incrementality page, analyze `CMP003` and the experiment, and write the final budget decision memo. The [progress log](docs/operations.md#progress-log) records completed steps and the next action.
